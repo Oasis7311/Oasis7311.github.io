@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网 - Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网" />
+<meta property="og:description" content="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网 背景 在GoDaddy主机上配置Shadowsocks，客户端通过链接代理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-07T14:05:25+08:00" />
+<meta property="article:modified_time" content="2023-01-07T14:05:25+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网"/>
+<meta name="twitter:description" content="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网 背景 在GoDaddy主机上配置Shadowsocks，客户端通过链接代理"/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" /><link rel="prev" href="http://example.org/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" /><link rel="next" href="http://example.org/zh-cn/posts/setting-up-xray-server-on-centos7/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks\/"
+        },"genre": "posts","keywords": "工具","wordcount":  3095 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks\/","datePublished": "2023-01-07T14:05:25+08:00","dateModified": "2023-01-07T14:05:25+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts"> 文章 </a><a class="menu-item" href="/zh-cn/tags"> 标签 </a><a class="menu-item" href="/zh-cn/categories"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts" title="">文章</a><a class="menu-item" href="/zh-cn/tags" title="">标签</a><a class="menu-item" href="/zh-cn/categories" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>科学上网</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-07">2023-01-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3095 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#godaddy-vps上shadowsocks搭建">GoDaddy VPS上Shadowsocks搭建</a></li>
+    <li><a href="#shadowrocket-ios客户端的使用">ShadowRocket IOS客户端的使用</a></li>
+    <li><a href="#其他">其他</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="通过godaddy-vps和shadowsocks搭建代理实现科学上网">通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网</h1>
+<hr>
+<h2 id="背景">背景</h2>
+<p>在GoDaddy主机上配置Shadowsocks，客户端通过链接代理端口实现科学上网</p>
+<p>前段时间VPN又续费了一年，正在使用的VPN虽然十分稳定，不限流量，不限带宽，同时使用设备数多，全平台，节点遍布欧美东亚南亚，价格不贵&hellip;</p>
+<p>（tmd，这VPN是有点好用的）</p>
+<p>唯一的缺点是没有办法自己配置规则决定是否直连or代理，导致一些网站总是重定向回.cn，无法访问.com/.net，比如leetcode.com, linkedin.com。</p>
+<p>昨天看到了一篇关于<a href="https://plantegg.github.io/2019/06/02/%e5%8f%b2%e4%b8%8a%e6%9c%80%e5%85%a8_SSH_%e6%9a%97%e9%bb%91%e6%8a%80%e5%b7%a7%e8%af%a6%e8%a7%a3--%e6%94%b6%e8%97%8f%e4%bf%9d%e5%b9%b3%e5%ae%89/" target="_blank" rel="noopener noreffer ">ssh命令的黑科技教学</a>，其中包含“一行ssh实现科学上网”，突然就有了兴致，想到为了构建这个博客网站购买了海外的服务器，就在思考要不自己搭建一个代理实现科学上网，这样也能多利用这个网站的服务器资源（毕竟我日常摆烂懒得更新，加上本来也没什么人浏览）。毕竟虽然更新很少，但是还是打算长期维护域名+服务器资源，如果搭建的代理好用的话也可以省下额外订阅VPN的钱了。</p>
+<p>ssh命令，原理解释见原文</p>
+<pre tabindex="0"><code>nohup ssh -qTfnN -D 127.0.0.1:38080 root@1.1.1.1 &#34;vmstat 10&#34; 2&gt;&amp;1 &gt;/dev/null &amp;
+</code></pre><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050917552.png"
+        title="img" /></a></p>
+<hr>
+<h2 id="godaddy-vps上shadowsocks搭建">GoDaddy VPS上Shadowsocks搭建</h2>
+<p>涉及到的教学原文并不能够完美运行，如果云服务器是新搭建的话，会因为一些基础依赖的缺少而导致部分命令无法运行成功。遇到错误的话可以参考我的流程，也许能帮到你。如果你的服务器已经用了挺久了，该有的运行环境都有，可以直接看具体的教学，跟着教学一步步走就好了。</p>
+<ol>
+<li>
+<p>教学中的各类命令适用于Linux or Mac OS，而我自用的机器只有一台win，日常也不会在win上搞这些东西，只是用来打游戏，因此对win上的命令行操作是一点不懂（有够菜的），所以没打算再重新学习这些命令在win上该怎么实现，转向<a href="https://github.com/zhaoweih/Shadowsocks-Tutorial" target="_blank" rel="noopener noreffer ">shadowsocks相关的教学</a>。</p>
+</li>
+<li>
+<p>到了这个shadowsocks的教学才发现，原来我在Godaddy上购买的并不是VPS，而是专门针对网站搭建的Web hosting。这一步花费了我不少时间确认，如果是没有海外服务器的朋友，记得确认好准备购买的是否是云服务器(Server)，我认为最简单的方法就是确认</p>
+<p>你能不能拿到服务器的root权限</p>
+<p>。</p>
+<ol>
+<li>关于服务器规格。1core1G十分够用了（这是GoDaddy上的VPS最小规格），如果你在别的平台购买，目的仅仅是为了搭建代理的话，选最小的套餐就是了。</li>
+<li>关于服务器提供商。比起教学中推荐的VPS，GoDaddy似乎也是5美金一个月，同时有免费的自动备份，好像更值当一些？大家自行选择，只需要能有一个海外的VPS就行了。</li>
+<li>关于服务器位置。我选择的是在美西的服务器，是因为我个人一些电子移民的账号都在美国地区，透过美西的服务器代理访问的话，应该可以减少一些账号风控检测导致的账号封禁（都是钱哎）。比如GV现在只提供美国&amp;加拿大地区的服务，不使用美加的IP的话似乎是无法使用的。个人根据个人的需求进行选择吧。毕竟如果服务器在日本、香港、新加坡这些亚太地区的话延迟更低一些，可能更适合日常使用。兴许以后我会额外买一个新加坡地区的VPS通过代理去打Apex，这样又省下了加速器的钱（明明为了服务器会花更多</li>
+<li>关于服务器系统。我选择的是CentOS7，因为教学有傻瓜操作脚本可以用</li>
+</ol>
+</li>
+<li>
+<p>VPS有了之后，win上用powerShell通过ssh登上服务器的root用户，或者用XShell建立和服务器的会话。mac就直接在终端ssh就好了</p>
+</li>
+<li>
+<p>执行傻瓜脚本：脚本执行过程的一些选项选择参考</p>
+<p>教学</p>
+<ol>
+<li><code>wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</code></li>
+<li><code>chmod +x shadowsocks-all.sh</code></li>
+<li><code>./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</code></li>
+<li>解释一下命令：
+<ul>
+<li><code>wget</code>是从指定的链接中下载文件，<code>-O</code>参数指定保存的文件名， <code>--no-check-certificate</code>代表这次下载不检查这个链接的CA证书</li>
+<li><code>chmod -x </code>会将文件转为可执行文件</li>
+<li>
+<ol>
+<li><code>./filename.sh</code> 执行.sh文件，<code>2</code> 和 <code>1</code>都是文件描述符，<code>1</code>代表标准输出(<code>stdout</code>)，<code>2</code>代表标准错误(<code>stderr</code>)，<code>&gt;</code> 是重定向，如果<strong>仅仅</strong>是<code>2&gt;1</code>，代表的含义是，将.sh文件执行的标准错误重定向到<strong>文件名为1的文件中</strong>。如果想要将标准错误重定向到标准输出中，需要在<code>1</code>前加<code>&amp;</code>，完整的<code>./shadowsocks-all.sh 2&gt;&amp;1</code>意味是：执行<code>shadowsocks-all.sh</code>，将标准错误重定向至标准输出流中，可以理解为将标准输出流和标准错误流合并。</li>
+<li><code>| tee shadowsocks-all.log</code>，<code>|</code>是linux中的管道符，会将前面的输出作为后面命令的输入。<code>tee</code>命令用于读取标准输入流将其输出到标准输出流或者文件中，<code>tee shadowsocks-all.log</code>就是将tee读到的标准输入输出到<code>shadowsocks-all.log</code>文件中。</li>
+</ol>
+</li>
+<li>完整命令<code>./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</code>的意思就是，执行<code>shadowsocks-all.sh</code>文件，将执行得到的<code>stderr</code>合并到<code>stdout</code>中，通过管道作为<code>tee</code>命令的<code>stdin</code>，将其输出到<code>shadowsocks-all.log</code>文件中。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>对于新购买了centos7服务器的朋友，在执行sh文件之前，需要下载&amp;&amp;更新一些依赖，可以：</p>
+<ol>
+<li>升级python版本到3.9.16，centos7自带的python版本为2.7，太老了，具体怎么升级网上很多教程。</li>
+<li>安装zlib1g-dev
+<ol>
+<li><code>sudo yum install zlib-devel</code></li>
+<li><code>./configure --with-zlib</code></li>
+<li><code>./configure --prefix=/opt/python2.7 + other options</code></li>
+<li><code>make</code></li>
+<li><code>make install</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>第4步成功之后，就没有卡点了，剩下的就是客户端的配置，参考<a href="https://github.com/zhaoweih/Shadowsocks-Tutorial#%e4%b8%8b%e8%bd%bd%e5%ae%a2%e6%88%b7%e7%ab%af" target="_blank" rel="noopener noreffer ">教学</a>，我就不细说了。</p>
+</li>
+</ol>
+<hr>
+<h2 id="shadowrocket-ios客户端的使用">ShadowRocket IOS客户端的使用</h2>
+<p>在配置shadowsocks的服务端的时候，会选择加密方式，关于加密方式的对比<a href="https://doc.libsodium.org/secret-key_cryptography/aead#tldr-which-one-should-i-use" target="_blank" rel="noopener noreffer ">点击这里</a>。教学中建议选择的是<code>xchacha20-ietf-poly1305</code> ，现在使用较多的代理软件应该是patatso和shadowRocket，功能更全面更强大（更贵）的app也有，不过我觉得对于只是需要基本的代理配置的朋友们应该和我一样用这些比较基础的就好了。需要一个非国区的apple账号才可以下载，shadowrocket要2.99$，patatso免费。</p>
+<p>但patatso中，加密方式的选择支持<code>chacha20-ietf-poly1305</code>，而不支持<code>xchacha20-ietf-poly1305</code>，因此如果想用patatso的朋友不要选择<code>xchacha20-ietf-poly1305</code>这个加密方式，但换别的加密方式，请自行对比，因为我没有用过，但是我猜测<code>chacha20-ietf-poly1305</code>也能够满足使用。</p>
+<p>如果没有visa、paypal等非人民币支付方式，可以通过<a href="https://www.apple.com/shop/gift-cards" target="_blank" rel="noopener noreffer ">苹果的礼品卡</a>赠送apple store余额给非国区账号，礼品卡可以使用国内的支付方式支付，然后再购买shadowrocket。</p>
+<p>然后就是一些shadowrocket的配置，我现在使用的是自动打开vpn+按场景转发，始终保持vpn打开状态，根据当前网络选择是否代理、代理使用的配置等。比如家里的WIFI与蜂窝网络会根据default.conf决定是否走代理，其他网络比如公司的WIFI就直连目标不走代理。这样就不会连着公司WIFI穿梭到外网区了还走一遍代理。</p>
+<hr>
+<h2 id="其他">其他</h2>
+<p>后续应该会将网站的数据备份后转移到VPS中来，webhosting到期后就不再续期了，感觉又是一个很浪费时间的事情，因为网站是基于wordpress搭建的，GoDaddy提供的webhosting可以自动配置完成wordpress的东西，转移到VPS上的话wordpress需要我自己重新搭建一遍，不知道是否GoDaddy搭建的wordpress和官方的版本是否有区别（只希望存储没区别，这样我的备份可以直接转移）</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-01-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" data-title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网" data-via="https://twitter.com/KKKyot_" data-hashtags="工具"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" data-hashtag="工具"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" data-title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" data-title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" data-title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E5%B7%A5%E5%85%B7/">工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" class="prev" rel="prev" title="溯源：LIS的O(Nlogn)时间复杂度算法"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>溯源：LIS的O(Nlogn)时间复杂度算法</a>
+            <a href="/zh-cn/posts/setting-up-xray-server-on-centos7/" class="next" rel="next" title="CentOS7搭建Xray-服务端">CentOS7搭建Xray-服务端<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
