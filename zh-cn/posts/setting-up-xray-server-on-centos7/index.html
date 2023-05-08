@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>CentOS7搭建Xray-服务端 - Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="CentOS7搭建Xray-服务端" />
+<meta property="og:description" content="Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-12T01:52:34+08:00" />
+<meta property="article:modified_time" content="2023-01-12T01:52:34+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS7搭建Xray-服务端"/>
+<meta name="twitter:description" content="Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根"/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" /><link rel="prev" href="https://oasis7311.github.io/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" /><link rel="next" href="https://oasis7311.github.io/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CentOS7搭建Xray-服务端",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/setting-up-xray-server-on-centos7\/"
+        },"genre": "posts","keywords": "工具, 记录","wordcount":  2573 ,
+        "url": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/setting-up-xray-server-on-centos7\/","datePublished": "2023-01-12T01:52:34+08:00","dateModified": "2023-01-12T01:52:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts"> 文章 </a><a class="menu-item" href="/zh-cn/tags"> 标签 </a><a class="menu-item" href="/zh-cn/categories"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/setting-up-xray-server-on-centos7/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts" title="">文章</a><a class="menu-item" href="/zh-cn/tags" title="">标签</a><a class="menu-item" href="/zh-cn/categories" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/setting-up-xray-server-on-centos7/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CentOS7搭建Xray-服务端</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-12">2023-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2573 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#update-at-4252023">Update At 4/25/2023</a></li>
+    <li><a href="#update-at-512023">Update At 5/1/2023</a></li>
+    <li><a href="#update-at-4232023">Update At 4/23/2023</a></li>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#需要的东西">需要的东西</a></li>
+    <li><a href="#参考文档">参考文档</a></li>
+    <li><a href="#具体操作">具体操作</a>
+      <ul>
+        <li><a href="#重建vps">重建vps</a></li>
+      </ul>
+    </li>
+    <li><a href="#bbr开启">bbr开启</a>
+      <ul>
+        <li><a href="#更新源">更新源</a></li>
+        <li><a href="#安装elrepo并升级内核">安装elrepo并升级内核</a></li>
+        <li><a href="#更新grub文件--reboot">更新grub文件 &amp;&amp; reboot</a></li>
+        <li><a href="#检查一下当前的内核版本">检查一下当前的内核版本</a></li>
+        <li><a href="#开启bbr">开启bbr</a></li>
+        <li><a href="#确认bbr开启">确认bbr开启</a></li>
+      </ul>
+    </li>
+    <li><a href="#vps基础配置修改爱做不做">VPS基础配置修改（爱做不做）</a>
+      <ul>
+        <li><a href="#给非root用户添加sudo权限如果没有的话新建一个用户">给非root用户添加sudo权限（如果没有的话新建一个用户）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#配置-epel-源--安装-nginx">配置 EPEL 源 &amp;&amp; 安装 Nginx</a></li>
+        <li><a href="#安装nano">安装nano</a></li>
+        <li><a href="#配一个静态页面">配一个静态页面</a></li>
+        <li><a href="#修改nginx配置">修改nginx配置</a></li>
+        <li><a href="#重启nginx">重启nginx</a></li>
+      </ul>
+    </li>
+    <li><a href="#证书管理">证书管理</a>
+      <ul>
+        <li><a href="#安装acme">安装acme</a></li>
+        <li><a href="#开启acme自动升级">开启acme自动升级</a></li>
+        <li><a href="#测试证书申请">测试证书申请</a></li>
+        <li><a href="#正式申请证书">正式申请证书</a></li>
+        <li><a href="#安装证书">安装证书</a></li>
+      </ul>
+    </li>
+    <li><a href="#xray服务端">Xray服务端</a>
+      <ul>
+        <li><a href="#安装xray">安装Xray</a></li>
+        <li><a href="#给xray配置tls证书">给Xray配置TLS证书</a></li>
+        <li><a href="#建立cronjob更新证书">建立Cronjob更新证书</a></li>
+        <li><a href="#生成uuid">生成UUID</a></li>
+        <li><a href="#创建日志文件">创建日志文件</a></li>
+        <li><a href="#修改配置文件">修改配置文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#启动xray">启动Xray</a>
+      <ul>
+        <li><a href="#https跳转">HTTPS跳转</a></li>
+        <li><a href="#修改xray回落">修改xray回落</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="update-at-4252023">Update At 4/25/2023</h2>
+<p>在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根页面地址/证书安装路径</p>
+<p>不过申请的次数太频繁了。。。暂时被ban了，还没验证这个脚本的可用性。不过我觉得是可用的！下次证书过期了再执行验证8</p>
+<h2 id="update-at-512023">Update At 5/1/2023</h2>
+<p>已验证可用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">rm -rf ~/.acme.sh
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Clear acme&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget -O -  https://get.acme.sh <span class="p">|</span> sh
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/.acme.sh/
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Download acme&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --upgrade --auto-upgrade
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Set acme auto upgrade&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --issue --server letsencrypt --test -d proxy.halfstack.net -w /home/summer/www/webpage --keylength ec-256
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Test Generate Cert&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --set-default-ca --server letsencrypt
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Change Default CA&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --issue -d proxy.halfstack.net -w /home/summer/www/webpage --keylength ec-256 --force
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Apply Cert&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --installcert -d proxy.halfstack.net --cert-file ~/keys/cert.crt --key-file ~/keys/cert.key --fullchain-file ~/keys/fullchain.crt --ecc
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Install Cert&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod +r /home/summer/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Read Permission Granted for Private Key&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo systemctl restart xray
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Xray Restarted&#34;</span>
+</span></span></code></pre></div><h2 id="update-at-4232023">Update At 4/23/2023</h2>
+<p>我在使用acme生成证书时，使用的是http方式，因此在自动更新脚本运行时，会访问80端口，但是由于nginx最终的配置中设置了强制https跳转，而443端口由xray监听，最终回落到8080端口，导致acme证书没法生成，进而导致证书更新失败。</p>
+<p>针对这种情况，暂时的解决方法是将nginx的强制https跳转关掉，正常让80端口访问webpage</p>
+<p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png"
+        title="img" /></a></p>
+<hr>
+<h2 id="背景">背景</h2>
+<p>用shadowsocks，没两天vps的ip就被gfw狠狠gank了</p>
+<hr>
+<p>仅做个人记录，vps为GoDaddy VPS4，Centos7，美西机房。</p>
+<h2 id="需要的东西">需要的东西</h2>
+<ol>
+<li>域名</li>
+<li>vps</li>
+<li>没了</li>
+</ol>
+<h2 id="参考文档">参考文档</h2>
+<ol>
+<li><a href="https://xtls.github.io/document/level-0/ch07-xray-server.html#_7-1-%E5%8D%9A%E8%A7%82%E8%80%8C%E7%BA%A6%E5%8F%96-%E5%8E%9A%E7%A7%AF%E8%80%8C%E8%96%84%E5%8F%91" target="_blank" rel="noopener noreffer ">https://xtls.github.io/document/level-0/ch07-xray-server.html#_7-1-%E5%8D%9A%E8%A7%82%E8%80%8C%E7%BA%A6%E5%8F%96-%E5%8E%9A%E7%A7%AF%E8%80%8C%E8%96%84%E5%8F%91</a></li>
+<li><a href="https://gaozhiyuan.net/server/centos-7-bbr.html" target="_blank" rel="noopener noreffer ">https://gaozhiyuan.net/server/centos-7-bbr.html</a></li>
+</ol>
+<h2 id="具体操作">具体操作</h2>
+<h3 id="重建vps">重建vps</h3>
+<p>从最干净的vps开始。</p>
+<hr>
+<h2 id="bbr开启">bbr开启</h2>
+<h3 id="更新源">更新源</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum update
+</span></span></code></pre></div><h3 id="安装elrepo并升级内核">安装elrepo并升级内核</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+</span></span><span class="line"><span class="cl">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+</span></span><span class="line"><span class="cl">yum --enablerepo<span class="o">=</span>elrepo-kernel install kernel-ml -y
+</span></span></code></pre></div><h3 id="更新grub文件--reboot">更新grub文件 &amp;&amp; reboot</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39;</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="o">(</span>6.1.4-1.el7.elrepo.x86_64<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="m">7</span> Rescue 05121276371f496993086411838f1b53 <span class="o">(</span>3.10.0-1160.81.1.el7.x86_64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="o">(</span>3.10.0-1160.81.1.el7.x86_64<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="o">(</span>3.10.0-1160.76.1.el7.x86_64<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="o">(</span>3.10.0-1160.45.1.el7.x86_64<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</span></span><span class="line"><span class="cl">CentOS Linux <span class="o">(</span>0-rescue-754f8a1ad2654504b10cacfb2e9d5eb0<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># grub2-set-default 0  //这个0是上面这个命令打印出来的最高版本内核的index，根据自己的来换，一般是0</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># reboot</span>
+</span></span></code></pre></div><h3 id="检查一下当前的内核版本">检查一下当前的内核版本</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># uname -r</span>
+</span></span><span class="line"><span class="cl">6.1.4-1.el7.elrepo.x86_64 //注意要大于4.9
+</span></span></code></pre></div><h3 id="开启bbr">开启bbr</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># vim /etc/sysctl.conf //添加下面打印出来的两行</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># sysctl -p</span>
+</span></span><span class="line"><span class="cl">net.core.default_qdisc <span class="o">=</span> fq
+</span></span><span class="line"><span class="cl">net.ipv4.tcp_congestion_control <span class="o">=</span> bbr
+</span></span></code></pre></div><h3 id="确认bbr开启">确认bbr开启</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># sysctl net.ipv4.tcp_available_congestion_control</span>
+</span></span><span class="line"><span class="cl">net.ipv4.tcp_available_congestion_control <span class="o">=</span> reno cubic bbr
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># lsmod | grep bbr</span>
+</span></span><span class="line"><span class="cl">tcp_bbr                <span class="m">20480</span>  <span class="m">1</span> 
+</span></span></code></pre></div><hr>
+<h2 id="vps基础配置修改爱做不做">VPS基础配置修改（爱做不做）</h2>
+<h3 id="给非root用户添加sudo权限如果没有的话新建一个用户">给非root用户添加sudo权限（如果没有的话新建一个用户）</h3>
+<p>安装sudo&amp;&amp;添加权限：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># yum -y install sudo</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@89 ~<span class="o">]</span><span class="c1"># visudo</span>
+</span></span><span class="line"><span class="cl">//在root <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>  ALL下面加入
+</span></span><span class="line"><span class="cl">//用户名 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>  ALL
+</span></span></code></pre></div><p>关闭Root的SSH等</p>
+<hr>
+<h1 id="网站建设">网站建设</h1>
+<h3 id="配置-epel-源--安装-nginx">配置 EPEL 源 &amp;&amp; 安装 Nginx</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo yum install -y epel-release <span class="o">&amp;&amp;</span> sudo yum -y update sudo yum install -y nginx
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ mkdir -p ~/www/webpage/ <span class="o">&amp;&amp;</span> nano ~/www/webpage/index.html
+</span></span></code></pre></div><h3 id="安装nano">安装nano</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo yum -y install nano
+</span></span></code></pre></div><h3 id="配一个静态页面">配一个静态页面</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ nano ~/www/webpage/index.html
+</span></span></code></pre></div><p>填入以下html代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;html <span class="nv">lang</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&gt;
+</span></span><span class="line"><span class="cl">  &lt;!-- Text between angle brackets is an HTML tag and is not displayed.
+</span></span><span class="line"><span class="cl">        Most tags, such as the HTML and /HTML tags that surround the contents of
+</span></span><span class="line"><span class="cl">        a page, come in pairs<span class="p">;</span> some tags, like HR, <span class="k">for</span> a horizontal rule, stand
+</span></span><span class="line"><span class="cl">        alone. Comments, such as the text you<span class="err">&#39;</span>re reading, are not displayed when
+</span></span><span class="line"><span class="cl">        the Web page is shown. The information between the HEAD and /HEAD tags is
+</span></span><span class="line"><span class="cl">        not displayed. The information between the BODY and /BODY tags is displayed.--&gt;
+</span></span><span class="line"><span class="cl">  &lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Enter a title, displayed at the top of the window.&lt;/title&gt;
+</span></span><span class="line"><span class="cl">  &lt;/head&gt;
+</span></span><span class="line"><span class="cl">  &lt;!-- The information between the BODY and /BODY tags is displayed.--&gt;
+</span></span><span class="line"><span class="cl">  &lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;h1&gt;Enter the main heading, usually the same as the title.&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;Be &lt;b&gt;bold&lt;/b&gt; in stating your key points. Put them in a list:&lt;/p&gt;
+</span></span><span class="line"><span class="cl">    &lt;ul&gt;
+</span></span><span class="line"><span class="cl">      &lt;li&gt;The first item in your list&lt;/li&gt;
+</span></span><span class="line"><span class="cl">      &lt;li&gt;The second item<span class="p">;</span> &lt;i&gt;italicize&lt;/i&gt; key words&lt;/li&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ul&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;Improve your image by including an image.&lt;/p&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;
+</span></span><span class="line"><span class="cl">      &lt;img <span class="nv">src</span><span class="o">=</span><span class="s2">&#34;https://i.imgur.com/SEBww.jpg&#34;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&#34;A Great HTML Resource&#34;</span> /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/p&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;
+</span></span><span class="line"><span class="cl">      Add a link to your favorite
+</span></span><span class="line"><span class="cl">      &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&#34;https://www.dummies.com/&#34;</span>&gt;Web site&lt;/a&gt;. Break up your page
+</span></span><span class="line"><span class="cl">      with a horizontal rule or two.
+</span></span><span class="line"><span class="cl">    &lt;/p&gt;
+</span></span><span class="line"><span class="cl">    &lt;hr /&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;
+</span></span><span class="line"><span class="cl">      Finally, link to &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&#34;page2.html&#34;</span>&gt;another page&lt;/a&gt; in your own Web
+</span></span><span class="line"><span class="cl">      site.
+</span></span><span class="line"><span class="cl">    &lt;/p&gt;
+</span></span><span class="line"><span class="cl">    &lt;!-- And add a copyright notice.--&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;<span class="p">&amp;</span><span class="c1">#169; Wiley Publishing, 2011&lt;/p&gt;</span>
+</span></span><span class="line"><span class="cl">  &lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></div><h3 id="修改nginx配置">修改nginx配置</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 webpage<span class="o">]</span>$ sudo nano /etc/nginx/nginx.conf
+</span></span></code></pre></div><p>修改user为当前用户</p>
+<p>在http下添加：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        listen 80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server_name proxy.halfstack.net<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        root /home/summer/www/webpage<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        index index.html<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h3 id="重启nginx">重启nginx</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 www<span class="o">]</span>$ sudo systemctl restart nginx
+</span></span></code></pre></div><p><a href="https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png"
+        data-srcset="https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png, https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png 1.5x, https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png 2x"
+        data-sizes="auto"
+        alt="https://halfstack.net/wp-content/uploads/2023/01/image-1-1024x763.png"
+        title="img" /></a></p>
+<hr>
+<h2 id="证书管理">证书管理</h2>
+<h3 id="安装acme">安装acme</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 www<span class="o">]</span>$ wget -O -  https://get.acme.sh <span class="p">|</span> sh
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ . .bashrc
+</span></span></code></pre></div><h3 id="开启acme自动升级">开启acme自动升级</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --upgrade --auto-upgrade
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:41:28 UTC 2023<span class="o">]</span> Already uptodate!
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:41:28 UTC 2023<span class="o">]</span> Upgrade success!
+</span></span></code></pre></div><h3 id="测试证书申请">测试证书申请</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --issue --server letsencrypt --test -d proxy.halfstack.net -w /home/summer/www/webpage --keylength ec-256
+</span></span></code></pre></div><p>有问题添加&ndash;debug查看详情</p>
+<h3 id="正式申请证书">正式申请证书</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --set-default-ca --server letsencrypt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:47:20 UTC 2023<span class="o">]</span> Changed default CA to: https://acme-v02.api.letsencrypt.org/directory
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --issue -d proxy.halfstack.net -w /home/summer/www/webpage --keylength ec-256 --force
+</span></span></code></pre></div><h3 id="安装证书">安装证书</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ mkdir ~/keys
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --installcert -d proxy.halfstack.net --cert-file ~/keys/cert.crt --key-file ~/keys/cert.key --fullchain-file ~/keys/fullchain.crt --ecc
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:51:09 UTC 2023<span class="o">]</span> Installing cert to: /home/summer/keys/cert.crt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:51:09 UTC 2023<span class="o">]</span> Installing key to: /home/summer/keys/cert.key
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:51:09 UTC 2023<span class="o">]</span> Installing full chain to: /home/summer/keys/fullchain.crt
+</span></span></code></pre></div><hr>
+<h2 id="xray服务端">Xray服务端</h2>
+<h3 id="安装xray">安装Xray</h3>
+<p>下载安装脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ wget https://github.com/XTLS/Xray-install/raw/main/install-release.sh
+</span></span></code></pre></div><p>运行安装脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo bash install-release.sh
+</span></span></code></pre></div><p>删除安装脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ rm ~/install-release.sh
+</span></span></code></pre></div><h3 id="给xray配置tls证书">给Xray配置TLS证书</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ mkdir ~/xray_cert
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ acme.sh --install-cert -d proxy.halfstack.net --ecc <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>            --fullchain-file ~/xray_cert/xray.crt <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>            --key-file ~/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:57:07 UTC 2023<span class="o">]</span> Installing key to: /home/summer/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Wed Jan <span class="m">11</span> 14:57:07 UTC 2023<span class="o">]</span> Installing full chain to: /home/summer/xray_cert/xray.crt
+</span></span></code></pre></div><p>增加其他用户可读权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ chmod +r ~/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ chmod +x /home/summer/
+</span></span></code></pre></div><h3 id="建立cronjob更新证书">建立Cronjob更新证书</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/xray_cert/xray-cert-renew.sh
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/home/summer/.acme.sh/acme.sh --install-cert -d proxy.halfstack.net --ecc --fullchain-file /home/summer/xray_cert/xray.crt --key-file /home/summer/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Xray Certificates Renewed&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod +r /home/summer/xray_cert/xray.key
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Read Permission Granted for Private Key&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo systemctl restart xray
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Xray Restarted&#34;</span>
+</span></span></code></pre></div><p>添加可执行权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x ~/xray_cert/xray-cert-renew.sh
+</span></span></code></pre></div><p>添加定时任务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 xray_cert<span class="o">]</span>$ crontab -e
+</span></span></code></pre></div><p>添加：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1:00am, 1st day each month, run `xray-cert-renew.sh`</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">1</span> <span class="m">1</span> * *   bash /home/summer/xray_cert/xray-cert-renew.sh
+</span></span></code></pre></div><h3 id="生成uuid">生成UUID</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 xray_cert<span class="o">]</span>$ xray uuid
+</span></span></code></pre></div><h3 id="创建日志文件">创建日志文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ mkdir ~/xray_log
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ touch ~/xray_log/access.log <span class="o">&amp;&amp;</span> touch ~/xray_log/error.log
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ chmod a+w ~/xray_log/*.log
+</span></span></code></pre></div><h3 id="修改配置文件">修改配置文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo nano /usr/local/etc/xray/config.json
+</span></span></code></pre></div><p>添加：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">// REFERENCE:
+</span></span><span class="line"><span class="cl">// https://github.com/XTLS/Xray-examples
+</span></span><span class="line"><span class="cl">// https://xtls.github.io/config/
+</span></span><span class="line"><span class="cl">// 常用的 config 文件，不论服务器端还是客户端，都有 <span class="m">5</span> 个部分。外加小小白解读：
+</span></span><span class="line"><span class="cl">// ┌─ 1*log 日志设置 - 日志写什么，写哪里（出错时有据可查）
+</span></span><span class="line"><span class="cl">// ├─ 2_dns DNS-设置 - DNS 怎么查（防 DNS 污染、防偷窥、避免国内外站匹配到国外服务器等）
+</span></span><span class="line"><span class="cl">// ├─ 3_routing 分流设置 - 流量怎么分类处理（是否过滤广告、是否国内外分流）
+</span></span><span class="line"><span class="cl">// ├─ 4_inbounds 入站设置 - 什么流量可以流入 Xray
+</span></span><span class="line"><span class="cl">// └─ 5_outbounds 出站设置 - 流出 Xray 的流量往哪里去
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  // 1<span class="se">\_</span>日志设置
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;log&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;loglevel&#34;</span>: <span class="s2">&#34;warning&#34;</span>, // 内容从少到多: <span class="s2">&#34;none&#34;</span>, <span class="s2">&#34;error&#34;</span>, <span class="s2">&#34;warning&#34;</span>, <span class="s2">&#34;info&#34;</span>, <span class="s2">&#34;debug&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;access&#34;</span>: <span class="s2">&#34;/home/summer/xray_log/access.log&#34;</span>, // 访问记录
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;error&#34;</span>: <span class="s2">&#34;/home/summer/xray_log/error.log&#34;</span> // 错误记录
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">  // 2_DNS 设置
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;dns&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;servers&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;https+local://1.1.1.1/dns-query&#34;</span>, // 首选 1.1.1.1 的 DoH 查询，牺牲速度但可防止 ISP 偷窥
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;localhost&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">  // 3*分流设置
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;routing&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;domainStrategy&#34;</span>: <span class="s2">&#34;IPIfNonMatch&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;rules&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">      // 3.1 防止服务器本地流转问题：如内网被攻击或滥用、错误的本地回环等
+</span></span><span class="line"><span class="cl">      <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;field&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ip&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;geoip:private&#34;</span> // 分流条件：geoip 文件内，名为<span class="s2">&#34;private&#34;</span>的规则（本地）
+</span></span><span class="line"><span class="cl">        <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;outboundTag&#34;</span>: <span class="s2">&#34;block&#34;</span> // 分流策略：交给出站<span class="s2">&#34;block&#34;</span>处理（黑洞屏蔽）
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">      <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        // 3.2 防止服务器直连国内
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;field&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ip&#34;</span>: <span class="o">[</span><span class="s2">&#34;geoip:cn&#34;</span><span class="o">]</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;outboundTag&#34;</span>: <span class="s2">&#34;block&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">      // 3.3 屏蔽广告
+</span></span><span class="line"><span class="cl">      <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;field&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;domain&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;geosite:category-ads-all&#34;</span> // 分流条件：geosite 文件内，名为<span class="s2">&#34;category-ads-all&#34;</span>的规则（各种广告域名）
+</span></span><span class="line"><span class="cl">        <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;outboundTag&#34;</span>: <span class="s2">&#34;block&#34;</span> // 分流策略：交给出站<span class="s2">&#34;block&#34;</span>处理（黑洞屏蔽）
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">]</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">  // 4*入站设置
+</span></span><span class="line"><span class="cl">  // 4.1 这里只写了一个最简单的 vless+xtls 的入站，因为这是 Xray 最强大的模式。如有其他需要，请根据模版自行添加。
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;inbounds&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;port&#34;</span>: 443,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;protocol&#34;</span>: <span class="s2">&#34;vless&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;settings&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;clients&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">          <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span>: <span class="s2">&#34;&#34;</span>, // 填写你的 UUID
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;flow&#34;</span>: <span class="s2">&#34;xtls-rprx-vision&#34;</span>,
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;level&#34;</span>: 0,
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;email&#34;</span>: <span class="s2">&#34;summer@yourdomain.com&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;decryption&#34;</span>: <span class="s2">&#34;none&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;fallbacks&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">          <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;alpn&#34;</span>:<span class="s2">&#34;h2&#34;</span>,
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;dest&#34;</span>: <span class="m">8080</span> // 默认回落到防探测的代理
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;streamSettings&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;network&#34;</span>: <span class="s2">&#34;tcp&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;security&#34;</span>: <span class="s2">&#34;tls&#34;</span>,
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;tlsSettings&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;certificates&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">            <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;certificateFile&#34;</span>: <span class="s2">&#34;/home/summer/xray_cert/xray.crt&#34;</span>,
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;keyFile&#34;</span>: <span class="s2">&#34;/home/summer/xray_cert/xray.key&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">          <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">	  <span class="s2">&#34;serverName&#34;</span>:<span class="s2">&#34;proxy.halfstack.net&#34;</span>,
+</span></span><span class="line"><span class="cl">	  <span class="s2">&#34;alpn&#34;</span> : <span class="o">[</span>
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;h2&#34;</span>,
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;http/1.1&#34;</span>
+</span></span><span class="line"><span class="cl">	  <span class="o">]</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">  // 5*出站设置
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;outbounds&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">    // 5.1 第一个出站是默认规则，freedom 就是对外直连（vps 已经是外网，所以直连）
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;tag&#34;</span>: <span class="s2">&#34;direct&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;protocol&#34;</span>: <span class="s2">&#34;freedom&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">    // 5.2 屏蔽规则，blackhole 协议就是把流量导入到黑洞里（屏蔽）
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;tag&#34;</span>: <span class="s2">&#34;block&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;protocol&#34;</span>: <span class="s2">&#34;blackhole&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h2 id="启动xray">启动Xray</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo systemctl start xray
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo systemctl status xray
+</span></span><span class="line"><span class="cl">● xray.service - Xray Service
+</span></span><span class="line"><span class="cl">   Loaded: loaded <span class="o">(</span>/etc/systemd/system/xray.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Drop-In: /etc/systemd/system/xray.service.d
+</span></span><span class="line"><span class="cl">           └─10-donot_touch_single_conf.conf
+</span></span><span class="line"><span class="cl">   Active: active <span class="o">(</span>running<span class="o">)</span> since Wed 2023-01-11 14:53:20 UTC<span class="p">;</span> 31min ago
+</span></span><span class="line"><span class="cl">     Docs: https://github.com/xtls
+</span></span><span class="line"><span class="cl"> Main PID: <span class="m">21082</span> <span class="o">(</span>xray<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   CGroup: /system.slice/xray.service
+</span></span><span class="line"><span class="cl">           └─21082 /usr/local/bin/xray run -config /usr/local/etc/xray/config.json
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Jan <span class="m">11</span> 14:53:20 89.202.178.68.host.secureserver.net systemd<span class="o">[</span>1<span class="o">]</span>: Started Xray Service.
+</span></span><span class="line"><span class="cl">Jan <span class="m">11</span> 14:53:20 89.202.178.68.host.secureserver.net xray<span class="o">[</span>21082<span class="o">]</span>: Xray 1.7.2 <span class="o">(</span>Xray, Penetrates Everything.<span class="o">)</span> Custom <span class="o">(</span>go1.19.4 linux/amd64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Jan <span class="m">11</span> 14:53:20 89.202.178.68.host.secureserver.net xray<span class="o">[</span>21082<span class="o">]</span>: A unified platform <span class="k">for</span> anti-censorship.
+</span></span><span class="line"><span class="cl">Jan <span class="m">11</span> 14:53:20 89.202.178.68.host.secureserver.net xray<span class="o">[</span>21082<span class="o">]</span>: 2023/01/11 14:53:20 <span class="o">[</span>Info<span class="o">]</span> infra/conf/serial: Reading config: /usr/local/etc/xray/config.json
+</span></span><span class="line"><span class="cl">Jan <span class="m">11</span> 14:53:20 89.202.178.68.host.secureserver.net xray<span class="o">[</span>21082<span class="o">]</span>: 2023/01/11 14:53:20 <span class="o">[</span>Warning<span class="o">]</span> core: Xray 1.7.2 started
+</span></span></code></pre></div><hr>
+<h3 id="https跳转">HTTPS跳转</h3>
+<p>修改nginx配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo nano /etc/nginx/nginx.conf
+</span></span></code></pre></div><p>改成这样：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png"
+        title="img" /></a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            listen 80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            server_name proxy.halfstack.net<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$http_host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            listen <span class="m">8080</span> http2<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            root /home/summer/www/webpage<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            index index.html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">            add_header Strict-Transport-Security <span class="s2">&#34;max-age=63072000&#34;</span> always<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo systemctl restart nginx
+</span></span></code></pre></div><h3 id="修改xray回落">修改xray回落</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo nano /usr/local/etc/xray/config.json
+</span></span></code></pre></div><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png"
+        title="img" /></a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo systemctl restart xray
+</span></span></code></pre></div><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png"
+        title="img" /></a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-01-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" data-title="CentOS7搭建Xray-服务端" data-via="https://twitter.com/KKKyot_" data-hashtags="工具,记录"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" data-hashtag="工具"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" data-title="CentOS7搭建Xray-服务端"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" data-title="CentOS7搭建Xray-服务端"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" data-title="CentOS7搭建Xray-服务端"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E5%B7%A5%E5%85%B7/">工具</a>,&nbsp;<a href="/zh-cn/tags/%E8%AE%B0%E5%BD%95/">记录</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" class="prev" rel="prev" title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网</a>
+            <a href="/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/" class="next" rel="next" title="Xray的使用-v2rayN与Proxifier结合">Xray的使用-v2rayN与Proxifier结合<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

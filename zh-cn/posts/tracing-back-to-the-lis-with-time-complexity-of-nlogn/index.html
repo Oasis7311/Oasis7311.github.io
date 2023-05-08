@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>溯源：LIS的O(Nlogn)时间复杂度算法 - Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="溯源：LIS的O(Nlogn)时间复杂度算法" />
+<meta property="og:description" content="周一的时候在LeetCode写每日一题，一道很白的LIS。从以前打比赛开始就基本没怎么写过LIS。工作之后就更没有机会接触这些算法，这次刚好" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-11T21:41:36+08:00" />
+<meta property="article:modified_time" content="2022-08-11T21:41:36+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="溯源：LIS的O(Nlogn)时间复杂度算法"/>
+<meta name="twitter:description" content="周一的时候在LeetCode写每日一题，一道很白的LIS。从以前打比赛开始就基本没怎么写过LIS。工作之后就更没有机会接触这些算法，这次刚好"/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" /><link rel="prev" href="https://oasis7311.github.io/zh-cn/posts/leetcode-858-mirror-reflection-medium/" /><link rel="next" href="https://oasis7311.github.io/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "溯源：LIS的O(Nlogn)时间复杂度算法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/tracing-back-to-the-lis-with-time-complexity-of-nlogn\/"
+        },"genre": "posts","wordcount":  966 ,
+        "url": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/tracing-back-to-the-lis-with-time-complexity-of-nlogn\/","datePublished": "2022-08-11T21:41:36+08:00","dateModified": "2022-08-11T21:41:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts"> 文章 </a><a class="menu-item" href="/zh-cn/tags"> 标签 </a><a class="menu-item" href="/zh-cn/categories"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts" title="">文章</a><a class="menu-item" href="/zh-cn/tags" title="">标签</a><a class="menu-item" href="/zh-cn/categories" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">溯源：LIS的O(Nlogn)时间复杂度算法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-08-11">2022-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 966 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>周一的时候在LeetCode写<a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener noreffer ">每日一题</a>，一道很白的LIS。从以前打比赛开始就基本没怎么写过LIS。工作之后就更没有机会接触这些算法，这次刚好遇到了LIS的题目，想着用O(nlogn)写一下，发现一时半会想不起来是怎么实现的了。折磨了自己一会之后，决定还是好好学一下nlogn的解。由于个人学算法的时候还是更习惯有个具像化的运行逻辑，再根据逻辑记忆代码的实际逻辑，所以对着LIS的nlogn解法一顿猛搜，发现好像大家都只是说出了代码怎么运行，没有说过为什么是这样运行。</p>
+<p>因此我一顿Google之后，发现LIS的nlogn解法出处并非是用于解决LIS问题的，而是一种纸牌游戏patience game。</p>
+<p>具体的规则如下：</p>
+<ol>
+<li>按照顺序将当前的纸牌放入某一个堆中，如果当前牌的大小 x 大于所有牌堆最上方的牌的大小，那么就在<strong>最右边</strong>新建一个牌堆，将牌放置在新堆上。</li>
+<li>如果 x 小于部分牌堆最上方的牌，那么就将 x 放置在所有合法堆中 <strong>最左边</strong> 的牌堆上。</li>
+<li>重复1、2步，直到将所有牌都分堆完成。</li>
+</ol>
+<p>这样的放置方法首先保证了：所有堆的堆顶，牌面大小从左到右为递增的。</p>
+<p>如下图所示，将[6,4,5,1,8,7,2,3]这8张牌，依照规则放置分堆。最后得到共3个牌堆。</p>
+<p>分别为：[1,4,6], [2, 5], [3,7,8]（下标小的为堆底）</p>
+<p><a href="https://halfstack.net/wp-content/uploads/2022/08/image-3.png" target="_blank" rel="noopener noreffer "><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050847965.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050847965.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050847965.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050847965.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050847965.png"
+        title="img" /></a></p>
+<p>想想就会明白，按照这样的规则分堆之后，堆的数量就是这个数组的LIS长度：首先，对于当前数x，如果不存在任意一个堆顶大于x，x将会新建一个堆（堆数+1）对应的，也就是LIS长度+1，如果存在某一个LIS串的一个数 y 大于 x ，那么用 x 来代替 y 在长度为以 y 结尾的LIS串，只会更利于扩张此LIS串的长度，因为 x &lt; y。经过这样的规则分堆，</p>
+<p>而第二步的放置方法，就是LIS的logn部分：设dp[i] = 长度为 i 的LIS串中，末尾最小的数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"> <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">ans</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="o">++</span><span class="n">ans</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"> <span class="k">else</span> <span class="n">dp</span><span class="p">[</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="n">dp</span> <span class="o">+</span> <span class="n">ans</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">dp</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div><hr>
+<p>这个纸牌游戏除去可以以nlogn复杂度解决LIS问题外，也延伸出了一种新的排序算法：patience sorting，通过上面的规则将纸牌分堆之后，再使用插入排序，完成对无序数组的排序。实际上就是通过分堆数组，来减少插入排序的遍历次数，从而加快插入排序。</p>
+<hr>
+<p>每日一题的AC代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">lengthOfLIS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>   
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dp</span><span class="p">[</span><span class="n">ans</span><span class="p">])</span> <span class="n">dp</span><span class="p">[</span><span class="o">++</span><span class="n">ans</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="n">dp</span><span class="p">[</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="n">dp</span> <span class="o">+</span> <span class="n">ans</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">dp</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-11</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" data-title="溯源：LIS的O(Nlogn)时间复杂度算法" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" data-title="溯源：LIS的O(Nlogn)时间复杂度算法"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" data-title="溯源：LIS的O(Nlogn)时间复杂度算法"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/" data-title="溯源：LIS的O(Nlogn)时间复杂度算法"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/leetcode-858-mirror-reflection-medium/" class="prev" rel="prev" title="LeetCode 858 Mirror Reflection /Medium"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>LeetCode 858 Mirror Reflection /Medium</a>
+            <a href="/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/" class="next" rel="next" title="通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网">通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
