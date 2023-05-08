@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/zh-cn\/posts\/wordpress_to_hugo\/"
-        },"genre": "posts","wordcount":  4754 ,
+        },"genre": "posts","wordcount":  5076 ,
         "url": "\/zh-cn\/posts\/wordpress_to_hugo\/","datePublished": "2023-05-04T22:48:20+08:00","dateModified": "2023-05-07T14:11:20+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Wordpress 迁移至 Hugo</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-04">2023-05-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4754 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 10 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-05-04">2023-05-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5076 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -947,6 +947,52 @@
 </li>
 </ol>
 <h3 id="vps">VPS</h3>
+<p>网上有很多通过GithubAction自动推送VPS的教程，不过暂时不太想搞这些，先把基础的东西弄完吧。</p>
+<ol>
+<li>
+<p>进入public文件夹，切换到另一个分支(baseURL不同，会影响到githubPages的展示)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git checkout -b master
+</span></span></code></pre></div></li>
+<li>
+<p>切换回网站根目录，生成vps上的public文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ../
+</span></span><span class="line"><span class="cl">hugo --baseUrl<span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>将重新生成的public文件夹push至git</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git commit .
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></div></li>
+<li>
+<p>登陆vps，clone master分支，修改nginx配置，指定网站根目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/www/
+</span></span><span class="line"><span class="cl">git clone git@github.com:Oasis7311/Oasis7311.github.io.git
+</span></span><span class="line"><span class="cl">sudo vim /etc/nginx/nginx.conf
+</span></span><span class="line"><span class="cl">sudo systemctl restart nginx
+</span></span></code></pre></div><p>nginx配置修改如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kn">listen</span> <span class="mi">8080</span> <span class="s">http2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">#root /home/summer/www/webpage;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kn">root</span> <span class="s">/home/summer/www/Oasis7311.github.io</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kn">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">&#34;max-age=63072000&#34;</span> <span class="s">always</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>查看效果</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305080953703.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305080953703.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305080953703.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305080953703.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305080953703.png"
+        title="image-20230508095346642" /></p>
+</li>
+</ol>
+<p>暂时先将代理的伪装网站给替换掉了，实际的halfstack.net这个网站仍然还是在web Hosting上运行，后续网站的基础设施都搞完了再全部切过去</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
