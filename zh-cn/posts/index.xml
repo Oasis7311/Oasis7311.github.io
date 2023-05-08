@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - Halfstack</title>
-        <link>proxy.halfstack.net/zh-cn/posts/</link>
+        <link>/zh-cn/posts/</link>
         <description>所有文章 | Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 04 May 2023 22:48:20 &#43;0800</lastBuildDate><atom:link href="proxy.halfstack.net/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 04 May 2023 22:48:20 &#43;0800</lastBuildDate><atom:link href="/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Wordpress 迁移至 Hugo</title>
-    <link>proxy.halfstack.net/zh-cn/posts/wordpress_to_hugo/</link>
+    <link>/zh-cn/posts/wordpress_to_hugo/</link>
     <pubDate>Thu, 04 May 2023 22:48:20 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/wordpress_to_hugo/</guid>
+    <guid>/zh-cn/posts/wordpress_to_hugo/</guid>
     <description><![CDATA[背景 去年在Godaddy上买了一个网站主机，因为没有root权限，基本上我拿来也只能建站，我唯一的建站需求是博客，后来想自己搭一个代理，IP]]></description>
 </item>
 <item>
     <title>利用Xray的回落机制&#43;Nginx代理chatgpt请求</title>
-    <link>proxy.halfstack.net/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</link>
+    <link>/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</link>
     <pubDate>Fri, 31 Mar 2023 12:28:14 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</guid>
+    <guid>/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</guid>
     <description><![CDATA[想着在服务器上搭一个chatgpt的代理，通过代理访问api.openai.com，因为服务器暂时还没被墙，可以不需要vpn也能访问 前情提要]]></description>
 </item>
 <item>
     <title>Xray的使用-v2rayN与Proxifier结合</title>
-    <link>proxy.halfstack.net/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</link>
+    <link>/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</link>
     <pubDate>Fri, 13 Jan 2023 02:09:32 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</guid>
+    <guid>/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</guid>
     <description><![CDATA[Win 需要的工具： v2rayN Proxifier 没了 v2rayN可以下载With-Core的，不然需要再下载一个xray-core v2rayN配置 Proxifier配置 x]]></description>
 </item>
 <item>
     <title>CentOS7搭建Xray-服务端</title>
-    <link>proxy.halfstack.net/zh-cn/posts/setting-up-xray-server-on-centos7/</link>
+    <link>/zh-cn/posts/setting-up-xray-server-on-centos7/</link>
     <pubDate>Thu, 12 Jan 2023 01:52:34 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/setting-up-xray-server-on-centos7/</guid>
+    <guid>/zh-cn/posts/setting-up-xray-server-on-centos7/</guid>
     <description><![CDATA[Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根]]></description>
 </item>
 <item>
     <title>通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网</title>
-    <link>proxy.halfstack.net/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</link>
+    <link>/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</link>
     <pubDate>Sat, 07 Jan 2023 14:05:25 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</guid>
+    <guid>/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</guid>
     <description><![CDATA[通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网 背景 在GoDaddy主机上配置Shadowsocks，客户端通过链接代理]]></description>
 </item>
 <item>
     <title>溯源：LIS的O(Nlogn)时间复杂度算法</title>
-    <link>proxy.halfstack.net/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</link>
+    <link>/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</link>
     <pubDate>Thu, 11 Aug 2022 21:41:36 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</guid>
+    <guid>/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</guid>
     <description><![CDATA[周一的时候在LeetCode写每日一题，一道很白的LIS。从以前打比赛开始就基本没怎么写过LIS。工作之后就更没有机会接触这些算法，这次刚好]]></description>
 </item>
 <item>
     <title>LeetCode 858 Mirror Reflection /Medium</title>
-    <link>proxy.halfstack.net/zh-cn/posts/leetcode-858-mirror-reflection-medium/</link>
+    <link>/zh-cn/posts/leetcode-858-mirror-reflection-medium/</link>
     <pubDate>Fri, 05 Aug 2022 23:14:48 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/leetcode-858-mirror-reflection-medium/</guid>
+    <guid>/zh-cn/posts/leetcode-858-mirror-reflection-medium/</guid>
     <description><![CDATA[原题链接 https://leetcode.com/problems/mirror-reflection/ 题目描述 思路 镜面反射是个很有意思的东西，以题中的图为例，如果我们忽略上侧的镜面，同时将左右侧镜面无限向上延伸：当从原点发出的光线通]]></description>
 </item>
 <item>
     <title>LeetCode 729 My Calendar I /Medium</title>
-    <link>proxy.halfstack.net/zh-cn/posts/leetcode-729-my-calendar-i-medium/</link>
+    <link>/zh-cn/posts/leetcode-729-my-calendar-i-medium/</link>
     <pubDate>Wed, 03 Aug 2022 23:27:06 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/leetcode-729-my-calendar-i-medium/</guid>
+    <guid>/zh-cn/posts/leetcode-729-my-calendar-i-medium/</guid>
     <description><![CDATA[原题链接 https://leetcode.com/problems/my-calendar-i/ 题目描述 思路 数据范围来看可以接受O(n2)做法，看题目标题的意思会有进阶题，咱就是体现一个具体问题具体分析，暴力O(n2)解题。 用]]></description>
 </item>
 <item>
     <title>Leetcode 307 Range Sum Query Mutable /Medium</title>
-    <link>proxy.halfstack.net/zh-cn/posts/leetcode-307-range-sum-query-mutable/</link>
+    <link>/zh-cn/posts/leetcode-307-range-sum-query-mutable/</link>
     <pubDate>Sun, 31 Jul 2022 14:44:57 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/leetcode-307-range-sum-query-mutable/</guid>
+    <guid>/zh-cn/posts/leetcode-307-range-sum-query-mutable/</guid>
     <description><![CDATA[原题： https://leetcode.com/problems/range-sum-query-mutable/ 题意 给一个数组N，对数组 Ｎ 执行两类操作： Update：将N[index]的值修改为Value; Sum：输出Sum(N[left], N[right]).]]></description>
 </item>
 <item>
     <title>Codeforces 1697 D题解</title>
-    <link>proxy.halfstack.net/zh-cn/posts/codeforces-1697-d-tutorial/</link>
+    <link>/zh-cn/posts/codeforces-1697-d-tutorial/</link>
     <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>proxy.halfstack.net/zh-cn/posts/codeforces-1697-d-tutorial/</guid>
+    <guid>/zh-cn/posts/codeforces-1697-d-tutorial/</guid>
     <description><![CDATA[D.Guess The String 题意 交互题。评测机生成一个长度为 N 的字符串 S，有两种操作： 1 i，询问第 i 位字母是什么。 2 l r，询问区间 [l, r] 的子字符串字符集大小。 只允许]]></description>
 </item>
 </channel>
