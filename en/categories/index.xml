@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - Halfstack</title>
-        <link>https://oasis7311.github.io/en/categories/</link>
+        <link>proxy.halfstack.net/en/categories/</link>
         <description>Categories - Category - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><atom:link href="https://oasis7311.github.io/en/categories/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><atom:link href="proxy.halfstack.net/en/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>
