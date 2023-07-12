@@ -1,25 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Halfstack</title>
-        <link>/en/posts/</link>
+        <link>https://oasis7311.github.io/en/posts/</link>
         <description>All Posts | Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Fri, 05 May 2023 22:37:02 &#43;0800</lastBuildDate><atom:link href="/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Fri, 05 May 2023 22:37:02 &#43;0800</lastBuildDate><atom:link href="https://oasis7311.github.io/en/posts/" rel="self" type="application/rss+xml" /><item>
     <title>LeetCode 307 Range Sum Query Mutable</title>
-    <link>/en/posts/leetcode-307-range-sum-query-mutable/</link>
+    <link>https://oasis7311.github.io/en/posts/leetcode-307-range-sum-query-mutable/</link>
     <pubDate>Fri, 05 May 2023 22:37:02 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/leetcode-307-range-sum-query-mutable/</guid>
+    <guid>https://oasis7311.github.io/en/posts/leetcode-307-range-sum-query-mutable/</guid>
     <description><![CDATA[Origin Link https://leetcode.com/problems/range-sum-query-mutable/
 Tutorial easy data structure, using segment tree or binary indexed tree。
 Ac Code class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { for(int i = 0; i &lt; nums.size(); ++i) n[i + 1] = nums[i]; l = nums.size(); build(1, l, 1); } void update(int index, int val) { updateNode(1, l, 1, index + 1, val); } int sumRange(int left, int right) { return sum(1, l, 1, left + 1, right + 1); } private: int n[30005]; int l; int node[30005 * 3]; void build(int l, int r, int k) { if(l == r){ node[k] = n[l]; return; } int mid = (l + r) &gt;&gt; 1; build(l, mid, k &lt;&lt; 1); build(mid + 1, r, k &lt;&lt; 1 | 1); node[k] = node[k &lt;&lt; 1] + node[k &lt;&lt; 1 | 1]; } void updateNode(int l, int r, int k, int x, int val){ if(l == r){ node[k] = val; return; } int mid = (l + r) &gt;&gt; 1; if(mid &lt; x) updateNode(mid + 1, r, k &lt;&lt; 1 | 1, x, val); else updateNode(l, mid, k &lt;&lt; 1, x, val); node[k] = node[k &lt;&lt; 1] + node[k &lt;&lt; 1 | 1]; } int sum(int l, int r, int k, int L, int R){ if(L &lt;= l &amp;&amp; R &gt;= r) return node[k]; int ans = 0; int mid = (l + r) &gt;&gt; 1; if(L &lt;= mid) ans += sum(l, mid, k &lt;&lt; 1, L, R); if(R &gt; mid) ans += sum(mid + 1, r, k &lt;&lt; 1 | 1, L, R); return ans; } }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(index,val); * int param_2 = obj-&gt;sumRange(left,right); */ ]]></description>
 </item>
 <item>
     <title>LeetCode Biweekly Contest 91 Tutorial</title>
-    <link>/en/posts/leetcode-biweekly-contest-91-tutorial/</link>
+    <link>https://oasis7311.github.io/en/posts/leetcode-biweekly-contest-91-tutorial/</link>
     <pubDate>Sun, 13 Nov 2022 14:29:05 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/leetcode-biweekly-contest-91-tutorial/</guid>
+    <guid>https://oasis7311.github.io/en/posts/leetcode-biweekly-contest-91-tutorial/</guid>
     <description><![CDATA[Q2 Tutorial An easy dp problem, for dp[i], means how many good string of length i.
 Init dp[zero] = 1, dp[one] = 1 (if one == zero, then dp[one] = 2);
 So dp[i] = dp[i - zero] + dp[i - one]. After calculate all dp, sum up dp[low] to dp[high].
@@ -27,20 +27,20 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 </item>
 <item>
     <title>2022.10 Daily LeetCode Coding Problems Tutorial</title>
-    <link>/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</link>
+    <link>https://oasis7311.github.io/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</link>
     <pubDate>Sat, 01 Oct 2022 11:22:16 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</guid>
+    <guid>https://oasis7311.github.io/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</guid>
     <description><![CDATA[If you get any problem of my code or you find something wrong, just leave a comment or contact with me, I&rsquo;ll response you as fast as I can if I see it.
 If this tutorial helps you well, you can subscribe my website, every time I update any Tutorial, I&rsquo;ll send an email to all subscribers.
 10-31 766. Toeplitz Matrix Difficulty: Easy Accepted Code class Solution { public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { vector&lt;int&gt; n[int(matrix.]]></description>
 </item>
 <item>
     <title>LeetCode 858 Mirror Reflection /Medium</title>
-    <link>/en/posts/leetcode-858-mirror-reflection-medium/</link>
+    <link>https://oasis7311.github.io/en/posts/leetcode-858-mirror-reflection-medium/</link>
     <pubDate>Fri, 05 Aug 2022 23:14:48 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/leetcode-858-mirror-reflection-medium/</guid>
+    <guid>https://oasis7311.github.io/en/posts/leetcode-858-mirror-reflection-medium/</guid>
     <description><![CDATA[Origin Link https://leetcode.com/problems/mirror-reflection/
 Description Tutorial Mirror reflection is a very interesting thing.
 Take the picture in the question as an example.
@@ -48,10 +48,10 @@ If we ignore the mirror on the upper side and extend the left and right mirrors 
 </item>
 <item>
     <title>LeetCode 729 My Calendar I /Medium</title>
-    <link>/en/posts/leetcode-729-my-calendar-i-medium/</link>
+    <link>https://oasis7311.github.io/en/posts/leetcode-729-my-calendar-i-medium/</link>
     <pubDate>Wed, 03 Aug 2022 23:27:06 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/leetcode-729-my-calendar-i-medium/</guid>
+    <guid>https://oasis7311.github.io/en/posts/leetcode-729-my-calendar-i-medium/</guid>
     <description><![CDATA[Origin Link https://leetcode.com/problems/my-calendar-i/
 Description Tutorial Throughout the constraints, we could know that O(n2) solution will be accepted. So we JUST DO IT.
 Using an array of pair&lt;int, int&gt; to restore every valid event&rsquo;s start time and end time. For every new Events, We just iterate over the array, and judge whether any event had occupied the time or not.
@@ -59,10 +59,10 @@ Accepted Code class MyCalendar { public: pair&lt;int, int&gt; events[1005]; int 
 </item>
 <item>
     <title>Codeforces 1697 D Tutorial</title>
-    <link>/en/posts/codeforces-1697-d-tutorial/</link>
+    <link>https://oasis7311.github.io/en/posts/codeforces-1697-d-tutorial/</link>
     <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/en/posts/codeforces-1697-d-tutorial/</guid>
+    <guid>https://oasis7311.github.io/en/posts/codeforces-1697-d-tutorial/</guid>
     <description><![CDATA[D. Guess The String Problem summary The Jury chosen a stringS consisting of n characters; each character of S is a lowercase Latin letter.
 You may ask query in two types:
 1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl+1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type.]]></description>

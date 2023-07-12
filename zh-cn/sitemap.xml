@@ -2,86 +2,113 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/zh-cn/</loc><lastmod>2023-05-07T14:11:20&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/tags/animal/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/building/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/categories/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/"
+                        href="https://oasis7311.github.io/en/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/"
+                    href="https://oasis7311.github.io/zh-cn/categories/"
                     /></url><url>
-            <loc>/zh-cn/posts/</loc><lastmod>2023-05-07T14:11:20&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/tags/cloth/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/country/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/categories/german/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/posts/"
+                        href="https://oasis7311.github.io/en/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/posts/"
+                    href="https://oasis7311.github.io/zh-cn/"
                     /></url><url>
-            <loc>/zh-cn/posts/wordpress_to_hugo/</loc><lastmod>2023-05-07T14:11:20&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</loc><lastmod>2023-03-31T12:28:14&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/categories/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/posts/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/categories/"
+                        href="https://oasis7311.github.io/en/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/categories/"
+                    href="https://oasis7311.github.io/zh-cn/posts/"
                     /></url><url>
-            <loc>/zh-cn/tags/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/tags/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/tags/"
+                        href="https://oasis7311.github.io/en/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/tags/"
+                    href="https://oasis7311.github.io/zh-cn/tags/"
                     /></url><url>
-            <loc>/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/tags/%E5%B7%A5%E5%85%B7/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/setting-up-xray-server-on-centos7/</loc><lastmod>2023-01-12T01:52:34&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/tags/%E8%AE%B0%E5%BD%95/</loc><lastmod>2023-01-12T01:52:34&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</loc><lastmod>2023-01-07T14:05:25&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</loc><lastmod>2022-08-11T21:41:36&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/leetcode-858-mirror-reflection-medium/</loc><lastmod>2022-08-05T23:14:48&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E5%8A%A8%E8%AF%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E5%8A%A8%E7%89%A9/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E5%B8%B8%E8%A7%81%E5%8F%A5/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E8%A1%A3%E7%89%A9/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%BB%BA%E7%AD%91%E5%90%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E5%AE%B6%E5%BA%AD%E5%85%B3%E7%B3%BB/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E4%BB%8B%E8%AF%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E5%B1%85%E5%AE%B6%E5%91%A8%E8%BE%B9/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/%E5%85%B6%E4%BB%96/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E6%95%B0%E8%AF%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E5%BD%A2%E5%AE%B9%E8%AF%8D%E4%B8%8E%E5%89%AF%E8%AF%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/deutsch/%E6%8C%87%E7%A4%BA%E4%BB%A3%E8%AF%8D/</loc><lastmod>2023-07-01T00:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/nginx/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/xray/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/%E8%84%9A%E6%9C%AC/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/some-config-or-script/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/%E9%85%8D%E7%BD%AE/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/categories/%E9%85%8D%E7%BD%AE/</loc><lastmod>2023-05-16T23:38:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/wordpress_to_hugo/</loc><lastmod>2023-05-07T14:11:20&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/utilizing-the-fallback-mechanism-of-xray-and-nginx-proxy-for-handling-chatgpt-requests/</loc><lastmod>2023-03-31T12:28:14&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/combining-xray-with-v2rayn-and-proxifier/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/%E5%B7%A5%E5%85%B7/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc><lastmod>2023-01-13T02:09:32&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/</loc><lastmod>2023-01-12T01:52:34&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/%E8%AE%B0%E5%BD%95/</loc><lastmod>2023-01-12T01:52:34&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/</loc><lastmod>2023-01-07T14:05:25&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/</loc><lastmod>2022-08-11T21:41:36&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/leetcode-858-mirror-reflection-medium/</loc><lastmod>2022-08-05T23:14:48&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/posts/leetcode-858-mirror-reflection-medium/"
+                        href="https://oasis7311.github.io/en/posts/leetcode-858-mirror-reflection-medium/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/posts/leetcode-858-mirror-reflection-medium/"
+                    href="https://oasis7311.github.io/zh-cn/posts/leetcode-858-mirror-reflection-medium/"
                     /></url><url>
-            <loc>/zh-cn/posts/leetcode-729-my-calendar-i-medium/</loc><lastmod>2022-08-03T23:27:06&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/posts/leetcode-729-my-calendar-i-medium/</loc><lastmod>2022-08-03T23:27:06&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/posts/leetcode-729-my-calendar-i-medium/"
+                        href="https://oasis7311.github.io/en/posts/leetcode-729-my-calendar-i-medium/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/posts/leetcode-729-my-calendar-i-medium/"
+                    href="https://oasis7311.github.io/zh-cn/posts/leetcode-729-my-calendar-i-medium/"
                     /></url><url>
-            <loc>/zh-cn/posts/leetcode-307-range-sum-query-mutable/</loc><lastmod>2022-07-31T14:44:57&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/posts/leetcode-307-range-sum-query-mutable/</loc><lastmod>2022-07-31T14:44:57&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/posts/leetcode-307-range-sum-query-mutable/"
+                        href="https://oasis7311.github.io/en/posts/leetcode-307-range-sum-query-mutable/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/posts/leetcode-307-range-sum-query-mutable/"
+                    href="https://oasis7311.github.io/zh-cn/posts/leetcode-307-range-sum-query-mutable/"
                     /></url><url>
-            <loc>/zh-cn/categories/codeforces/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/posts/codeforces-1697-d-tutorial/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod><xhtml:link
+            <loc>https://oasis7311.github.io/zh-cn/categories/codeforces/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/codeforces-1697-d-tutorial/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="/en/posts/codeforces-1697-d-tutorial/"
+                        href="https://oasis7311.github.io/en/posts/codeforces-1697-d-tutorial/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="/zh-cn/posts/codeforces-1697-d-tutorial/"
+                    href="https://oasis7311.github.io/zh-cn/posts/codeforces-1697-d-tutorial/"
                     /></url><url>
-            <loc>/zh-cn/tags/%E9%A2%98%E8%A7%A3/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url></urlset>
+            <loc>https://oasis7311.github.io/zh-cn/tags/hugo/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/categories/hugo/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/waline/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/tags/%E9%A2%98%E8%A7%A3/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url><url>
+            <loc>https://oasis7311.github.io/zh-cn/posts/add-waline/</loc><lastmod>2022-07-09T18:04:59&#43;08:00</lastmod></url></urlset>

@@ -8,21 +8,21 @@
         <title>Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="Halfstack" />
 <meta property="og:description" content="Still have another half to learn" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/zh-cn/" /><meta property="og:site_name" content="Halfstack" />
+<meta property="og:url" content="https://oasis7311.github.io/zh-cn/" /><meta property="og:site_name" content="Halfstack" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Halfstack"/>
 <meta name="twitter:description" content="Still have another half to learn"/>
 <meta name="application-name" content="Halfstack">
 <meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/zh-cn/" /><link rel="alternate" href="/zh-cn/index.xml" type="application/rss+xml" title="Halfstack">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oasis7311.github.io/zh-cn/" /><link rel="alternate" href="/zh-cn/index.xml" type="application/rss+xml" title="Halfstack">
     <link rel="feed" href="/zh-cn/index.xml" type="application/rss+xml" title="Halfstack"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "\/zh-cn\/","inLanguage": "zh-CN","author": {
+        "url": "https:\/\/oasis7311.github.io\/zh-cn\/","inLanguage": "zh-CN","author": {
                 "@type": "Person",
                 "name": "Oasis"
             },"description": "Still have another half to learn","name": "Halfstack"
@@ -103,6 +103,11 @@
         alt="https://www.gravatar.com/avatar/ab4373c6bd8c97aaf40c1042a5aad224?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/ab4373c6bd8c97aaf40c1042a5aad224?s=240&amp;d=mp" /></a></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/Oasis7311" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/https://twitter.com/KKKyot_" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/https://steamcommunity.com/profiles/76561198316055325" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="mailto:Oasis7311@gmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/zh-cn/posts/some-config-or-script/">脚本与配置</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-05-16">2023-05-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/%E9%85%8D%E7%BD%AE/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>配置</a></span></div><div class="content">自动更新域名SSL证书脚本 #!/bin/bash rm -rf ~/.acme.sh echo &#34;Clear acme&#34; wget -O - https://get.acme.sh | sh cd ~/.acme.sh/ echo &#34;Download acme&#34; sh acme.sh --upgrade --auto-upgrade echo &#34;Set acme auto upgrade&#34; sh acme.sh --issue --server letsencrypt --test -d halfstack.net -w /home/summer/www/webpage --keylength ec-256 echo &#34;Test Generate Cert&#34; sh acme.sh --set-default-ca --server letsencrypt echo &#34;Change Default CA&#34; sh acme.sh --issue -d halfstack.net</div><div class="post-footer">
+        <a href="/zh-cn/posts/some-config-or-script/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E9%85%8D%E7%BD%AE/">配置</a>,&nbsp;<a href="/zh-cn/tags/%E8%84%9A%E6%9C%AC/">脚本</a>,&nbsp;<a href="/zh-cn/tags/nginx/">nginx</a>,&nbsp;<a href="/zh-cn/tags/xray/">xray</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/zh-cn/posts/wordpress_to_hugo/">Wordpress 迁移至 Hugo</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-05-04">2023-05-04</time></span></div><div class="content">背景 去年在Godaddy上买了一个网站主机，因为没有root权限，基本上我拿来也只能建站，我唯一的建站需求是博客，后来想自己搭一个代理，IP</div><div class="post-footer">
         <a href="/zh-cn/posts/wordpress_to_hugo/">阅读全文</a></div>
@@ -117,7 +122,7 @@
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E5%B7%A5%E5%85%B7/">工具</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/zh-cn/posts/setting-up-xray-server-on-centos7/">CentOS7搭建Xray-服务端</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-01-12">2023-01-12</time></span></div><div class="content">Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-01-12">2023-01-12</time></span></div><div class="content">Update At 5/9/2023 因为网站迁移后，不再需要proxy.halfstack.net这个域名，因此重新申请了halfstack.net的证书，发现脚本有点问</div><div class="post-footer">
         <a href="/zh-cn/posts/setting-up-xray-server-on-centos7/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E5%B7%A5%E5%85%B7/">工具</a>,&nbsp;<a href="/zh-cn/tags/%E8%AE%B0%E5%BD%95/">记录</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -125,10 +130,6 @@
     </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-01-07">2023-01-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>科学上网</a></span></div><div class="content">通过GoDaddy VPS和ShadowSocks搭建代理实现科学上网 背景 在GoDaddy主机上配置Shadowsocks，客户端通过链接代理</div><div class="post-footer">
         <a href="/zh-cn/posts/establishing-a-proxy-for-accessing-the-internet-through-godaddy-vps-and-shadowsocks/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E5%B7%A5%E5%85%B7/">工具</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/">溯源：LIS的O(Nlogn)时间复杂度算法</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-08-11">2022-08-11</time></span></div><div class="content">周一的时候在LeetCode写每日一题，一道很白的LIS。从以前打比赛开始就基本没怎么写过LIS。工作之后就更没有机会接触这些算法，这次刚好</div><div class="post-footer">
-        <a href="/zh-cn/posts/tracing-back-to-the-lis-with-time-complexity-of-nlogn/">阅读全文</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/zh-cn/">1</a>
