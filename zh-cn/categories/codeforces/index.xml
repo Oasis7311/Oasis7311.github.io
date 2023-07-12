@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Codeforces - 分类 - Halfstack</title>
-        <link>/zh-cn/categories/codeforces/</link>
+        <link>halfstack.net/zh-cn/categories/codeforces/</link>
         <description>Codeforces - 分类 - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</lastBuildDate><atom:link href="/zh-cn/categories/codeforces/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</lastBuildDate><atom:link href="halfstack.net/zh-cn/categories/codeforces/" rel="self" type="application/rss+xml" /><item>
     <title>Codeforces 1697 D题解</title>
-    <link>/zh-cn/posts/codeforces-1697-d-tutorial/</link>
+    <link>halfstack.net/zh-cn/posts/codeforces-1697-d-tutorial/</link>
     <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/codeforces-1697-d-tutorial/</guid>
+    <guid>halfstack.net/zh-cn/posts/codeforces-1697-d-tutorial/</guid>
     <description><![CDATA[D.Guess The String 题意 交互题。评测机生成一个长度为 N 的字符串 S，有两种操作： 1 i，询问第 i 位字母是什么。 2 l r，询问区间 [l, r] 的子字符串字符集大小。 只允许]]></description>
 </item>
 </channel>
