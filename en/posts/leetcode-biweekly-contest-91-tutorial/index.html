@@ -10,7 +10,7 @@ Init dp[zero] = 1, dp[one] = 1 (if one == zero, then dp[one] = 2);
 So dp[i] = dp[i - zero] &#43; dp[i - one]. After calculate all dp, sum up dp[low] to dp[high].
 Accepted Code class Solution { public: long long dp[100005]; int countGoodStrings(int low, int high, int zero, int one) { memset(dp, 0, sizeof(dp)); dp[zero]&#43;&#43;; dp[one]&#43;&#43;; for(int i = min(zero, one); i &lt;= high; &#43;&#43;i){ if(i &gt; zero) dp[i] &#43;= dp[i - zero]; if(i &gt; one) dp[i] &#43;= dp[i - one]; dp[i] %= 1000000007; } long long ans = 0; for(int i = low; i &lt;= high; &#43;&#43;i){ ans &#43;= dp[i]; ans %= 1000000007; } return ans; } }; Q3 Tutorial First, from root 0, bfs all tree to find where bob is." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/en/posts/leetcode-biweekly-contest-91-tutorial/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-13T14:29:05+08:00" />
 <meta property="article:modified_time" content="2022-11-13T14:29:05+08:00" /><meta property="og:site_name" content="Halfstack" />
 <meta name="twitter:card" content="summary"/>
@@ -22,7 +22,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 <meta name="application-name" content="Halfstack">
 <meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" /><link rel="prev" href="halfstack.net/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" /><link rel="next" href="halfstack.net/en/posts/leetcode-307-range-sum-query-mutable/" /><link rel="stylesheet" href="/halfstack.net/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/en/posts/leetcode-biweekly-contest-91-tutorial/" /><link rel="prev" href="/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" /><link rel="next" href="/en/posts/leetcode-307-range-sum-query-mutable/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -32,9 +32,9 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "halfstack.net\/en\/posts\/leetcode-biweekly-contest-91-tutorial\/"
+            "@id": "\/en\/posts\/leetcode-biweekly-contest-91-tutorial\/"
         },"genre": "posts","wordcount":  727 ,
-        "url": "halfstack.net\/en\/posts\/leetcode-biweekly-contest-91-tutorial\/","datePublished": "2022-11-13T14:29:05+08:00","dateModified": "2022-11-13T14:29:05+08:00","publisher": {
+        "url": "\/en\/posts\/leetcode-biweekly-contest-91-tutorial\/","datePublished": "2022-11-13T14:29:05+08:00","dateModified": "2022-11-13T14:29:05+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -47,10 +47,10 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="halfstack.net/en/" title="Halfstack">Halfstack</a>
+            <a href="/en/" title="Halfstack">Halfstack</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/halfstack.net/en/posts"> Posts </a><a class="menu-item" href="/halfstack.net/en/tags"> Tags </a><a class="menu-item" href="/halfstack.net/en/categories"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts"> Posts </a><a class="menu-item" href="/en/tags"> Tags </a><a class="menu-item" href="/en/categories"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -65,7 +65,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" selected>English</option></select>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/en/posts/leetcode-biweekly-contest-91-tutorial/" selected>English</option></select>
                 </a></div>
         </div>
     </div>
@@ -73,7 +73,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="halfstack.net/en/" title="Halfstack">Halfstack</a>
+                <a href="/en/" title="Halfstack">Halfstack</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -95,11 +95,11 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/halfstack.net/en/posts" title="">Posts</a><a class="menu-item" href="/halfstack.net/en/tags" title="">Tags</a><a class="menu-item" href="/halfstack.net/en/categories" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/en/posts" title="">Posts</a><a class="menu-item" href="/en/tags" title="">Tags</a><a class="menu-item" href="/en/categories" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" selected>English</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/en/posts/leetcode-biweekly-contest-91-tutorial/" selected>English</option></select>
                 </a></div>
     </div>
 </header><div class="search-dropdown desktop">
@@ -112,13 +112,13 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">LeetCode Biweekly Contest 91 Tutorial</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="halfstack.net/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-13">2022-11-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;727 words
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;<span id="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" class="leancloud_visitors" data-flag-title="LeetCode Biweekly Contest 91 Tutorial">
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;<span id="/en/posts/leetcode-biweekly-contest-91-tutorial/" class="leancloud_visitors" data-flag-title="LeetCode Biweekly Contest 91 Tutorial">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
                     </span>&nbsp;
 					<a href="#comments" id="post-meta-vcount" title="View Comments">
-						<i class="fas fa-comment fa-fw"></i>&nbsp;<span id="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" class="waline-comment-count"></span>&nbsp;条评论
+						<i class="fas fa-comment fa-fw"></i>&nbsp;<span id="/en/posts/leetcode-biweekly-contest-91-tutorial/" class="waline-comment-count"></span>&nbsp;条评论
 					</a></div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -146,7 +146,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 </nav></div>
             </div><div class="content" id="content"><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913403.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913403.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913403.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913403.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913403.png 2x"
         data-sizes="auto"
@@ -155,7 +155,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 <h2 id="q2">Q2</h2>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913722.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913722.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913722.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913722.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913722.png 2x"
         data-sizes="auto"
@@ -168,7 +168,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 <h4 id="accepted-code">Accepted Code</h4>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913131.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913131.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913131.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913131.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913131.png 2x"
         data-sizes="auto"
@@ -198,7 +198,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 </span></span></code></pre></div><h2 id="q3">Q3</h2>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913477.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913477.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913477.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913477.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913477.png 2x"
         data-sizes="auto"
@@ -211,7 +211,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 <h4 id="accepted-codehttpsleetcodecomproblemsmost-profitable-path-in-a-treesubmissions842018593"><a href="https://leetcode.com/problems/most-profitable-path-in-a-tree/submissions/842018593/" target="_blank" rel="noopener noreffer ">Accepted Code</a></h4>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913855.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913855.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913855.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913855.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913855.png 2x"
         data-sizes="auto"
@@ -290,7 +290,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 </span></span></code></pre></div><h2 id="q4">Q4</h2>
 <p><a href="https://halfstack.net/wp-content/uploads/2022/11/image-6-1024x781.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://halfstack.net/wp-content/uploads/2022/11/image-6-1024x781.png"
         data-srcset="https://halfstack.net/wp-content/uploads/2022/11/image-6-1024x781.png, https://halfstack.net/wp-content/uploads/2022/11/image-6-1024x781.png 1.5x, https://halfstack.net/wp-content/uploads/2022/11/image-6-1024x781.png 2x"
         data-sizes="auto"
@@ -303,7 +303,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 <h4 id="accepted-codehttpsleetcodecomproblemssplit-message-based-on-limitsubmissions842041740"><a href="https://leetcode.com/problems/split-message-based-on-limit/submissions/842041740/" target="_blank" rel="noopener noreffer ">Accepted Code</a></h4>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913185.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
-        src="/halfstack.net/svg/loading.min.svg"
+        src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913185.png"
         data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913185.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913185.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050913185.png 2x"
         data-sizes="auto"
@@ -368,7 +368,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="halfstack.net/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="/en/posts/leetcode-biweekly-contest-91-tutorial/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="/en/posts/leetcode-biweekly-contest-91-tutorial/" data-title="LeetCode Biweekly Contest 91 Tutorial"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -376,12 +376,12 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
     <div class="post-info-more">
         <section class="post-tags"></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="halfstack.net/en/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="halfstack.net/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" class="prev" rel="prev" title="2022.10 Daily LeetCode Coding Problems Tutorial"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>2022.10 Daily LeetCode Coding Problems Tutorial</a>
-            <a href="halfstack.net/en/posts/leetcode-307-range-sum-query-mutable/" class="next" rel="next" title="LeetCode 307 Range Sum Query Mutable">LeetCode 307 Range Sum Query Mutable<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" class="prev" rel="prev" title="2022.10 Daily LeetCode Coding Problems Tutorial"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>2022.10 Daily LeetCode Coding Problems Tutorial</a>
+            <a href="/en/posts/leetcode-307-range-sum-query-mutable/" class="next" rel="next" title="LeetCode 307 Range Sum Query Mutable">LeetCode 307 Range Sum Query Mutable<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="waline"></div>
 			<script src='https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
@@ -405,7 +405,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
 		    </script></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="halfstack.net/en/" target="_blank">Oasis</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/en/" target="_blank">Oasis</a></span></div>
         </div>
     </footer></div>
 
@@ -414,7 +414,7 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"halfstack.net/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/halfstack.net/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'G-4HXY0PTNJ3');
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-4HXY0PTNJ3" async></script></body>
