@@ -10,7 +10,7 @@
     <pubDate>Thu, 12 Jan 2023 01:52:34 &#43;0800</pubDate>
     <author>Oasis</author>
     <guid>https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/</guid>
-    <description><![CDATA[Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根]]></description>
+    <description><![CDATA[Update At 5/9/2023 因为网站迁移后，不再需要proxy.halfstack.net这个域名，因此重新申请了halfstack.net的证书，发现脚本有点问]]></description>
 </item>
 </channel>
 </rss>

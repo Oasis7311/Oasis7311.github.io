@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>CentOS7搭建Xray-服务端 - Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="CentOS7搭建Xray-服务端" />
-<meta property="og:description" content="Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根" />
+<meta property="og:description" content="Update At 5/9/2023 因为网站迁移后，不再需要proxy.halfstack.net这个域名，因此重新申请了halfstack.net的证书，发现脚本有点问" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-12T01:52:34+08:00" />
 <meta property="article:modified_time" content="2023-01-12T01:52:34+08:00" /><meta property="og:site_name" content="Halfstack" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS7搭建Xray-服务端"/>
-<meta name="twitter:description" content="Update At 4/25/2023 在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根"/>
+<meta name="twitter:description" content="Update At 5/9/2023 因为网站迁移后，不再需要proxy.halfstack.net这个域名，因此重新申请了halfstack.net的证书，发现脚本有点问"/>
 <meta name="application-name" content="Halfstack">
 <meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/setting-up-xray-server-on-centos7\/"
-        },"genre": "posts","keywords": "工具, 记录","wordcount":  2573 ,
+        },"genre": "posts","keywords": "工具, 记录","wordcount":  2805 ,
         "url": "https:\/\/oasis7311.github.io\/zh-cn\/posts\/setting-up-xray-server-on-centos7\/","datePublished": "2023-01-12T01:52:34+08:00","dateModified": "2023-01-12T01:52:34+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CentOS7搭建Xray-服务端</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-01-12">2023-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2573 字
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-01-12">2023-01-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2805 字
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/zh-cn/posts/setting-up-xray-server-on-centos7/" class="leancloud_visitors" data-flag-title="CentOS7搭建Xray-服务端">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;
@@ -121,8 +121,9 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#update-at-4252023">Update At 4/25/2023</a></li>
+    <li><a href="#update-at-592023">Update At 5/9/2023</a></li>
     <li><a href="#update-at-512023">Update At 5/1/2023</a></li>
+    <li><a href="#update-at-4252023">Update At 4/25/2023</a></li>
     <li><a href="#update-at-4232023">Update At 4/23/2023</a></li>
     <li><a href="#背景">背景</a></li>
     <li><a href="#需要的东西">需要的东西</a></li>
@@ -186,9 +187,16 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="update-at-4252023">Update At 4/25/2023</h2>
-<p>在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根页面地址/证书安装路径</p>
-<p>不过申请的次数太频繁了。。。暂时被ban了，还没验证这个脚本的可用性。不过我觉得是可用的！下次证书过期了再执行验证8</p>
+            </div><div class="content" id="content"><h2 id="update-at-592023">Update At 5/9/2023</h2>
+<p>因为网站迁移后，不再需要<code>proxy.halfstack.net</code>这个域名，因此重新申请了<code>halfstack.net</code>的证书，发现脚本有点问题，因为xray的配置中指定的cert和key不是<code>~/xray_cert</code>里的，因此还需要增加软链或者将证书安装后的内容覆盖<code>~/xray_cert</code></p>
+<p>因此还是直接改xray的配置，修改为脚本中安装的路径</p>
+<p>同时，安装脚本变化为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sh acme.sh --issue --server letsencrypt --test -d halfstack.net -w /home/summer/www/webpage --keylength ec-256
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sh acme.sh --installcert -d halfstack.net --cert-file ~/keys/cert.crt --key-file ~/keys/cert.key --fullchain-file ~/keys/fullchain.crt --ecc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod +r ~/keys/cert.key
+</span></span></code></pre></div><p>同时要注意将客户端的server_name也一同修改</p>
 <h2 id="update-at-512023">Update At 5/1/2023</h2>
 <p>已验证可用</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
@@ -220,16 +228,19 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">sudo systemctl restart xray
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Xray Restarted&#34;</span>
-</span></span></code></pre></div><h2 id="update-at-4232023">Update At 4/23/2023</h2>
+</span></span></code></pre></div><h2 id="update-at-4252023">Update At 4/25/2023</h2>
+<p>在更新证书的过程中，发现自动更新的脚本是没用的，干脆自己按申请的步骤重写了一份脚本，每次运行重新安装证书，使用时替换对应的域名/网站根页面地址/证书安装路径</p>
+<p>不过申请的次数太频繁了。。。暂时被ban了，还没验证这个脚本的可用性。不过我觉得是可用的！下次证书过期了再执行验证8</p>
+<h2 id="update-at-4232023">Update At 4/23/2023</h2>
 <p>我在使用acme生成证书时，使用的是http方式，因此在自动更新脚本运行时，会访问80端口，但是由于nginx最终的配置中设置了强制https跳转，而443端口由xray监听，最终回落到8080端口，导致acme证书没法生成，进而导致证书更新失败。</p>
 <p>针对这种情况，暂时的解决方法是将nginx的强制https跳转关掉，正常让80端口访问webpage</p>
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335317.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335317.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335317.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335317.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919050.png"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335317.png"
         title="img" /></a></p>
 <hr>
 <h2 id="背景">背景</h2>
@@ -558,10 +569,10 @@
 <p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335555.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335555.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335555.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335555.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919349.png"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335555.png"
         title="img" /></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    server <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            listen 80<span class="p">;</span>
@@ -580,19 +591,19 @@
 </span></span></code></pre></div><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335773.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335773.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335773.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335773.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050919761.png"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335773.png"
         title="img" /></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>summer@89 ~<span class="o">]</span>$ sudo systemctl restart xray
 </span></span></code></pre></div><p><a href="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png" target="_blank" rel="noopener noreffer "><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335061.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335061.png, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335061.png 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335061.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305050920190.png"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202305162335061.png"
         title="img" /></a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
