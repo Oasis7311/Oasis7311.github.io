@@ -4,9 +4,17 @@
         <link>/zh-cn/</link>
         <description>Still have another half to learn</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</lastBuildDate>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</lastBuildDate>
             <atom:link href="/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Nginx 301重定向问题</title>
+    <link>/zh-cn/posts/nginx_301_redirect_problem/</link>
+    <pubDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/zh-cn/posts/nginx_301_redirect_problem/</guid>
+    <description><![CDATA[起因 发现在直接点击「文章」、「标签」等顶部跳转栏时，会无法访问资源 而直接点击某个文章是可以的 排查 F12查看了具体的网络请求后发现，点击文章时]]></description>
+</item>
+<item>
     <title>动词</title>
     <link>/zh-cn/posts/deutsch/verb/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
@@ -16,10 +24,10 @@
 </item>
 <item>
     <title>动物</title>
-    <link>/zh-cn/posts/deutsch/substantiv/5/</link>
+    <link>/zh-cn/posts/deutsch/substantiv/animal/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/substantiv/5/</guid>
+    <guid>/zh-cn/posts/deutsch/substantiv/animal/</guid>
     <description><![CDATA[Hund 中/英：狗/dog 性：阳 格 单 复 主(N) der ~ die ~e 宾(A) der ~ die ~e 与(D) dem ~ den ~en 属(G) des ~es der ~e]]></description>
 </item>
 <item>
@@ -32,26 +40,26 @@
 </item>
 <item>
     <title>服装</title>
-    <link>/zh-cn/posts/deutsch/substantiv/2/</link>
+    <link>/zh-cn/posts/deutsch/substantiv/cloth/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/substantiv/2/</guid>
+    <guid>/zh-cn/posts/deutsch/substantiv/cloth/</guid>
     <description><![CDATA[Hemd 中/英：衬衫/shirt 性：中性 格 单 复 主(N) das Hemd die Hemden 宾(A) das Hemd die Hemden 与(D) dem Hemd den Hemden 属(G) des Hemdes der Hemden 主格（Nominativ）: Das Hemd ist b]]></description>
 </item>
 <item>
     <title>国家名、地名、建筑名等</title>
-    <link>/zh-cn/posts/deutsch/substantiv/1/</link>
+    <link>/zh-cn/posts/deutsch/substantiv/country_place_bulding_name/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/substantiv/1/</guid>
+    <guid>/zh-cn/posts/deutsch/substantiv/country_place_bulding_name/</guid>
     <description><![CDATA[国家 Land 中/英：国家/country 性：中性 格 单 复 主(N) das Land die Länder 宾(A) das Land die Länder 与(D) dem Land den Ländern 属(G) des Landes]]></description>
 </item>
 <item>
     <title>家庭关系与称呼</title>
-    <link>/zh-cn/posts/deutsch/substantiv/3/</link>
+    <link>/zh-cn/posts/deutsch/substantiv/membership_or_c/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/substantiv/3/</guid>
+    <guid>/zh-cn/posts/deutsch/substantiv/membership_or_c/</guid>
     <description><![CDATA[Familie Vater Mutter Sohn Tochter Großvater Großmutter Schwester Bruder]]></description>
 </item>
 <item>
@@ -64,10 +72,10 @@
 </item>
 <item>
     <title>居家周边</title>
-    <link>/zh-cn/posts/deutsch/substantiv/4/</link>
+    <link>/zh-cn/posts/deutsch/substantiv/house_and_related_to_house/</link>
     <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/substantiv/4/</guid>
+    <guid>/zh-cn/posts/deutsch/substantiv/house_and_related_to_house/</guid>
     <description><![CDATA[Haus 中/英：房屋/house 性：中性 格 单 复 主(N) das Haus die Häuser 宾(A) das Haus die Häuser 与(D) dem Haus den Häusern 属(G) des Hauses der Häu]]></description>
 </item>
 <item>
@@ -77,14 +85,6 @@
     <author>Oasis</author>
     <guid>/zh-cn/posts/deutsch/numeral/</guid>
     <description><![CDATA[Eins 性 主N 宾A 与D 属G 阳 ein ein eines einem 阴 eine eine eine eine 中 ein eines eines eines 除了1有变形，其他的不管词性和修饰名词的格，都是原形 neun zehn]]></description>
-</item>
-<item>
-    <title>形容词与副词</title>
-    <link>/zh-cn/posts/deutsch/adjectives_and_adverbs/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/adjectives_and_adverbs/</guid>
-    <description><![CDATA[形容词 物主代词 mein：我的 格 男性单数名词 女性单数名词 中性单数名词 复数名词 主(N) mein Freund meine Freundin mein Buch meine Freunde 宾(A) meinen Freund meine Freundin mein Buch meine Freunde 与(D) meinem Freund meiner Freundin meinem]]></description>
 </item>
 </channel>
 </rss>

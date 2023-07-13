@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/zh-cn\/posts\/some-config-or-script\/"
-        },"genre": "posts","keywords": "配置, 脚本, nginx, xray","wordcount":  1328 ,
+        },"genre": "posts","keywords": "配置, 脚本, nginx, xray","wordcount":  1365 ,
         "url": "\/zh-cn\/posts\/some-config-or-script\/","datePublished": "2023-05-16T23:38:59+08:00","dateModified": "2023-05-16T23:38:59+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">脚本与配置</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/%E9%85%8D%E7%BD%AE/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>配置</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-05-16">2023-05-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1328 字
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-05-16">2023-05-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1365 字
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/zh-cn/posts/some-config-or-script/" class="leancloud_visitors" data-flag-title="脚本与配置">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;
@@ -180,6 +180,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kn">root</span> <span class="s">/home/summer/www/Oasis7311.github.io</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="kn">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">&#34;max-age=63072000&#34;</span> <span class="s">always</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">       		<span class="c1"># 重定向末尾没有斜杠的请求，加上斜杠，https
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        	<span class="kn">if</span> <span class="s">(</span><span class="nv">$request_uri</span> <span class="p">~</span> <span class="sr">&#34;^([^.\?]*[^/])$&#34;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    	    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#    server {
