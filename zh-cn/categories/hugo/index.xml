@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>hugo - 分类 - Halfstack</title>
+        <link>https://oasis7311.github.io/zh-cn/categories/hugo/</link>
+        <description>hugo - 分类 - Halfstack</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</lastBuildDate><atom:link href="https://oasis7311.github.io/zh-cn/categories/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>Nginx 301重定向问题</title>
+    <link>https://oasis7311.github.io/zh-cn/posts/nginx_301_redirect_problem/</link>
+    <pubDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>https://oasis7311.github.io/zh-cn/posts/nginx_301_redirect_problem/</guid>
+    <description><![CDATA[起因 发现在直接点击「文章」、「标签」等顶部跳转栏时，会无法访问资源 而直接点击某个文章是可以的 排查 F12查看了具体的网络请求后发现，点击文章时]]></description>
+</item>
+<item>
+    <title>添加Waline评论功能</title>
+    <link>https://oasis7311.github.io/zh-cn/posts/add-waline/</link>
+    <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>https://oasis7311.github.io/zh-cn/posts/add-waline/</guid>
+    <description><![CDATA[为hugo站点添加waline组件，同时展示文章阅读数]]></description>
+</item>
+</channel>
+</rss>
