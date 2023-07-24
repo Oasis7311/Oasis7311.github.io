@@ -53,6 +53,14 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>other</title>
+    <link>/zh-cn/tags/other/</link>
+    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/zh-cn/tags/other/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>xray</title>
     <link>/zh-cn/tags/xray/</link>
     <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
     <author>Oasis</author>
     <guid>/zh-cn/tags/%E9%85%8D%E7%BD%AE/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>工具</title>
-    <link>/zh-cn/tags/%E5%B7%A5%E5%85%B7/</link>
-    <pubDate>Fri, 13 Jan 2023 02:09:32 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/tags/%E5%B7%A5%E5%85%B7/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
