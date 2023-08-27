@@ -4,5 +4,53 @@
         <link>/en/tags/</link>
         <description>Tags - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><atom:link href="/en/tags/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>priority_queue</title>
+    <link>/en/tags/priority_queue/</link>
+    <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/priority_queue/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>unordered_map</title>
+    <link>/en/tags/unordered_map/</link>
+    <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/unordered_map/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>array</title>
+    <link>/en/tags/array/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/array/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>simulation</title>
+    <link>/en/tags/simulation/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/simulation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>string</title>
+    <link>/en/tags/string/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/string/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>sliding window</title>
+    <link>/en/tags/sliding-window/</link>
+    <pubDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/sliding-window/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
