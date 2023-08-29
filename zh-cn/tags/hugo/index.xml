@@ -12,13 +12,5 @@
     <guid>/zh-cn/posts/nginx_301_redirect_problem/</guid>
     <description><![CDATA[起因 发现在直接点击「文章」、「标签」等顶部跳转栏时，会无法访问资源 而直接点击某个文章是可以的 排查 F12查看了具体的网络请求后发现，点击文章时]]></description>
 </item>
-<item>
-    <title>添加Waline评论功能</title>
-    <link>/zh-cn/posts/add-waline/</link>
-    <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/posts/add-waline/</guid>
-    <description><![CDATA[为hugo站点添加waline组件，同时展示文章阅读数]]></description>
-</item>
 </channel>
 </rss>

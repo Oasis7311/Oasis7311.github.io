@@ -67,5 +67,15 @@ If this tutorial helps you well, you can subscribe my website, every time I upda
 You may ask query in two types:
 1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl+1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type.]]></description>
 </item>
+<item>
+    <title>4. Median of Two Sorted Arrays</title>
+    <link>/en/posts/lc/0004_median_of_two_sorted_arrays/</link>
+    <pubDate>Sat, 28 May 2022 12:45:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/posts/lc/0004_median_of_two_sorted_arrays/</guid>
+    <description><![CDATA[https://leetcode.com/problems/median-of-two-sorted-arrays/
+https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/708741884/
+class Solution { public: double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) { priority_queue&lt;int&gt; q; for(int i : nums1) q.push(i); for(int i : nums2) q.push(i); int popCount = q.size() - 1 &gt;&gt; 1; bool d = (q.size() % 2 == 0); while(popCount--) q.pop(); double ans = 0; ans = q.top(); q.pop(); if(d){ ans = (q.top() + ans) / 2.0; } return ans; } }; ]]></description>
+</item>
 </channel>
 </rss>

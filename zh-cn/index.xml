@@ -4,9 +4,17 @@
         <link>/zh-cn/</link>
         <description>Still have another half to learn</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 15 Aug 2023 00:00:00 &#43;0800</lastBuildDate>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Mon, 28 Aug 2023 00:00:00 &#43;0800</lastBuildDate>
             <atom:link href="/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Unit4-Part2: 货币、价钱和喜好</title>
+    <link>/zh-cn/posts/deutsch/ut4-shopping/2-wa%CC%88hrungen-preise-und-pra%CC%88ferenzen/</link>
+    <pubDate>Mon, 28 Aug 2023 00:00:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/zh-cn/posts/deutsch/ut4-shopping/2-wa%CC%88hrungen-preise-und-pra%CC%88ferenzen/</guid>
+    <description><![CDATA[名词 Theaterstück：[teˈaː.tɐʁ.ʃtʏk] 中/英：剧本，戏剧/play, drama 性：中性 格 单 复 主(N) das Theaterstüc]]></description>
+</item>
+<item>
     <title>Unit4-Part1: 需求和要求</title>
     <link>/zh-cn/posts/deutsch/ut4-shopping/1-bedu%CC%88rfnisse-und-anforderungen/</link>
     <pubDate>Tue, 15 Aug 2023 00:00:00 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>Oasis</author>
     <guid>/zh-cn/posts/nginx_301_redirect_problem/</guid>
     <description><![CDATA[起因 发现在直接点击「文章」、「标签」等顶部跳转栏时，会无法访问资源 而直接点击某个文章是可以的 排查 F12查看了具体的网络请求后发现，点击文章时]]></description>
-</item>
-<item>
-    <title>动词</title>
-    <link>/zh-cn/posts/deutsch/verb/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/posts/deutsch/verb/</guid>
-    <description><![CDATA[sein 中：是 单 复 第一人称 bin sind 第二人称 bist seid 第三人称 ist sind 一单：Ich bin glücklich.（我很快乐。） 一复：Wir sind glücklich.（我们很快]]></description>
 </item>
 </channel>
 </rss>
