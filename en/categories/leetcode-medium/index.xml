@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>leetcode medium - Category - Halfstack</title>
+        <link>/en/categories/leetcode-medium/</link>
+        <description>leetcode medium - Category - Halfstack</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</lastBuildDate><atom:link href="/en/categories/leetcode-medium/" rel="self" type="application/rss+xml" /><item>
+    <title>2707. Extra Characters in a String</title>
+    <link>/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
+    <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/posts/lc/medium/2707_extra_characters_in_a_string/</guid>
+    <description><![CDATA[https://leetcode.com/problems/extra-characters-in-a-string/
+https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038162877/
+class Solution { public: vector&lt;int&gt; ans; unordered_map&lt;string, bool&gt; mp; int minExtraChar(string s, vector&lt;string&gt;&amp; dictionary) { ans.resize(s.size()+1, 0x3f3f3f3f); for(string a : dictionary) mp[a] = true; ans[s.size() - 1] = !mp[string(1, s.back())]; ans[s.size()] = 0; for(int i = s.size() - 2; i &gt;= 0; --i){ for(int j = 1; j &lt;= s.size() - i; ++j) { string tmp = s.substr(i, j); ans[i] = min(ans[i], (mp[tmp]?0:j) + ans[i+j]); } } return ans[0]; } }; ]]></description>
+</item>
+</channel>
+</rss>
