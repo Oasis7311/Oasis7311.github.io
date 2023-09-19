@@ -4,7 +4,23 @@
         <link>/zh-cn/tags/</link>
         <description>Tags - 标签 - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</lastBuildDate><atom:link href="/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Japan</title>
+    <link>/zh-cn/tags/japan/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/zh-cn/tags/japan/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tokyo</title>
+    <link>/zh-cn/tags/tokyo/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/zh-cn/tags/tokyo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>hugo</title>
     <link>/zh-cn/tags/hugo/</link>
     <pubDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</pubDate>
@@ -66,22 +82,6 @@
     <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
     <author>Oasis</author>
     <guid>/zh-cn/tags/xray/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>脚本</title>
-    <link>/zh-cn/tags/%E8%84%9A%E6%9C%AC/</link>
-    <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/tags/%E8%84%9A%E6%9C%AC/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>配置</title>
-    <link>/zh-cn/tags/%E9%85%8D%E7%BD%AE/</link>
-    <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/zh-cn/tags/%E9%85%8D%E7%BD%AE/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

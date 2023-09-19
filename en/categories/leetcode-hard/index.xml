@@ -4,7 +4,17 @@
         <link>/en/categories/leetcode-hard/</link>
         <description>leetcode hard - Category - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 31 Aug 2023 08:49:00 &#43;0800</lastBuildDate><atom:link href="/en/categories/leetcode-hard/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</lastBuildDate><atom:link href="/en/categories/leetcode-hard/" rel="self" type="application/rss+xml" /><item>
+    <title>1359. Count All Valid Pickup and Delivery Options</title>
+    <link>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
+    <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
+    <description><![CDATA[https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
+class Solution { public: int countOrders(int n) { vector&lt;int&gt; dp(n + 1); dp[1] = 1; for(int i = 2; i &lt;= n; ++i){ int tn = (2 * i - 1); int sn = (tn * (tn + 1)) / 2; dp[i] = (long long)dp[i - 1] * sn % 1000000007; } return dp[n]; } }; Looked Hint]]></description>
+</item>
+<item>
     <title>1326. Minimum Number of Taps to Open to Water a Garden</title>
     <link>/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</link>
     <pubDate>Thu, 31 Aug 2023 08:49:00 &#43;0800</pubDate>

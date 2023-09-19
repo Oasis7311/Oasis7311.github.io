@@ -4,9 +4,19 @@
         <link>/en/</link>
         <description>Still have another half to learn</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</lastBuildDate>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</lastBuildDate>
             <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>1359. Count All Valid Pickup and Delivery Options</title>
+    <link>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
+    <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
+    <description><![CDATA[https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
+class Solution { public: int countOrders(int n) { vector&lt;int&gt; dp(n + 1); dp[1] = 1; for(int i = 2; i &lt;= n; ++i){ int tn = (2 * i - 1); int sn = (tn * (tn + 1)) / 2; dp[i] = (long long)dp[i - 1] * sn % 1000000007; } return dp[n]; } }; Looked Hint]]></description>
+</item>
+<item>
     <title>2707. Extra Characters in a String</title>
     <link>/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
     <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
@@ -96,16 +106,6 @@ Accepted Code class Solution { public: long long dp[100005]; int countGoodString
     <description><![CDATA[If you get any problem of my code or you find something wrong, just leave a comment or contact with me, I&rsquo;ll response you as fast as I can if I see it.
 If this tutorial helps you well, you can subscribe my website, every time I update any Tutorial, I&rsquo;ll send an email to all subscribers.
 10-31 766. Toeplitz Matrix Difficulty: Easy Accepted Code class Solution { public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { vector&lt;int&gt; n[int(matrix.]]></description>
-</item>
-<item>
-    <title>Codeforces 1697 D Tutorial</title>
-    <link>/en/posts/cf/codeforces-1697-d-tutorial/</link>
-    <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/en/posts/cf/codeforces-1697-d-tutorial/</guid>
-    <description><![CDATA[D. Guess The String Problem summary The Jury chosen a stringS consisting of n characters; each character of S is a lowercase Latin letter.
-You may ask query in two types:
-1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl+1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type.]]></description>
 </item>
 </channel>
 </rss>
