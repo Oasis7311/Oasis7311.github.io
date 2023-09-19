@@ -4,7 +4,15 @@
         <link>/en/posts/</link>
         <description>All Posts | Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</lastBuildDate><atom:link href="/en/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>2023.9.14～2023.9.17 Tokyo, Japan</title>
+    <link>/en/posts/travel/tokyo/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/posts/travel/tokyo/</guid>
+    <description><![CDATA[Tokyo! Even though the trip was very rushed, it seemed to be enough for me. Even if I had extra time, I'd probably just roam around, see a few more landmarks and buildings, and enjoy more of the renowned local delicacies. Perhaps for every traveler, every city has its own advantages to admire.]]></description>
+</item>
+<item>
     <title>1359. Count All Valid Pickup and Delivery Options</title>
     <link>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
     <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
@@ -94,16 +102,6 @@ class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&am
 Init dp[zero] = 1, dp[one] = 1 (if one == zero, then dp[one] = 2);
 So dp[i] = dp[i - zero] + dp[i - one]. After calculate all dp, sum up dp[low] to dp[high].
 Accepted Code class Solution { public: long long dp[100005]; int countGoodStrings(int low, int high, int zero, int one) { memset(dp, 0, sizeof(dp)); dp[zero]++; dp[one]++; for(int i = min(zero, one); i &lt;= high; ++i){ if(i &gt; zero) dp[i] += dp[i - zero]; if(i &gt; one) dp[i] += dp[i - one]; dp[i] %= 1000000007; } long long ans = 0; for(int i = low; i &lt;= high; ++i){ ans += dp[i]; ans %= 1000000007; } return ans; } }; Q3 Tutorial First, from root 0, bfs all tree to find where bob is.]]></description>
-</item>
-<item>
-    <title>2022.10 Daily LeetCode Coding Problems Tutorial</title>
-    <link>/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</link>
-    <pubDate>Sat, 01 Oct 2022 11:22:16 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</guid>
-    <description><![CDATA[If you get any problem of my code or you find something wrong, just leave a comment or contact with me, I&rsquo;ll response you as fast as I can if I see it.
-If this tutorial helps you well, you can subscribe my website, every time I update any Tutorial, I&rsquo;ll send an email to all subscribers.
-10-31 766. Toeplitz Matrix Difficulty: Easy Accepted Code class Solution { public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { vector&lt;int&gt; n[int(matrix.]]></description>
 </item>
 </channel>
 </rss>

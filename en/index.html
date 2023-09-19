@@ -102,7 +102,21 @@
         data-sizes="auto"
         alt="https://www.gravatar.com/avatar/ab4373c6bd8c97aaf40c1042a5aad224?s=240&amp;d=mp"
         title="https://www.gravatar.com/avatar/ab4373c6bd8c97aaf40c1042a5aad224?s=240&amp;d=mp" /></a></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/Oasis7311" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://twitter.com/https://twitter.com/KKKyot_" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="https://steamcommunity.com/id/https://steamcommunity.com/profiles/76561198316055325" title="Steam" target="_blank" rel="noopener noreffer me"><i class="fab fa-steam fa-fw" aria-hidden="true"></i></a><a href="mailto:Oasis7311@gmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/en/posts/travel/tokyo/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202309192246856.jpeg"
+        data-srcset="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202309192246856.jpeg, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202309192246856.jpeg 1.5x, https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202309192246856.jpeg 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/Oasis7311/halfstack_image@main/blog/202309192246856.jpeg"
+        title="Tokyo! Even though the trip was very rushed, it seemed to be enough for me. Even if I had extra time, I&#39;d probably just roam around, see a few more landmarks and buildings, and enjoy more of the renowned local delicacies. Perhaps for every traveler, every city has its own advantages to admire." /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/en/posts/travel/tokyo/">2023.9.14～2023.9.17 Tokyo, Japan</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-09-19">2023-09-19</time></span>&nbsp;<span class="post-category">included in <a href="/en/categories/travel/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>travel</a></span></div><div class="content">Tokyo! Even though the trip was very rushed, it seemed to be enough for me. Even if I had extra time, I'd probably just roam around, see a few more landmarks and buildings, and enjoy more of the renowned local delicacies. Perhaps for every traveler, every city has its own advantages to admire.</div><div class="post-footer">
+        <a href="/en/posts/travel/tokyo/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/tokyo/">Tokyo</a>,&nbsp;<a href="/en/tags/japan/">Japan</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/">1359. Count All Valid Pickup and Delivery Options</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-09-10">2023-09-10</time></span>&nbsp;<span class="post-category">included in <a href="/en/categories/leetcode-hard/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>leetcode hard</a></span></div><div class="content">https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
 https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
@@ -137,13 +151,6 @@ Only int version for c
 /* div example */ #include &lt;stdio.h&gt; /* printf */ #include &lt;stdlib.</div><div class="post-footer">
         <a href="/en/posts/lib-or-special-usage/c&#43;&#43;/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/c&#43;&#43;/">c&#43;&#43;</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/en/posts/lc/hard/0403_frog_jump/">403. Frog Jump</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-08-27">2023-08-27</time></span>&nbsp;<span class="post-category">included in <a href="/en/categories/leetcode-hard/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>leetcode hard</a></span></div><div class="content">https://leetcode.com/problems/frog-jump/
-https://leetcode.com/problems/frog-jump/submissions/1032720945/
-class Solution { public: bool check(unordered_map&lt;int, bool&gt;&amp; exist, unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; &amp;inq, int lastStone, int nextStone, int jumpUnits) { if(inq[nextStone][jumpUnits]) return false; if(nextStone &gt; lastStone) return false; if(!exist[nextStone]) return false; return true; } bool canCross(vector&lt;int&gt;&amp; stones) { if(stones == (vector&lt;int&gt;){0,1}) { return true; } int n = stones.size(); if(stones.back() &gt; (n * (1 + n - 1) / 2)) { return false; } unordered_map&lt;int, bool&gt; exist; for(int i : stones) exist[i] = true; priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, less&lt;pair&lt;int, int&gt;&gt;&gt; q; unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; inq; if(stones[1] !</div><div class="post-footer">
-        <a href="/en/posts/lc/hard/0403_frog_jump/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/priority_queue/">priority_queue</a>,&nbsp;<a href="/en/tags/unordered_map/">unordered_map</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/en/">1</a>
@@ -151,6 +158,10 @@ class Solution { public: bool check(unordered_map&lt;int, bool&gt;&amp; exist, u
                 </li><li class="page-item ">
                     <span class="page-link">
                         <a href="/en/page/2/">2</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/en/page/3/">3</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

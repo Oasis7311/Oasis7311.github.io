@@ -4,7 +4,23 @@
         <link>/en/tags/</link>
         <description>Tags - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Japan</title>
+    <link>/en/tags/japan/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/japan/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tokyo</title>
+    <link>/en/tags/tokyo/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>/en/tags/tokyo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>dp</title>
     <link>/en/tags/dp/</link>
     <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
@@ -66,22 +82,6 @@
     <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
     <author>Oasis</author>
     <guid>/en/tags/simulation/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>string</title>
-    <link>/en/tags/string/</link>
-    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/en/tags/string/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>sliding window</title>
-    <link>/en/tags/sliding-window/</link>
-    <pubDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>/en/tags/sliding-window/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
