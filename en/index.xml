@@ -55,7 +55,7 @@ https://leetcode.com/problems/minimum-replacements-to-sort-the-array/submissions
 class Solution { public: long long minimumReplacement(vector&lt;int&gt;&amp; nums) { long long ans = 0; int Max = nums.back(); for(int i = nums.size() - 2; i &gt;= 0; --i) { //cout &lt;&lt; i &lt;&lt; &#34; max = &#34; &lt;&lt; Max &lt;&lt; &#34; num = &#34; &lt;&lt; nums[i] &lt;&lt; endl; if(nums[i] &lt;= Max) { Max = nums[i]; continue; } int divisor = nums[i]; int dividend = Max; int mod = divisor % dividend; int quotient = divisor / dividend; if(mod == 0) { ans += quotient - 1; continue; } ans += quotient; // binary search to find max Max int l = mod, r = Max; while(l &lt;= r) { int mid = (l + r) &gt;&gt; 1; int gap = mid - mod; int times = gap / quotient; if(gap % quotient !]]></description>
 </item>
 <item>
-    <title>c&#43;&#43; lib, which I hardly used but seen</title>
+    <title>c&#43;&#43; lib or usage, which I hardly used but seen</title>
     <link>/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
     <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
     <author>Oasis</author>
