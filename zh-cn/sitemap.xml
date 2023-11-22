@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/zh-cn/categories/</loc><lastmod>2023-11-17T00:07:48&#43;08:00</lastmod><xhtml:link
+            <loc>/zh-cn/categories/</loc><lastmod>2023-11-23T00:09:46&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="/en/categories/"
@@ -11,8 +11,8 @@
                     hreflang="zh-cn"
                     href="/zh-cn/categories/"
                     /></url><url>
-            <loc>/zh-cn/categories/german/</loc><lastmod>2023-11-17T00:07:48&#43;08:00</lastmod></url><url>
-            <loc>/zh-cn/</loc><lastmod>2023-11-17T00:07:48&#43;08:00</lastmod><xhtml:link
+            <loc>/zh-cn/categories/german/</loc><lastmod>2023-11-23T00:09:46&#43;08:00</lastmod></url><url>
+            <loc>/zh-cn/</loc><lastmod>2023-11-23T00:09:46&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="/en/"
@@ -21,7 +21,7 @@
                     hreflang="zh-cn"
                     href="/zh-cn/"
                     /></url><url>
-            <loc>/zh-cn/posts/</loc><lastmod>2023-11-17T00:07:48&#43;08:00</lastmod><xhtml:link
+            <loc>/zh-cn/posts/</loc><lastmod>2023-11-23T00:09:46&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="/en/posts/"
@@ -30,6 +30,7 @@
                     hreflang="zh-cn"
                     href="/zh-cn/posts/"
                     /></url><url>
+            <loc>/zh-cn/posts/deutsch/ut6-feature-and-past/4/</loc><lastmod>2023-11-23T00:09:46&#43;08:00</lastmod></url><url>
             <loc>/zh-cn/posts/deutsch/ut6-feature-and-past/3-career/</loc><lastmod>2023-11-17T00:07:48&#43;08:00</lastmod></url><url>
             <loc>/zh-cn/posts/deutsch/ut6-feature-and-past/2-meaning/</loc><lastmod>2023-11-03T00:33:38&#43;08:00</lastmod></url><url>
             <loc>/zh-cn/posts/deutsch/ut6-feature-and-past/1-letter/</loc><lastmod>2023-11-01T00:33:38&#43;08:00</lastmod></url><url>
