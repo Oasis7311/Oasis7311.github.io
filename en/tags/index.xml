@@ -1,8 +1,88 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - Halfstack</title>
-        <link>https://oasis7311.github.io/en/tags/</link>
+        <link>halfstack.net/en/tags/</link>
         <description>Tags - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><atom:link href="https://oasis7311.github.io/en/tags/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Japan</title>
+    <link>halfstack.net/en/tags/japan/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/japan/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tokyo</title>
+    <link>halfstack.net/en/tags/tokyo/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/tokyo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>dp</title>
+    <link>halfstack.net/en/tags/dp/</link>
+    <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/dp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>hash</title>
+    <link>halfstack.net/en/tags/hash/</link>
+    <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/hash/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>c&#43;&#43;</title>
+    <link>halfstack.net/en/tags/c&#43;&#43;/</link>
+    <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/c&#43;&#43;/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>math</title>
+    <link>halfstack.net/en/tags/math/</link>
+    <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/math/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>priority_queue</title>
+    <link>halfstack.net/en/tags/priority_queue/</link>
+    <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/priority_queue/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>unordered_map</title>
+    <link>halfstack.net/en/tags/unordered_map/</link>
+    <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/unordered_map/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>array</title>
+    <link>halfstack.net/en/tags/array/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/array/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>simulation</title>
+    <link>halfstack.net/en/tags/simulation/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/tags/simulation/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>记录 - 标签 - Halfstack</title>
-        <link>https://oasis7311.github.io/zh-cn/tags/%E8%AE%B0%E5%BD%95/</link>
+        <link>halfstack.net/zh-cn/tags/%E8%AE%B0%E5%BD%95/</link>
         <description>记录 - 标签 - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 12 Jan 2023 01:52:34 &#43;0800</lastBuildDate><atom:link href="https://oasis7311.github.io/zh-cn/tags/%E8%AE%B0%E5%BD%95/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Thu, 12 Jan 2023 01:52:34 &#43;0800</lastBuildDate><atom:link href="halfstack.net/zh-cn/tags/%E8%AE%B0%E5%BD%95/" rel="self" type="application/rss+xml" /><item>
     <title>CentOS7搭建Xray-服务端</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/</link>
+    <link>halfstack.net/zh-cn/posts/setting-up-xray-server-on-centos7/</link>
     <pubDate>Thu, 12 Jan 2023 01:52:34 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/setting-up-xray-server-on-centos7/</guid>
+    <guid>halfstack.net/zh-cn/posts/setting-up-xray-server-on-centos7/</guid>
     <description><![CDATA[Update At 5/9/2023 因为网站迁移后，不再需要proxy.halfstack.net这个域名，因此重新申请了halfstack.net的证书，发现脚本有点问]]></description>
 </item>
 </channel>

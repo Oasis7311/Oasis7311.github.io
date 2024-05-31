@@ -1,88 +1,88 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - Halfstack</title>
-        <link>https://oasis7311.github.io/zh-cn/posts/</link>
+        <link>halfstack.net/zh-cn/posts/</link>
         <description>所有文章 | Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Mon, 24 Jul 2023 00:00:00 &#43;0800</lastBuildDate><atom:link href="https://oasis7311.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Unit3-Part1: 位置与时间-单词</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/vocabulary/</link>
-    <pubDate>Mon, 24 Jul 2023 00:00:00 &#43;0800</pubDate>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Fri, 31 May 2024 09:32:45 &#43;0800</lastBuildDate><atom:link href="halfstack.net/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>2-3: Where you&#39;re from</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/3/</link>
+    <pubDate>Fri, 31 May 2024 09:32:45 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/vocabulary/</guid>
-    <description><![CDATA[动词 arbeiten 中/英：工作/work 单 复 第一人称 arbeite arbeiten 第二人称 arbeitest arbeitet 第三人称 arbeitet arbeiten 一单：Ich arbeite in einem Büro.（我在办公室工作。） 一复：Wir arbeiten zusammen an einem Pr]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/3/</guid>
+    <description><![CDATA[名词 het land: [lɑnt] 中/英：国家/country 性：中性 格 单数 复数 主(N) het land de landen 宾(A) het land de landen 与(D) het land de landen 属(G) het lands de landen 主格（No]]></description>
 </item>
 <item>
-    <title>Unit3-Part1: 位置与时间-句子</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/sentence/</link>
-    <pubDate>Mon, 24 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>2-2: Around the house</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/2/</link>
+    <pubDate>Wed, 29 May 2024 09:25:58 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/sentence/</guid>
-    <description><![CDATA[Wo arbeiten Sie? &ldquo;Wo&rdquo;：这是一个疑问词，表示 &ldquo;在哪里&rdquo;，用于提问地点或位置。 &ldquo;arbei]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/2/</guid>
+    <description><![CDATA[名词 de deur: [døːr] 中/英：门/door 性：阳性 格 单数 复数 主(N) de deur de deuren 宾(A) de deur de deuren 与(D) de deur de deuren 属(G) de deur de deuren 主格（Nomina]]></description>
 </item>
 <item>
-    <title>Unit3-Part1: 位置与时间-语法</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/gramma/</link>
-    <pubDate>Mon, 24 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>2-1: </title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/1/</link>
+    <pubDate>Mon, 27 May 2024 08:33:58 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/ut3-work-and-study/1-location-and-schedule/gramma/</guid>
-    <description><![CDATA[第三单元第一部分语法]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut2-greetings-and-introductions/1/</guid>
+    <description><![CDATA[名词 het gezin: [ɣəˈzɪn] 中/英：家庭/family (nuclear) 性：中性 格 单数 复数 主(N) het gezin de gezinnen 宾(A) het gezin de gezinnen 与(D) het gezin de gezinnen 属(G) het gezins de gezinnen 主格（]]></description>
 </item>
 <item>
-    <title>Nginx 301重定向问题</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/nginx_301_redirect_problem/</link>
-    <pubDate>Thu, 13 Jul 2023 08:56:59 &#43;0800</pubDate>
+    <title>1-4: Clothing and quantities</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/clothing-and-quantities/</link>
+    <pubDate>Fri, 24 May 2024 09:03:14 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/nginx_301_redirect_problem/</guid>
-    <description><![CDATA[起因 发现在直接点击「文章」、「标签」等顶部跳转栏时，会无法访问资源 而直接点击某个文章是可以的 排查 F12查看了具体的网络请求后发现，点击文章时]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/clothing-and-quantities/</guid>
+    <description><![CDATA[名词 de sleutel: [ˈsløːtəl] 中/英：钥匙/key 性：阳性 格 单数 复数 主(N) de sleutel de sleutels 宾(A) de sleutel de sleutels 与(D) de sleutel de sleutels 属(G) de sleutels de sleutels 主格（No]]></description>
 </item>
 <item>
-    <title>动词</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/verb/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>1-3: Colors and sizes</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/colors-and-sizes/</link>
+    <pubDate>Wed, 22 May 2024 09:03:39 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/verb/</guid>
-    <description><![CDATA[sein 中：是 单 复 第一人称 bin sind 第二人称 bist seid 第三人称 ist sind 一单：Ich bin glücklich.（我很快乐。） 一复：Wir sind glücklich.（我们很快]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/colors-and-sizes/</guid>
+    <description><![CDATA[名词 de maan: [maːn] 中/英：月亮/moon 性：阳性 格 单数 复数 主(N) de maan de manen 宾(A) de maan de manen 与(D) de maan de manen 属(G) de maans de manen 主格（Nomin]]></description>
 </item>
 <item>
-    <title>动物</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/animal/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>1-2: Everyday items</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/everyday-items/</link>
+    <pubDate>Mon, 20 May 2024 09:22:24 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/animal/</guid>
-    <description><![CDATA[Hund 中/英：狗/dog 性：阳 格 单 复 主(N) der ~ die ~e 宾(A) der ~ die ~e 与(D) dem ~ den ~en 属(G) des ~es der ~e]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/everyday-items/</guid>
+    <description><![CDATA[名词 het broodje: [ˈbroʊ̯dʒə] 中/英：小面包/sandwich, bun 性：中性 格 单数 复数 主(N) het broodje de broodjes 宾(A) het broodje de broodjes 与(D) het broodje de broodjes 属(G)]]></description>
 </item>
 <item>
-    <title>短句</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/common_sentence/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>1-1: Basic sentences</title>
+    <link>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/basic-sentences/</link>
+    <pubDate>Sat, 18 May 2024 09:43:44 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/common_sentence/</guid>
-    <description><![CDATA[Guten Tag Hallo Auf Wiedersehen Tschüss &ldquo;Auf Wiedersehen&rdquo; 和 &ldquo;Tschüss&rdquo; 都是德语中用于告别的常见表达方式，但它们在形式和用法上有一些差别。 &ldquo;Auf]]></description>
+    <guid>halfstack.net/zh-cn/posts/dutch/ut1-language-basics/basic-sentences/</guid>
+    <description><![CDATA[名词 de jongen: [ˈjɔŋə(n)] 中/英：男孩/boy 性：阳性 &ldquo;Jongen&rdquo; 指的是一个年轻的男性，通常指的是尚未成年的男孩。 格 单数 复数 主(N) de jongen de jongens 宾(A)]]></description>
 </item>
 <item>
-    <title>服装</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/cloth/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>Unit7-Part4: 邀请和道歉</title>
+    <link>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/4/</link>
+    <pubDate>Tue, 12 Mar 2024 08:02:02 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/cloth/</guid>
-    <description><![CDATA[das Hemd 中/英：衬衫/shirt 性：中性 格 单 复 主(N) das Hemd die Hemden 宾(A) das Hemd die Hemden 与(D) dem Hemd den Hemden 属(G) des Hemdes der Hemden 主格（Nominativ）: Das Hemd ist]]></description>
+    <guid>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/4/</guid>
+    <description><![CDATA[名词 die Sängerin: [ˈzɛŋəʁɪn] 中/英：女歌手/female singer 性：阴性 &ldquo;Sängerin&rdquo; 是 &ldquo]]></description>
 </item>
 <item>
-    <title>国家名、地名、建筑名等</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/country_place_bulding_name/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>Unit7-Part3: 庆典和文化</title>
+    <link>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/3/</link>
+    <pubDate>Sun, 03 Mar 2024 21:20:19 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/country_place_bulding_name/</guid>
-    <description><![CDATA[国家 Land 中/英：国家/country 性：中性 格 单 复 主(N) das Land die Länder 宾(A) das Land die Länder 与(D) dem Land den Ländern 属(G) des Landes]]></description>
+    <guid>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/3/</guid>
+    <description><![CDATA[名词 der Geburtstag: [ɡəˈbʊʁtstaːk] 中/英：生日/birthday 性：阳性 &ldquo;Geburtstag&rdquo; 指的是一个人出生日期的周年纪念。 格 单数 复数 主(N) der Geburtstag die Geburtstage 宾(A]]></description>
 </item>
 <item>
-    <title>家庭关系与称呼</title>
-    <link>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/membership_or_c/</link>
-    <pubDate>Sat, 01 Jul 2023 00:00:00 &#43;0800</pubDate>
+    <title>Unit7-Part2: 规划</title>
+    <link>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/2/</link>
+    <pubDate>Thu, 11 Jan 2024 09:09:25 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/zh-cn/posts/deutsch/substantiv/membership_or_c/</guid>
-    <description><![CDATA[Familie Vater Mutter Sohn Tochter Großvater Großmutter Schwester Bruder]]></description>
+    <guid>halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/2/</guid>
+    <description><![CDATA[名词 die Polizei: [poˈliːt͡saɪ̯] 中/英：警察/police 性：阴性 &ldquo;Polizei&rdquo; 指的是执行法律、维持秩序和公共安全的官方机构。 格 单数 复数 主(N) die Polizei]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Codeforces 1697 D Tutorial - Halfstack</title><meta name="Description" content="Still have another half to learn"><meta property="og:title" content="Codeforces 1697 D Tutorial" />
+<meta property="og:description" content="D. Guess The String Problem summary The Jury chosen a stringS consisting of n characters; each character of S is a lowercase Latin letter.
+You may ask query in two types:
+1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl&#43;1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-09T18:04:59+08:00" />
+<meta property="article:modified_time" content="2022-07-09T18:04:59+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Codeforces 1697 D Tutorial"/>
+<meta name="twitter:description" content="D. Guess The String Problem summary The Jury chosen a stringS consisting of n characters; each character of S is a lowercase Latin letter.
+You may ask query in two types:
+1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl&#43;1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type."/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" /><link rel="prev" href="halfstack.net/en/posts/lc/hard/0004_median_of_two_sorted_arrays/" /><link rel="next" href="halfstack.net/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" /><link rel="stylesheet" href="/halfstack.net/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Codeforces 1697 D Tutorial",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "halfstack.net\/en\/posts\/cf\/codeforces-1697-d-tutorial\/"
+        },"genre": "posts","wordcount":  533 ,
+        "url": "halfstack.net\/en\/posts\/cf\/codeforces-1697-d-tutorial\/","datePublished": "2022-07-09T18:04:59+08:00","dateModified": "2022-07-09T18:04:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="halfstack.net/en/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/halfstack.net/en/posts"> Posts </a><a class="menu-item" href="/halfstack.net/en/tags"> Tags </a><a class="menu-item" href="/halfstack.net/en/categories"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" selected>English</option><option value="halfstack.net/zh-cn/posts/cf/codeforces-1697-d-tutorial/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="halfstack.net/en/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/halfstack.net/en/posts" title="">Posts</a><a class="menu-item" href="/halfstack.net/en/tags" title="">Tags</a><a class="menu-item" href="/halfstack.net/en/categories" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" selected>English</option><option value="halfstack.net/zh-cn/posts/cf/codeforces-1697-d-tutorial/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Codeforces 1697 D Tutorial</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="halfstack.net/en/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-07-09">2022-07-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;533 words
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;<span id="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" class="leancloud_visitors" data-flag-title="Codeforces 1697 D Tutorial">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;
+					<a href="#comments" id="post-meta-vcount" title="View Comments">
+						<i class="fas fa-comment fa-fw"></i>&nbsp;<span id="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" class="waline-comment-count"></span>&nbsp;条评论
+					</a></div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#problem-summary">Problem summary</a></li>
+        <li><a href="#sample-input">Sample Input</a></li>
+        <li><a href="#sample-ouput">Sample Ouput</a></li>
+        <li><a href="#tourial"><strong>Tourial</strong></a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="d-guess-the-stringhttpscodeforcescomcontest1697problemd"><a href="https://codeforces.com/contest/1697/problem/D" target="_blank" rel="noopener noreffer ">D. Guess The String</a></h1>
+<h3 id="problem-summary">Problem summary</h3>
+<p>The Jury chosen a string<code>S</code> consisting of <code>n</code> characters; each character of <code>S</code> is a lowercase Latin letter.</p>
+<p>You may ask query in two types:</p>
+<ol>
+<li><code>1 i</code> - query for the letter<code>Si</code></li>
+<li><code>2 l r</code> - query the size of character set of <code>Sl,Sl+1,......,Sr</code></li>
+</ol>
+<p>You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type.</p>
+<p>Output the final <code>S</code> you found in <code>! S</code></p>
+<h3 id="sample-input">Sample Input</h3>
+<pre tabindex="0"><code>5
+4
+u
+2
+g
+e
+s
+1
+</code></pre><h3 id="sample-ouput">Sample Ouput</h3>
+<pre tabindex="0"><code>? 2 1 5
+? 1 2
+? 2 1 2
+? 1 1
+? 1 3
+? 1 4
+? 2 4 5
+! guess
+</code></pre><h3 id="tourial"><strong>Tourial</strong></h3>
+<p>First, it is easy to recognize  that first type of operate is to find the letters which are first time appear.</p>
+<p>so, the first question is when we construct string, how to know whether the character has ever appeared.</p>
+<p>We define <code>f(x, y)</code> represent the size of the charater-set in range <code>[x, y]</code>.</p>
+<p>We know that 2nd op tell us the size of the charater-set. So abviously we solve the question by perform 2nd op. If we construct the string in order, we query <code>f(1, x)</code> and <code>f(1, x - 1)</code>, if <code>f(1, x)</code> bigger than <code>f(1, x -1)</code>, means <code>s[x]</code> never appeared in <code>s[1] - s[x - 1]</code>. and then we perform 1st op to judge the character of <code>s[x]</code>.</p>
+<p>After that, the new question appeares: how to know the character X, if <code>f(1, x)</code> equals to <code>f(1, x - 1)</code>.</p>
+<p>Assume we know every charater in <code>s[1]</code> to <code>s[x - 1]</code>, and s[x] has appeared in this range. limited by the perform times of 2nd op. we can only perform 6 times max for <code>s[x]</code>. Because We construct the answer string in order, the monotonicity implict in problem is: from left to right, the longer the string, the monotoncically increasing the charater-set&rsquo;s size. Base on it, we could use binary search to guess <code>s[x]</code>.</p>
+<p>We record every character&rsquo;s last position. We already know<code> f(lastPos[mid], x - 1)</code>, so if <code>f(mid, x)</code> equals to <code>f(mid, x - 1)</code>, means <code>s[x]</code> last appeared in range<code>lastPos[s[mid]]</code>to<code> (x - 1)</code>. Through the binary search, we could find <code>s[x]</code> last appeared position, and easily to konw <code>s[x]</code>.</p>
+<h3 id="code">Code</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//CPP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">solveD</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">s</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;? 1 1</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34; %c&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">PIC</span> <span class="n">lastPos</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">tot</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">lastPos</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIC</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;? 2 1 %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">sz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34; %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">sz</span> <span class="o">!=</span> <span class="n">tot</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;? 1 %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34; %c&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">lastPos</span><span class="p">[</span><span class="o">++</span><span class="n">tot</span><span class="p">]</span> <span class="o">=</span> <span class="n">PIC</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sort</span><span class="p">(</span><span class="n">lastPos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lastPos</span> <span class="o">+</span> <span class="n">tot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">tot</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span><span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;? 2 %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">lastPos</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34; %d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span><span class="n">sz</span> <span class="o">==</span> <span class="n">tot</span> <span class="o">-</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">mid</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span> <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lastPos</span><span class="p">[</span><span class="n">ans</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">lastPos</span><span class="p">[</span><span class="n">ans</span><span class="p">].</span><span class="n">first</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;! %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-07-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" data-title="Codeforces 1697 D Tutorial" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" data-title="Codeforces 1697 D Tutorial"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" data-title="Codeforces 1697 D Tutorial"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="halfstack.net/en/posts/cf/codeforces-1697-d-tutorial/" data-title="Codeforces 1697 D Tutorial"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="halfstack.net/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="halfstack.net/en/posts/lc/hard/0004_median_of_two_sorted_arrays/" class="prev" rel="prev" title="4. Median of Two Sorted Arrays"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>4. Median of Two Sorted Arrays</a>
+            <a href="halfstack.net/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/" class="next" rel="next" title="2022.10 Daily LeetCode Coding Problems Tutorial">2022.10 Daily LeetCode Coding Problems Tutorial<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="waline"></div>
+			<script src='https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+
+			<script>
+		    	new Waline({
+		    	  el: '#waline',
+				  meta: ["nick","mail","link"],
+		    	  requiredMeta: ["nick","mail"],
+		    	  login: "force",
+				  placeholder: "为防恶意灌水攻击，评论前需注册并登录，望见谅~",
+		    	  serverURL: "https://vercel-waline-kpliukny0-oasis7311.vercel.app",
+		    	  avatarCDN: "https://sdn.geekzu.org/avatar/",
+		    	  pageSize:  20 ,
+		    	  avatar: "retro",
+		    	  lang: "en",
+				  visitor:  true ,
+				  highlight:  true ,
+				  uploadImage:  false 				  
+		    	});
+		    </script></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="halfstack.net/en/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"halfstack.net/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/halfstack.net/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-4HXY0PTNJ3');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-4HXY0PTNJ3" async></script></body>
+</html>

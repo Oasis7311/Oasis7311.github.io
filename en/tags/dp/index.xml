@@ -1,0 +1,38 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>dp - Tag - Halfstack</title>
+        <link>halfstack.net/en/tags/dp/</link>
+        <description>dp - Tag - Halfstack</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/dp/" rel="self" type="application/rss+xml" /><item>
+    <title>1359. Count All Valid Pickup and Delivery Options</title>
+    <link>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
+    <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
+    <description><![CDATA[https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
+class Solution { public: int countOrders(int n) { vector&lt;int&gt; dp(n + 1); dp[1] = 1; for(int i = 2; i &lt;= n; ++i){ int tn = (2 * i - 1); int sn = (tn * (tn + 1)) / 2; dp[i] = (long long)dp[i - 1] * sn % 1000000007; } return dp[n]; } }; Looked Hint]]></description>
+</item>
+<item>
+    <title>2707. Extra Characters in a String</title>
+    <link>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
+    <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</guid>
+    <description><![CDATA[https://leetcode.com/problems/extra-characters-in-a-string/
+https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038162877/
+class Solution { public: vector&lt;int&gt; ans; unordered_map&lt;string, bool&gt; mp; int minExtraChar(string s, vector&lt;string&gt;&amp; dictionary) { ans.resize(s.size()+1, 0x3f3f3f3f); for(string a : dictionary) mp[a] = true; ans[s.size() - 1] = !mp[string(1, s.back())]; ans[s.size()] = 0; for(int i = s.size() - 2; i &gt;= 0; --i){ for(int j = 1; j &lt;= s.size() - i; ++j) { string tmp = s.substr(i, j); ans[i] = min(ans[i], (mp[tmp]?0:j) + ans[i+j]); } } return ans[0]; } }; ]]></description>
+</item>
+<item>
+    <title>1326. Minimum Number of Taps to Open to Water a Garden</title>
+    <link>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</link>
+    <pubDate>Thu, 31 Aug 2023 08:49:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</guid>
+    <description><![CDATA[https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
+https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/submissions/1036407008/
+class Solution { public: int minTaps(int n, vector&lt;int&gt;&amp; ranges) { vector&lt;int&gt; dp(n + 1, 0x3f3f3f3f); dp[0] = 0; for(int i = 0; i &lt; ranges.size(); ++i) { int l = max(0, i - ranges[i]); int r = min(n, i + ranges[i]); for(int j = l; j &lt;= r; ++j) { dp[j] = min(dp[j], dp[l] + 1); } } int ans = 0; for(int i = 0; i &lt;= n; ++i) { if(dp[i] == 0x3f3f3f3f) { return -1; } ans = max(ans, dp[i]); } return ans; } }; ]]></description>
+</item>
+</channel>
+</rss>

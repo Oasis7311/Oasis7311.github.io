@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Unit5-Part2: 方向和位置 - Halfstack</title><meta name="Description" content="第五单元第二部分-方向和位置"><meta property="og:title" content="Unit5-Part2: 方向和位置" />
+<meta property="og:description" content="第五单元第二部分-方向和位置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-27T22:24:57+08:00" />
+<meta property="article:modified_time" content="2023-10-01T15:10:00+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unit5-Part2: 方向和位置"/>
+<meta name="twitter:description" content="第五单元第二部分-方向和位置"/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" /><link rel="prev" href="halfstack.net/zh-cn/posts/deutsch/ut05-travel/1-destination/" /><link rel="next" href="halfstack.net/zh-cn/posts/deutsch/ut05-travel/3-time-reach-and-set-out/" /><link rel="stylesheet" href="/halfstack.net/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Unit5-Part2: 方向和位置",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "halfstack.net\/zh-cn\/posts\/deutsch\/ut05-travel\/2-direction-and-position\/"
+        },"genre": "posts","wordcount":  7051 ,
+        "url": "halfstack.net\/zh-cn\/posts\/deutsch\/ut05-travel\/2-direction-and-position\/","datePublished": "2023-09-27T22:24:57+08:00","dateModified": "2023-10-01T15:10:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": "第五单元第二部分-方向和位置"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="halfstack.net/zh-cn/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/halfstack.net/zh-cn/posts"> 文章 </a><a class="menu-item" href="/halfstack.net/zh-cn/tags"> 标签 </a><a class="menu-item" href="/halfstack.net/zh-cn/categories"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="halfstack.net/zh-cn/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/halfstack.net/zh-cn/posts" title="">文章</a><a class="menu-item" href="/halfstack.net/zh-cn/tags" title="">标签</a><a class="menu-item" href="/halfstack.net/zh-cn/categories" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Unit5-Part2: 方向和位置</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="halfstack.net/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-category">收录于 <a href="halfstack.net/zh-cn/categories/german/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>german</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7051 字
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" class="leancloud_visitors" data-flag-title="Unit5-Part2: 方向和位置">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;
+					<a href="#comments" id="post-meta-vcount" title="查看评论">
+						<i class="fas fa-comment fa-fw"></i>&nbsp;<span id="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" class="waline-comment-count"></span>&nbsp;条评论
+					</a></div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#名词">名词</a>
+      <ul>
+        <li><a href="#die-schlange-ˈʃlaŋə">die Schlange: [ˈʃlaŋə]</a></li>
+        <li><a href="#die-person-ˈpɛʁzoːn">die Person: [ˈpɛʁzoːn]</a></li>
+        <li><a href="#die-ziffer-ˈtsɪfɐ">die Ziffer: [ˈtsɪfɐ]</a></li>
+        <li><a href="#die-toilette-toɪˈlɛtə">die Toilette: [toɪˈlɛtə]</a></li>
+        <li><a href="#die-u-bahn-ˈuːbaːn">die U-Bahn: [ˈuːbaːn]</a></li>
+        <li><a href="#der-bus-bʊs">der Bus: [bʊs]</a></li>
+        <li><a href="#das-taxi-ˈtaksi">das Taxi: [ˈtaksi]</a></li>
+        <li><a href="#das-platz-plats">das Platz: [plats]</a></li>
+        <li><a href="#die-u-bahnhaltestelle-ˈuːbaːnˌhaltəˌʃtɛlə">die U-Bahnhaltestelle: [ˈuː.baːnˌhaltəˌʃtɛlə]</a></li>
+        <li><a href="#die-bushaltestelle-ˈbʊsˌhaltəˌʃtɛlə">die Bushaltestelle: [ˈbʊsˌhaltəˌʃtɛlə]</a></li>
+      </ul>
+    </li>
+    <li><a href="#分离动词">分离动词</a>
+      <ul>
+        <li><a href="#einsteigen">einsteigen</a></li>
+        <li><a href="#aussteigen">aussteigen</a></li>
+        <li><a href="#abbiegen">abbiegen</a></li>
+      </ul>
+    </li>
+    <li><a href="#序数词">序数词</a>
+      <ul>
+        <li><a href="#erste">erste</a></li>
+        <li><a href="#zweite">zweite</a></li>
+        <li><a href="#dritte">dritte</a></li>
+        <li><a href="#vierte">vierte</a></li>
+      </ul>
+    </li>
+    <li><a href="#介词">介词</a>
+      <ul>
+        <li><a href="#von">von</a></li>
+        <li><a href="#nach">nach</a></li>
+        <li><a href="#bis">bis</a></li>
+      </ul>
+    </li>
+    <li><a href="#副词">副词</a>
+      <ul>
+        <li><a href="#geradeaus-ɡəˈʁaːdəʔaʊs">geradeaus： [ɡəˈʁaːdəʔaʊs]</a></li>
+      </ul>
+    </li>
+    <li><a href="#对话">对话</a></li>
+    <li><a href="#qa">Q&amp;A</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="名词">名词</h2>
+<h3 id="die-schlange-ˈʃlaŋə">die Schlange: [ˈʃlaŋə]</h3>
+<p>中/英：蛇/snake; 队列/queue</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Schlange</td>
+<td>die Schlangen</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Schlange</td>
+<td>die Schlangen</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Schlange</td>
+<td>den Schlangen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Schlange</td>
+<td>der Schlangen</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例句 (作为蛇):</strong></p>
+<ul>
+<li>主格（Nominativ）：Die Schlange ist sehr lang. (这条蛇很长。)</li>
+<li>宾格（Akkusativ）：Ich habe Angst vor der Schlange. (我害怕那条蛇。)</li>
+<li>与格（Dativ）：Ich gebe der Schlange etwas zu essen. (我给那条蛇一些吃的。)</li>
+<li>属格（Genitiv）：Die Farbe der Schlange ist beeindruckend. (那条蛇的颜色令人印象深刻。)</li>
+</ul>
+<p><strong>示例句 (作为队列):</strong></p>
+<ul>
+<li>主格（Nominativ）：Die Schlange vor dem Kino ist sehr lang. (电影院前的队伍很长。)</li>
+<li>宾格（Akkusativ）：Ich hasse es, in der Schlange zu stehen. (我讨厌排队。)</li>
+<li>与格（Dativ）：Ich stehe der Schlange seit einer Stunde. (我排队已经一个小时了。) <em>(这个句子不是很自然，通常会说: Ich stehe seit einer Stunde in der Schlange.)</em></li>
+<li>属格（Genitiv）：Die Länge der Schlange ist erstaunlich. (队伍的长度令人惊讶。)</li>
+</ul>
+<h3 id="die-person-ˈpɛʁzoːn">die Person: [ˈpɛʁzoːn]</h3>
+<p>中/英：人/person</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Person</td>
+<td>die Personen</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Person</td>
+<td>die Personen</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Person</td>
+<td>den Personen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Person</td>
+<td>der Personen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die erste Person in der Schlange ist groß. (排在第一位的人很高。)</li>
+<li>宾格（Akkusativ）：Ich sehe die Person jeden Tag. (我每天都看到这个人。)</li>
+<li>与格（Dativ）：Ich gebe der Person ein Geschenk. (我给这个人一个礼物。)</li>
+<li>属格（Genitiv）：Die Adresse der Person ist unbekannt. (这个人的地址是未知的。)</li>
+</ul>
+<h3 id="die-ziffer-ˈtsɪfɐ">die Ziffer: [ˈtsɪfɐ]</h3>
+<p>中/英：数字/digit</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Ziffer</td>
+<td>die Ziffern</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Ziffer</td>
+<td>die Ziffern</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Ziffer</td>
+<td>den Ziffern</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Ziffer</td>
+<td>der Ziffern</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：
+<ul>
+<li>Die Ziffer ist korrekt. (这个数字是正确的。)</li>
+<li>Die zweite Ziffer ist neun. (第二个数字是9)</li>
+</ul>
+</li>
+<li>宾格（Akkusativ）：Ich sehe die Ziffer auf dem Bildschirm. (我在屏幕上看到这个数字。)</li>
+<li>与格（Dativ）：Ich gebe der Ziffer eine Bedeutung. (我赋予这个数字一个意义。)</li>
+<li>属格（Genitiv）：Die Bedeutung der Ziffer ist klar. (这个数字的意义是明确的。)</li>
+</ul>
+<h3 id="die-toilette-toɪˈlɛtə">die Toilette: [toɪˈlɛtə]</h3>
+<p>中/英：厕所/toilet, 洗手间/restroom, 化妆/toilette</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Toilette</td>
+<td>die Toiletten</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Toilette</td>
+<td>die Toiletten</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Toilette</td>
+<td>den Toiletten</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Toilette</td>
+<td>der Toiletten</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die Toilette ist sauber. (厕所很干净。)</li>
+<li>宾格（Akkusativ）：Ich muss zur Toilette gehen. (我需要去厕所。)</li>
+<li>与格（Dativ）：Ich gebe der Toilette eine gründliche Reinigung. (我给厕所做了一个彻底的清洁。)</li>
+<li>属格（Genitiv）：Der Zustand der Toilette ist gut. (厕所的状态很好。)</li>
+</ul>
+<p><strong>请注意</strong>: &ldquo;Toilette&rdquo; 还可以用于指代个人的清洁或化妆活动，例如 &ldquo;sich zur Toilette begeben&rdquo; 意为去洗手间或化妆。在日常德语中，它通常用作厕所或洗手间的同义词。</p>
+<h3 id="die-u-bahn-ˈuːbaːn">die U-Bahn: [ˈuːbaːn]</h3>
+<p>中/英：地铁/subway, 地下铁路/underground railway</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die U-Bahn</td>
+<td>die U-Bahnen</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die U-Bahn</td>
+<td>die U-Bahnen</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der U-Bahn</td>
+<td>den U-Bahnen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der U-Bahn</td>
+<td>der U-Bahnen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die U-Bahn ist schnell. (地铁很快。)</li>
+<li>宾格（Akkusativ）：Ich nehme die U-Bahn zur Arbeit. (我乘地铁上班。)</li>
+<li>与格（Dativ）：Ich steige an der U-Bahn-Station aus. (我在地铁站下车。)</li>
+<li>属格（Genitiv）：Die Station der U-Bahn ist hier. (地铁站就在这里。)</li>
+</ul>
+<h3 id="der-bus-bʊs">der Bus: [bʊs]</h3>
+<p>中/英：公交车/bus</p>
+<p>性：阳性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>der Bus</td>
+<td>die Busse</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>den Bus</td>
+<td>die Busse</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>dem Bus</td>
+<td>den Bussen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>des Busses</td>
+<td>der Busse</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Der Bus ist pünktlich. (公交车准时。)</li>
+<li>宾格（Akkusativ）：Ich nehme den Bus zur Schule. (我乘公交车去学校。)</li>
+<li>与格（Dativ）：Ich steige in dem Bus ein. (我在公交车上登车。) <strong>或</strong> Ich steige dem Bus ein.</li>
+<li>属格（Genitiv）：Der Fahrplan des Busses ist festgelegt. (公交车的时刻表已经确定。)</li>
+</ul>
+<p><strong>请注意</strong>：在日常德语中，&ldquo;dem Bus einsteigen&quot;和&quot;in dem Bus einsteigen&quot;都是正确的，但是前者更为常见。</p>
+<h3 id="das-taxi-ˈtaksi">das Taxi: [ˈtaksi]</h3>
+<p>中/英：出租车/taxi, cab</p>
+<p>性：中性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>das Taxi</td>
+<td>die Taxis</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>das Taxi</td>
+<td>die Taxis</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>dem Taxi</td>
+<td>den Taxis</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>des Taxis</td>
+<td>der Taxis</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Das Taxi ist hier. (出租车在这里。)</li>
+<li>宾格（Akkusativ）：Ich nehme das Taxi zur Arbeit. (我乘出租车上班。)</li>
+<li>与格（Dativ）：Ich gebe dem Taxi-Fahrer ein Trinkgeld. (我给出租车司机小费。)</li>
+<li>属格（Genitiv）：Die Nummer des Taxis ist klar sichtbar. (出租车的号码清晰可见。)</li>
+</ul>
+<p><strong>请注意</strong>：&ldquo;Taxi&quot;在德语中的复数形式可以是&quot;Taxis&quot;或&quot;Taxen&rdquo;，两者都是正确的，但&quot;Taxis&quot;更为常见。</p>
+<h3 id="das-platz-plats">das Platz: [plats]</h3>
+<p>中/英：广场/square, place, space</p>
+<p>性：阳性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>der Platz</td>
+<td>die Plätze</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>den Platz</td>
+<td>die Plätze</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>dem Platz</td>
+<td>den Plätzen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>des Platzes</td>
+<td>der Plätze</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>主格（Nominativ）：Der Platz ist leer. (广场是空的。)</p>
+</li>
+<li>
+<p>宾格（Akkusativ）：Ich finde den Platz sehr schön. (我觉得这个地方非常漂亮。)</p>
+</li>
+<li>
+<p>与格（Dativ）：</p>
+<ul>
+<li>Ich gebe dem Platz eine besondere Bedeutung. (我给这个地方赋予特殊的意义。)</li>
+<li>Möchten Sie diesen Platz?</li>
+</ul>
+</li>
+<li>
+<p>属格（Genitiv）：Die Geschichte des Platzes ist interessant. (这个广场的历史很有趣。)</p>
+</li>
+</ul>
+<p><strong>请注意</strong>：&ldquo;Platz&quot;可以用来指代物理的位置或空间，例如一个广场或房间中的空间，也可以用于抽象的意义，例如在一个列表或排名中的位置。</p>
+<h3 id="die-u-bahnhaltestelle-ˈuːbaːnˌhaltəˌʃtɛlə">die U-Bahnhaltestelle: [ˈuː.baːnˌhaltəˌʃtɛlə]</h3>
+<p>中/英：地铁站/subway station, metro station</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die U-Bahnhaltestelle</td>
+<td>die U-Bahnhaltestellen</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die U-Bahnhaltestelle</td>
+<td>die U-Bahnhaltestellen</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der U-Bahnhaltestelle</td>
+<td>den U-Bahnhaltestellen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der U-Bahnhaltestelle</td>
+<td>der U-Bahnhaltestellen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die U-Bahnhaltestelle ist voll. (地铁站很拥挤。)</li>
+<li>宾格（Akkusativ）：Ich gehe zur U-Bahnhaltestelle. (我走到地铁站。)</li>
+<li>与格（Dativ）：Ich stehe an der U-Bahnhaltestelle. (我站在地铁站里。)</li>
+<li>属格（Genitiv）：Die Bauarbeiten der U-Bahnhaltestelle sind abgeschlossen. (地铁站的建设工作已经完成。)</li>
+</ul>
+<p><strong>请注意</strong>：&ldquo;U-Bahnhaltestelle&rdquo; 是由 &ldquo;U-Bahn&rdquo; (地铁) 和 &ldquo;Haltestelle&rdquo; (停靠站) 组合而成的复合名词。在德语中，复合名词很常见，并且通常根据最后一个词来决定性和变格。</p>
+<h3 id="die-bushaltestelle-ˈbʊsˌhaltəˌʃtɛlə">die Bushaltestelle: [ˈbʊsˌhaltəˌʃtɛlə]</h3>
+<p>中/英：公交站/bus stop</p>
+<p>性：阴性</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Bushaltestelle</td>
+<td>die Bushaltestellen</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Bushaltestelle</td>
+<td>die Bushaltestellen</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Bushaltestelle</td>
+<td>den Bushaltestellen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Bushaltestelle</td>
+<td>der Bushaltestellen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die Bushaltestelle ist in der Nähe. (公交车站就在附近。)</li>
+<li>宾格（Akkusativ）：Ich gehe zur Bushaltestelle. (我走到公交车站。)</li>
+<li>与格（Dativ）：Ich warte an der Bushaltestelle. (我在公交车站等车。)</li>
+<li>属格（Genitiv）：Die Renovierung der Bushaltestelle wird bald beginnen. (公交车站的翻新工程将很快开始。)</li>
+</ul>
+<p><strong>请注意</strong>：&ldquo;Bushaltestelle&rdquo; 是由 &ldquo;Bus&rdquo; (公交车) 和 &ldquo;Haltestelle&rdquo; (停靠站) 组合而成的复合名词。在德语中，复合名词是非常常见的，并且通常根据最后一个词来决定性和变格。</p>
+<h2 id="分离动词">分离动词</h2>
+<h3 id="einsteigen">einsteigen</h3>
+<p>中/英：上车，上船，上飞机，登上/get on (a vehicle), board (a boat, plane)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>steige ein</td>
+<td>steigen ein</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>steigst ein</td>
+<td>steigt ein</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>steigt ein</td>
+<td>steigen ein</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>steige ein</strong> in den Bus.（我上了公交车。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>steigen ein</strong> in die Straßenbahn.（我们上了电车。）</p>
+</li>
+<li>
+<p>二单：Du <strong>steigst ein</strong> in das Taxi.（你上了出租车。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>steigt ein</strong> in das Flugzeug.（你们上了飞机。）</p>
+</li>
+<li>
+<p>三单：Er <strong>steigt ein</strong> in das Boot.（他上了船。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>steigen ein</strong> in den Zug.（他们上了火车。）</p>
+</li>
+</ul>
+<h3 id="aussteigen">aussteigen</h3>
+<p>中/英：下车，下船，下飞机，离开/get off (a vehicle), disembark (a boat, plane), exit</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>steige aus</td>
+<td>steigen aus</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>steigst aus</td>
+<td>steigt aus</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>steigt aus</td>
+<td>steigen aus</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>steige aus</strong> dem Auto aus.（我从车里下来。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>steigen aus</strong> dem Zug aus.（我们从火车上下来。）</p>
+</li>
+<li>
+<p>二单：Du <strong>steigst aus</strong> dem Flugzeug aus.（你从飞机上下来。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>steigt aus</strong> dem Bus aus.（你们从公交车上下来。）</p>
+</li>
+<li>
+<p>三单：Er <strong>steigt aus</strong> dem Boot aus.（他从船上下来。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>steigen aus</strong> dem Taxi aus.（他们从出租车上下来。）</p>
+</li>
+</ul>
+<h3 id="abbiegen">abbiegen</h3>
+<p>中/英：转弯/turn</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单</th>
+<th>复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>biege ab</td>
+<td>biegen ab</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>biegst ab</td>
+<td>biegt ab</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>biegt ab</td>
+<td>biegen ab</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>biege ab</strong> an der nächsten Kreuzung.（我在下一个十字路口拐弯。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>biegen ab</strong> und folgen dem Schild.（我们拐弯并跟着标志走。）</p>
+</li>
+<li>
+<p>二单：Du <strong>biegst ab</strong> nach links.（你向左拐弯。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>biegt ab</strong> und fahrt die Straße entlang.（你们拐弯然后沿着这条街走。）</p>
+</li>
+<li>
+<p>三单：<strong>Das Taxi biegt links ab.</strong>（出租车向左转。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>biegen ab</strong> und kommen zu unserem Haus.（他们拐弯然后来到我们家。）</p>
+</li>
+</ul>
+<h2 id="序数词">序数词</h2>
+<h3 id="erste">erste</h3>
+<h3 id="zweite">zweite</h3>
+<h3 id="dritte">dritte</h3>
+<h3 id="vierte">vierte</h3>
+<h2 id="介词">介词</h2>
+<h3 id="von">von</h3>
+<p>通常可以翻译为英语的 &ldquo;of&rdquo; 或 &ldquo;from&rdquo;</p>
+<ol>
+<li><strong>表示来源或起点</strong>：
+<ul>
+<li>Ich komme <strong>von</strong> der Schule. （我从学校来。）</li>
+<li>Die Blumen sind <strong>von</strong> ihm. （这些花是他的/来自他。）</li>
+<li><strong>Das erste Kind von links trägt einen roten Rock.</strong>（从左边数第一个孩子穿着一条红裙子。）</li>
+</ul>
+</li>
+<li><strong>表示所有权</strong>：
+<ul>
+<li>Das Buch <strong>von</strong> Goethe ist sehr bekannt. （歌德的书非常出名。）</li>
+</ul>
+</li>
+<li><strong>表示物质或成分</strong>：
+<ul>
+<li>Der Ring ist <strong>von</strong> Gold. （这个戒指是金制的。）</li>
+</ul>
+</li>
+<li><strong>表示时间点</strong>：
+<ul>
+<li><strong>Von</strong> Montag bis Freitag muss ich arbeiten. （从星期一到星期五我必须工作。）</li>
+</ul>
+</li>
+</ol>
+<h3 id="nach">nach</h3>
+<ol>
+<li><strong>表示方向或目的地</strong>：
+<ul>
+<li>Ich fahre nach Berlin.（我去柏林。）</li>
+<li>Wir gehen nach Hause.（我们回家。）</li>
+<li><strong>Er fährt nach Hause.</strong>（他开车回家。）</li>
+</ul>
+</li>
+<li><strong>表示时间</strong>：
+<ul>
+<li>nach der Schule（放学后）</li>
+<li>nach dem Essen（饭后）</li>
+</ul>
+</li>
+<li><strong>表示标准或顺序</strong>：
+<ul>
+<li>nach Größe sortieren（按大小排序）</li>
+<li>nach Bedeutung（按重要性）</li>
+</ul>
+</li>
+<li><strong>表示模仿或根据</strong>：
+<ul>
+<li>nach dem Vorbild von（按&hellip;的榜样）</li>
+<li>ein Bild nach der Natur malen（根据实物画画）</li>
+</ul>
+</li>
+<li><strong>表示原因</strong>：
+<ul>
+<li>nach dem Gesetz（根据法律）</li>
+<li>nach meiner Meinung（按我的意见）</li>
+</ul>
+</li>
+</ol>
+<p>在使用 &ldquo;nach&rdquo; 时，通常会跟随一个名词，并且该名词通常处于第三格 (Dativ)。例如，在 &ldquo;Ich fahre nach Berlin.&rdquo; 这个例子中，“Berlin” 是第三格。</p>
+<h3 id="bis">bis</h3>
+<p>主要用于表示时间、空间或程度上的结束点</p>
+<ol>
+<li><strong>词义</strong>：
+<ul>
+<li>表示到达某个点（时间或空间）：直到，直至</li>
+<li>在某种程度上：直到</li>
+</ul>
+</li>
+<li><strong>用法</strong>：
+<ul>
+<li>时间：表示一个时间段的结束点。
+<ul>
+<li>例如：Wir arbeiten bis 18 Uhr. （我们工作到18点）</li>
+</ul>
+</li>
+<li>空间：表示空间的结束点或范围。
+<ul>
+<li>例如：Gehen Sie bis zur Kreuzung. （走到十字路口）</li>
+</ul>
+</li>
+<li>程度：表示某种程度或极限。
+<ul>
+<li>例如：Ich bin bis zu einem gewissen Grad einverstanden. （我在某种程度上同意）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>搭配</strong>：
+<ul>
+<li>&ldquo;bis&rdquo; 可以和其他词搭配，例如：bis zu (直到), bis dahin (直到那时)</li>
+</ul>
+</li>
+<li><strong>例句</strong>：
+<ul>
+<li>Fahren Sie bis zur nächsten Haltestelle. （开车到下一个站点）</li>
+<li>Ich warte hier, bis du zurückkommst. （我会在这等你，直到你回来）</li>
+</ul>
+</li>
+</ol>
+<h2 id="副词">副词</h2>
+<h3 id="geradeaus-ɡəˈʁaːdəʔaʊs">geradeaus： [ɡəˈʁaːdəʔaʊs]</h3>
+<p>副词 <strong>geradeaus</strong> 是德语中一个方向副词，它的意思是“直行”或“直向前”。它通常用于描述移动或前进的方向。下面是一些关于 &ldquo;geradeaus&rdquo; 的信息和例子：</p>
+<ul>
+<li><strong>词义</strong>: 直行，直向前</li>
+<li><strong>用法</strong>: 用来描述方向或运动。</li>
+<li><strong>合成词</strong>: &ldquo;geradeaus&rdquo; 是一个合成词，由 &ldquo;gerade&rdquo; (直的) 和 &ldquo;aus&rdquo; (外，出) 组成，字面上的意思是“直出”。</li>
+</ul>
+<p><strong>例句</strong>:</p>
+<ol>
+<li><strong>Fahren Sie geradeaus bis zur nächsten Kreuzung.</strong>
+<ul>
+<li>翻译: 直行至下一个十字路口。</li>
+</ul>
+</li>
+<li><strong>Gehen Sie geradeaus, und Sie werden das Museum finden.</strong>
+<ul>
+<li>翻译: 直走，你会找到博物馆。</li>
+</ul>
+</li>
+</ol>
+<h2 id="对话">对话</h2>
+<ul>
+<li>Entschuldigen Sie bitte, wie komme ich zu einer Bank?</li>
+<li>Gehen Sie geradeaus bis zum Park.</li>
+<li>und Biegen Sie links ab.</li>
+<li>und Die Bank ist rechts.</li>
+</ul>
+<h2 id="qa">Q&amp;A</h2>
+<ul>
+<li>
+<p>Die Frauen stehen Schlange.的语法结构？</p>
+</li>
+<li>
+<p>在这个句子 &ldquo;Die Frauen stehen Schlange.&rdquo; 中, 我们可以分析出以下几个语法组成部分：</p>
+<ol>
+<li><strong>主语 (Subject):</strong> &ldquo;Die Frauen&rdquo;（女人们） - 这是句子的主体，表示谁在进行动作。</li>
+<li><strong>谓语 (Predicate):</strong> &ldquo;stehen&rdquo;（站立） - 这是句子的动作，表示主体正在做什么。</li>
+<li><strong>宾语 (Object) / 补语 (Complement):</strong> &ldquo;Schlange&rdquo;（队伍） - 这里表达的是主语的状态或位置。在德语中，&ldquo;Schlange stehen&rdquo; 是一个固定短语，意思是排队。</li>
+</ol>
+<p>整个句子的结构很简单和直接，遵循了标准的主谓宾语序。在德语中，通常的句子结构是主-谓-宾，但也可能有一些变体，尤其是在更复杂的句子中。在这个特定的句子中，我们看到的是一个简单明了的语法结构，表达的是女人们正在排队。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Sie <strong>steigt</strong> <em>aus dem Bus</em> <strong>aus</strong>. 给我解释一下这句话的语法结构</p>
+</li>
+<li>
+<p>当然可以，让我们来分析这句话 &ldquo;Sie steigt aus dem Bus aus.&rdquo; 的语法结构：</p>
+<ol>
+<li>
+<p><strong>Sie</strong> - 这是主语，代表第三人称单数女性，意思是“她”。</p>
+</li>
+<li>
+<p><strong>steigt</strong> - 这是动词的主要部分，来源于动词 &ldquo;steigen&rdquo;。在此上下文中，与 &ldquo;aus&rdquo; 组成的 &ldquo;aussteigen&rdquo; 的意思是“下车”或“下来”。</p>
+</li>
+<li>
+<p><strong>aus dem Bus</strong> - 这是一个介词词组。</p>
+<ul>
+<li><strong>aus</strong> - 这是一个介词，表示“从&hellip;里面”。这里它与动词 &ldquo;steigen&rdquo; 组合形成一个分离动词 &ldquo;aussteigen&rdquo;，但在这个句子的结构中，&ldquo;aus&rdquo; 被拆分出来放在句子的开始和结束位置。</li>
+<li><strong>dem Bus</strong> - 这是一个名词词组，&ldquo;Bus&rdquo; 是名词，意思是“公共汽车”。而 &ldquo;dem&rdquo; 是一个定冠词，在这里表示与 &ldquo;Bus&rdquo; (一个男性名词) 的第三格匹配。</li>
+</ul>
+</li>
+<li>
+<p><strong>aus</strong> - 这是分离动词 &ldquo;aussteigen&rdquo; 的前缀部分。在德语的一些动词结构中，前缀和动词主体在句子中被拆分。特别是在主要句子结构中，这种分离的前缀通常被放在句子的最后。</p>
+</li>
+</ol>
+<p>所以，整句的直译是：“她从公交车上下来。” 或更自然的翻译是：“她从公交车上下车。”</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Sie steigt in den Bus ein.这句话的语法结构</p>
+</li>
+<li>
+<p>在句子 &ldquo;Sie steigt in den Bus ein.&rdquo; 中，语法结构有以下几个部分：</p>
+<ol>
+<li>
+<p><strong>Sie</strong> - 这是主语，代表第三人称单数女性，意思是“她”。</p>
+</li>
+<li>
+<p><strong>steigt</strong> - 这是动词的主要部分，来自于动词 &ldquo;steigen&rdquo;。在这里，与 &ldquo;ein&rdquo; 组成的 &ldquo;einsteigen&rdquo; 的意思是“上车”。</p>
+</li>
+<li>
+<p><strong>in den Bus</strong> - 这是一个介词词组。</p>
+<ul>
+<li><strong>in</strong> - 这是一个介词，表示“进入”或“到&hellip;里面”。</li>
+<li><strong>den Bus</strong> - 这是一个名词词组，&ldquo;Bus&rdquo; 是名词，意思是“公共汽车”。而 &ldquo;den&rdquo; 是一个定冠词，在这里表示与 &ldquo;Bus&rdquo; (一个男性名词) 的第四格匹配。</li>
+</ul>
+</li>
+<li>
+<p><strong>ein</strong> - 这是分离动词 &ldquo;einsteigen&rdquo; 的前缀部分。在德语的一些动词结构中，前缀和动词主体在句子中被拆分。特别是在主要句子结构中，这种分离的前缀通常被放在句子的最后。</p>
+</li>
+</ol>
+<p>整句的意思是：“她上公共汽车。” 或者 “她登上公共汽车。”</p>
+<p>这个句子的结构和 &ldquo;Sie steigt aus dem Bus aus.&rdquo; 很相似，但前缀和介词词组的变化使得意义完全不同。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Das Taxi biegt links ab. Das Taxi fährt geradeaus. 解析这两句的语法</p>
+</li>
+<li></li>
+</ul>
+<ol>
+<li>
+<p><strong>Das Taxi biegt links ab.</strong></p>
+<ul>
+<li><strong>Das Taxi</strong> - 这是主语，其中 &ldquo;Das&rdquo; 是定冠词，&ldquo;Taxi&rdquo; 是名词，意思是“出租车”。</li>
+<li><strong>biegt</strong> - 这是动词的主要部分，来自于动词 &ldquo;abbiegen&rdquo;，在此语境中的意思是“转弯”。</li>
+<li><strong>links</strong> - 这是副词，表示方向，意思是“向左”。</li>
+<li><strong>ab</strong> - 这是分离动词 &ldquo;abbiegen&rdquo; 的前缀部分，通常在句子的最后。</li>
+</ul>
+<p>总的来说，这句话的意思是：“出租车向左转。”</p>
+</li>
+<li>
+<p><strong>Das Taxi fährt geradeaus.</strong></p>
+<ul>
+<li><strong>Das Taxi</strong> - 同样，这是主语，意思是“出租车”。</li>
+<li><strong>fährt</strong> - 这是动词，来自于动词 &ldquo;fahren&rdquo;，意思是“驾驶”或“行驶”。</li>
+<li><strong>geradeaus</strong> - 这是副词，表示方向，意思是“直行”。</li>
+</ul>
+<p>总的来说，这句话的意思是：“出租车直行。”</p>
+</li>
+</ol>
+<p>这两句话都是关于出租车行驶方向的简单叙述。在第一句中使用了分离动词 &ldquo;abbiegen&rdquo;，而在第二句中使用了简单动词 &ldquo;fahren&rdquo;，并通过副词 &ldquo;geradeaus&rdquo; 来指定方向。</p>
+<hr>
+<ul>
+<li>
+<p>Biegen Sie links ab. 为什么动词Biegen在最前呢</p>
+</li>
+<li>
+<p>在德语中，基本的句子结构通常遵循“主-谓-宾”（SVO）的顺序，但是当涉及到命令或指示时，这种顺序可能会发生变化。</p>
+<p>在命令句中，动词通常放在句子的开头，然后是主语（如果有的话）和其他信息。这是德语特有的语法规则。在你提供的句子 &ldquo;Biegen Sie links ab.&rdquo; 中，我们看到的是一个典型的命令句结构：</p>
+<ol>
+<li><strong>Biegen</strong> - 这是动词的基本形式，用于发出命令。</li>
+<li><strong>Sie</strong> - 这是主语，指的是被命令的人或人群。</li>
+<li><strong>links ab</strong> - 这是方向和动词的分离前缀，指的是向左转。</li>
+</ol>
+<p>这种结构使句子的命令意图清晰明了。在德语中，将动词置于命令句的开头是很常见的，特别是在给出方向或指示时。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>介绍一下这句的语法：Fahren Sie mit dem Bus bis zur vierten Haltestelle.</p>
+</li>
+<li>
+<p>在这句 &ldquo;Fahren Sie mit dem Bus bis zur vierten Haltestelle.&rdquo; 中，我们可以看到以下几个语法元素：</p>
+<ol>
+<li>
+<p><strong>Fahren Sie</strong>：</p>
+<ul>
+<li>这是动词 &ldquo;fahren&rdquo; 的命令形式，用于第二人称复数。它意味着 &ldquo;驾驶&rdquo; 或 &ldquo;乘坐&rdquo;。在德语的命令句中，动词通常位于句首，接着是主语（如果有的话）。</li>
+</ul>
+</li>
+<li>
+<p><strong>mit dem Bus</strong>：</p>
+<ul>
+<li><strong>mit</strong> 是一个介词，表示 &ldquo;与&hellip;一起&rdquo; 或 &ldquo;通过&rdquo;。</li>
+<li><strong>dem Bus</strong> 是一个附带定冠词的名词词组，其中 &ldquo;dem&rdquo; 是定冠词，表示第三格单数男性，而 &ldquo;Bus&rdquo; 是名词，意味着 &ldquo;公共汽车&rdquo;。</li>
+</ul>
+</li>
+<li>
+<p><strong>bis zur vierten Haltestelle</strong>：</p>
+<ul>
+<li><strong>bis</strong> 是一个介词，表示 &ldquo;直到&rdquo;。</li>
+<li><strong>zur</strong> 是介词 &ldquo;zu&rdquo; 和定冠词 &ldquo;der&rdquo; 的缩写形式，用于第三格单数女性名词前。</li>
+<li><strong>vierten Haltestelle</strong> 是一个名词词组，其中 &ldquo;vierten&rdquo; 是序数词 &ldquo;vier&rdquo; 的变形，表示 &ldquo;第四&rdquo;，而 &ldquo;Haltestelle&rdquo; 是名词，意味着 &ldquo;站点&rdquo; 或 &ldquo;车站&rdquo;。</li>
+</ul>
+</li>
+</ol>
+<p>整句的意思是：&ldquo;乘坐公共汽车到第四个站点&rdquo;。这句话是在指示听话的人应该乘坐公共汽车，并在第四个站点下车。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Er hält Blumen in seiner linken Hand. 和 Das Spielzeug steht neben seinem rechten Fuß. 中seiner 和 seinem的区别是什么？</p>
+</li>
+<li>
+<p>&ldquo;seiner&rdquo; 和 &ldquo;seinem&rdquo; 都是指示代词的变形，它们的基本形式是 &ldquo;sein&rdquo;，意思是“他的”或“它的”。这两个词的不同形式是由于德语名词的格(case)和性(gender)导致的变化。</p>
+<ol>
+<li>
+<p><strong>seiner</strong>：</p>
+<ul>
+<li>用于女性和复数名词，通常在第三格(dative)或第四格(accusative)中使用，具体取决于上下文和跟随的名词。</li>
+<li>例如：Er denkt an seiner Mutter.（他想念他的母亲。）</li>
+</ul>
+</li>
+<li>
+<p><strong>seinem</strong>：</p>
+<ul>
+<li>用于男性和中性名词，并且通常在第三格(dative)中使用。</li>
+<li>例如：Er hilft seinem Vater.（他帮助他的父亲。）</li>
+</ul>
+</li>
+</ol>
+<p>在你给的例子中：</p>
+<ul>
+<li>
+<p><strong>Er hält Blumen in seiner linken Hand.</strong></p>
+<ul>
+<li>“Hand”（手）是女性名词，而“in”是需要第三格(dative)的介词，所以我们使用&quot;seiner&rdquo;。</li>
+</ul>
+</li>
+<li>
+<p><strong>Das Spielzeug steht neben seinem rechten Fuß.</strong></p>
+<ul>
+<li>“Fuß”（脚）是男性名词，而“neben”是需要第三格(dative)的介词，所以我们使用&quot;seinem&rdquo;。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-10-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" data-title="Unit5-Part2: 方向和位置" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" data-title="Unit5-Part2: 方向和位置"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" data-title="Unit5-Part2: 方向和位置"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="halfstack.net/zh-cn/posts/deutsch/ut05-travel/2-direction-and-position/" data-title="Unit5-Part2: 方向和位置"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="halfstack.net/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="halfstack.net/zh-cn/posts/deutsch/ut05-travel/1-destination/" class="prev" rel="prev" title="Unit5-Part1: 目的地"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Unit5-Part1: 目的地</a>
+            <a href="halfstack.net/zh-cn/posts/deutsch/ut05-travel/3-time-reach-and-set-out/" class="next" rel="next" title="Unit5-Part3: 时间、到达和出发">Unit5-Part3: 时间、到达和出发<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="waline"></div>
+			<script src='https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+
+			<script>
+		    	new Waline({
+		    	  el: '#waline',
+				  meta: ["nick","mail","link"],
+		    	  requiredMeta: ["nick","mail"],
+		    	  login: "force",
+				  placeholder: "为防恶意灌水攻击，评论前需注册并登录，望见谅~",
+		    	  serverURL: "https://vercel-waline-kpliukny0-oasis7311.vercel.app",
+		    	  avatarCDN: "https://sdn.geekzu.org/avatar/",
+		    	  pageSize:  20 ,
+		    	  avatar: "retro",
+		    	  lang: "en",
+				  visitor:  true ,
+				  highlight:  true ,
+				  uploadImage:  false 				  
+		    	});
+		    </script></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="halfstack.net/zh-cn/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/halfstack.net/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/halfstack.net/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"halfstack.net/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/halfstack.net/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/halfstack.net/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-4HXY0PTNJ3');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-4HXY0PTNJ3" async></script></body>
+</html>

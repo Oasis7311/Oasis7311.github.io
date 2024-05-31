@@ -1,71 +1,107 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Halfstack</title>
-        <link>https://oasis7311.github.io/en/posts/</link>
+        <link>halfstack.net/en/posts/</link>
         <description>All Posts | Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Fri, 05 May 2023 22:37:02 &#43;0800</lastBuildDate><atom:link href="https://oasis7311.github.io/en/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>LeetCode 307 Range Sum Query Mutable</title>
-    <link>https://oasis7311.github.io/en/posts/leetcode-307-range-sum-query-mutable/</link>
-    <pubDate>Fri, 05 May 2023 22:37:02 &#43;0800</pubDate>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>2023.9.14～2023.9.17 Tokyo, Japan</title>
+    <link>halfstack.net/en/posts/travel/tokyo/</link>
+    <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/leetcode-307-range-sum-query-mutable/</guid>
-    <description><![CDATA[Origin Link https://leetcode.com/problems/range-sum-query-mutable/
-Tutorial easy data structure, using segment tree or binary indexed tree。
-Ac Code class NumArray { public: NumArray(vector&lt;int&gt;&amp; nums) { for(int i = 0; i &lt; nums.size(); ++i) n[i + 1] = nums[i]; l = nums.size(); build(1, l, 1); } void update(int index, int val) { updateNode(1, l, 1, index + 1, val); } int sumRange(int left, int right) { return sum(1, l, 1, left + 1, right + 1); } private: int n[30005]; int l; int node[30005 * 3]; void build(int l, int r, int k) { if(l == r){ node[k] = n[l]; return; } int mid = (l + r) &gt;&gt; 1; build(l, mid, k &lt;&lt; 1); build(mid + 1, r, k &lt;&lt; 1 | 1); node[k] = node[k &lt;&lt; 1] + node[k &lt;&lt; 1 | 1]; } void updateNode(int l, int r, int k, int x, int val){ if(l == r){ node[k] = val; return; } int mid = (l + r) &gt;&gt; 1; if(mid &lt; x) updateNode(mid + 1, r, k &lt;&lt; 1 | 1, x, val); else updateNode(l, mid, k &lt;&lt; 1, x, val); node[k] = node[k &lt;&lt; 1] + node[k &lt;&lt; 1 | 1]; } int sum(int l, int r, int k, int L, int R){ if(L &lt;= l &amp;&amp; R &gt;= r) return node[k]; int ans = 0; int mid = (l + r) &gt;&gt; 1; if(L &lt;= mid) ans += sum(l, mid, k &lt;&lt; 1, L, R); if(R &gt; mid) ans += sum(mid + 1, r, k &lt;&lt; 1 | 1, L, R); return ans; } }; /** * Your NumArray object will be instantiated and called as such: * NumArray* obj = new NumArray(nums); * obj-&gt;update(index,val); * int param_2 = obj-&gt;sumRange(left,right); */ ]]></description>
+    <guid>halfstack.net/en/posts/travel/tokyo/</guid>
+    <description><![CDATA[Tokyo! Even though the trip was very rushed, it seemed to be enough for me. Even if I had extra time, I'd probably just roam around, see a few more landmarks and buildings, and enjoy more of the renowned local delicacies. Perhaps for every traveler, every city has its own advantages to admire.]]></description>
+</item>
+<item>
+    <title>1359. Count All Valid Pickup and Delivery Options</title>
+    <link>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
+    <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
+    <description><![CDATA[https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
+class Solution { public: int countOrders(int n) { vector&lt;int&gt; dp(n + 1); dp[1] = 1; for(int i = 2; i &lt;= n; ++i){ int tn = (2 * i - 1); int sn = (tn * (tn + 1)) / 2; dp[i] = (long long)dp[i - 1] * sn % 1000000007; } return dp[n]; } }; Looked Hint]]></description>
+</item>
+<item>
+    <title>2707. Extra Characters in a String</title>
+    <link>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
+    <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</guid>
+    <description><![CDATA[https://leetcode.com/problems/extra-characters-in-a-string/
+https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038162877/
+class Solution { public: vector&lt;int&gt; ans; unordered_map&lt;string, bool&gt; mp; int minExtraChar(string s, vector&lt;string&gt;&amp; dictionary) { ans.resize(s.size()+1, 0x3f3f3f3f); for(string a : dictionary) mp[a] = true; ans[s.size() - 1] = !mp[string(1, s.back())]; ans[s.size()] = 0; for(int i = s.size() - 2; i &gt;= 0; --i){ for(int j = 1; j &lt;= s.size() - i; ++j) { string tmp = s.substr(i, j); ans[i] = min(ans[i], (mp[tmp]?0:j) + ans[i+j]); } } return ans[0]; } }; ]]></description>
+</item>
+<item>
+    <title>1326. Minimum Number of Taps to Open to Water a Garden</title>
+    <link>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</link>
+    <pubDate>Thu, 31 Aug 2023 08:49:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</guid>
+    <description><![CDATA[https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
+https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/submissions/1036407008/
+class Solution { public: int minTaps(int n, vector&lt;int&gt;&amp; ranges) { vector&lt;int&gt; dp(n + 1, 0x3f3f3f3f); dp[0] = 0; for(int i = 0; i &lt; ranges.size(); ++i) { int l = max(0, i - ranges[i]); int r = min(n, i + ranges[i]); for(int j = l; j &lt;= r; ++j) { dp[j] = min(dp[j], dp[l] + 1); } } int ans = 0; for(int i = 0; i &lt;= n; ++i) { if(dp[i] == 0x3f3f3f3f) { return -1; } ans = max(ans, dp[i]); } return ans; } }; ]]></description>
+</item>
+<item>
+    <title>2366. Minimum Replacements to Sort the Array</title>
+    <link>halfstack.net/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</link>
+    <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</guid>
+    <description><![CDATA[https://leetcode.com/problems/minimum-replacements-to-sort-the-array/description/
+https://leetcode.com/problems/minimum-replacements-to-sort-the-array/submissions/1035547342/
+class Solution { public: long long minimumReplacement(vector&lt;int&gt;&amp; nums) { long long ans = 0; int Max = nums.back(); for(int i = nums.size() - 2; i &gt;= 0; --i) { //cout &lt;&lt; i &lt;&lt; &#34; max = &#34; &lt;&lt; Max &lt;&lt; &#34; num = &#34; &lt;&lt; nums[i] &lt;&lt; endl; if(nums[i] &lt;= Max) { Max = nums[i]; continue; } int divisor = nums[i]; int dividend = Max; int mod = divisor % dividend; int quotient = divisor / dividend; if(mod == 0) { ans += quotient - 1; continue; } ans += quotient; // binary search to find max Max int l = mod, r = Max; while(l &lt;= r) { int mid = (l + r) &gt;&gt; 1; int gap = mid - mod; int times = gap / quotient; if(gap % quotient !]]></description>
+</item>
+<item>
+    <title>c&#43;&#43; lib or usage, which I hardly used but seen</title>
+    <link>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
+    <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</guid>
+    <description><![CDATA[cstdlib div div_t div(int numer, int denom); ldiv_t div(long int numer, long int denom); lldiv_t div (long long int numer, long long int denom); Returns the integral quotient and remainder of the division of numer by denom ( numer/denom ) as a structure of type div_t, ldiv_t or lldiv_t, which has two members: quot and rem.
+Only int version for c
+/* div example */ #include &lt;stdio.h&gt; /* printf */ #include &lt;stdlib.]]></description>
+</item>
+<item>
+    <title>403. Frog Jump</title>
+    <link>halfstack.net/en/posts/lc/hard/0403_frog_jump/</link>
+    <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/0403_frog_jump/</guid>
+    <description><![CDATA[https://leetcode.com/problems/frog-jump/
+https://leetcode.com/problems/frog-jump/submissions/1032720945/
+class Solution { public: bool check(unordered_map&lt;int, bool&gt;&amp; exist, unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; &amp;inq, int lastStone, int nextStone, int jumpUnits) { if(inq[nextStone][jumpUnits]) return false; if(nextStone &gt; lastStone) return false; if(!exist[nextStone]) return false; return true; } bool canCross(vector&lt;int&gt;&amp; stones) { if(stones == (vector&lt;int&gt;){0,1}) { return true; } int n = stones.size(); if(stones.back() &gt; (n * (1 + n - 1) / 2)) { return false; } unordered_map&lt;int, bool&gt; exist; for(int i : stones) exist[i] = true; priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, less&lt;pair&lt;int, int&gt;&gt;&gt; q; unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; inq; if(stones[1] !]]></description>
+</item>
+<item>
+    <title>68. Text Justification</title>
+    <link>halfstack.net/en/posts/lc/hard/0068_text_justification/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/0068_text_justification/</guid>
+    <description><![CDATA[https://leetcode.com/problems/text-justification/
+https://leetcode.com/problems/text-justification/submissions/1030637814/
+class Solution { public: vector&lt;string&gt; fullJustify(vector&lt;string&gt;&amp; words, int maxWidth) { vector&lt;string&gt; ans; for(int i = 0; i &lt; words.size(); ){ string tans = &#34;&#34;; int j = i; while(j != words.size() &amp;&amp; tans.size() + words[j].size() &lt;= maxWidth) { tans += words[j]; if(tans.size() != maxWidth) tans += &#34; &#34;; j++; } if(j == words.size()) { ans.push_back(tans + string(maxWidth - tans.size(), &#39; &#39;)); } else { ans.push_back(rerrange(tans, maxWidth)); } i = j; } return ans; } inline string rerrange(string s, int maxWidth) { int space = 0; vector&lt;string&gt; split; string ts = &#34;&#34;; for(auto c : s) { if(c == &#39; &#39;) space++, split.]]></description>
+</item>
+<item>
+    <title>239. Sliding Window Maximum</title>
+    <link>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</link>
+    <pubDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</guid>
+    <description><![CDATA[https://leetcode.com/problems/sliding-window-maximum/
+https://leetcode.com/problems/sliding-window-maximum/submissions/1022554836/
+class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) { priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, less&lt;pair&lt;int,int&gt;&gt;&gt; q; for(int i = 0; i &lt; k; ++i) { q.push(pair(nums[i],i)); } vector&lt;int&gt; ans; ans.push_back(q.top().first); for(int i = k; i &lt; nums.size(); ++i) { q.push(pair(nums[i], i)); auto t = q.top(); while(t.second &lt;= i - k) { q.pop(); t = q.top(); } ans.push_back(q.top().first); } return ans; } }; ]]></description>
 </item>
 <item>
     <title>LeetCode Biweekly Contest 91 Tutorial</title>
-    <link>https://oasis7311.github.io/en/posts/leetcode-biweekly-contest-91-tutorial/</link>
+    <link>halfstack.net/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</link>
     <pubDate>Sun, 13 Nov 2022 14:29:05 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/leetcode-biweekly-contest-91-tutorial/</guid>
+    <guid>halfstack.net/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</guid>
     <description><![CDATA[Q2 Tutorial An easy dp problem, for dp[i], means how many good string of length i.
 Init dp[zero] = 1, dp[one] = 1 (if one == zero, then dp[one] = 2);
 So dp[i] = dp[i - zero] + dp[i - one]. After calculate all dp, sum up dp[low] to dp[high].
 Accepted Code class Solution { public: long long dp[100005]; int countGoodStrings(int low, int high, int zero, int one) { memset(dp, 0, sizeof(dp)); dp[zero]++; dp[one]++; for(int i = min(zero, one); i &lt;= high; ++i){ if(i &gt; zero) dp[i] += dp[i - zero]; if(i &gt; one) dp[i] += dp[i - one]; dp[i] %= 1000000007; } long long ans = 0; for(int i = low; i &lt;= high; ++i){ ans += dp[i]; ans %= 1000000007; } return ans; } }; Q3 Tutorial First, from root 0, bfs all tree to find where bob is.]]></description>
-</item>
-<item>
-    <title>2022.10 Daily LeetCode Coding Problems Tutorial</title>
-    <link>https://oasis7311.github.io/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</link>
-    <pubDate>Sat, 01 Oct 2022 11:22:16 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/2022.10-daily-leetcode-coding-problems-tutorial/</guid>
-    <description><![CDATA[If you get any problem of my code or you find something wrong, just leave a comment or contact with me, I&rsquo;ll response you as fast as I can if I see it.
-If this tutorial helps you well, you can subscribe my website, every time I update any Tutorial, I&rsquo;ll send an email to all subscribers.
-10-31 766. Toeplitz Matrix Difficulty: Easy Accepted Code class Solution { public: bool isToeplitzMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) { vector&lt;int&gt; n[int(matrix.]]></description>
-</item>
-<item>
-    <title>LeetCode 858 Mirror Reflection /Medium</title>
-    <link>https://oasis7311.github.io/en/posts/leetcode-858-mirror-reflection-medium/</link>
-    <pubDate>Fri, 05 Aug 2022 23:14:48 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/leetcode-858-mirror-reflection-medium/</guid>
-    <description><![CDATA[Origin Link https://leetcode.com/problems/mirror-reflection/
-Description Tutorial Mirror reflection is a very interesting thing.
-Take the picture in the question as an example.
-If we ignore the mirror on the upper side and extend the left and right mirrors infinitely upward: when the light emitted from the origin is reflected by the mirror on the right, and then it touches the mirror on the left. The height of the point is actually 2q.]]></description>
-</item>
-<item>
-    <title>LeetCode 729 My Calendar I /Medium</title>
-    <link>https://oasis7311.github.io/en/posts/leetcode-729-my-calendar-i-medium/</link>
-    <pubDate>Wed, 03 Aug 2022 23:27:06 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/leetcode-729-my-calendar-i-medium/</guid>
-    <description><![CDATA[Origin Link https://leetcode.com/problems/my-calendar-i/
-Description Tutorial Throughout the constraints, we could know that O(n2) solution will be accepted. So we JUST DO IT.
-Using an array of pair&lt;int, int&gt; to restore every valid event&rsquo;s start time and end time. For every new Events, We just iterate over the array, and judge whether any event had occupied the time or not.
-Accepted Code class MyCalendar { public: pair&lt;int, int&gt; events[1005]; int tot; MyCalendar() { tot = 0; } bool book(int start, int end) { end--; for(int i = 0; i &lt; tot; ++i){ if(events[i].]]></description>
-</item>
-<item>
-    <title>Codeforces 1697 D Tutorial</title>
-    <link>https://oasis7311.github.io/en/posts/codeforces-1697-d-tutorial/</link>
-    <pubDate>Sat, 09 Jul 2022 18:04:59 &#43;0800</pubDate>
-    <author>Oasis</author>
-    <guid>https://oasis7311.github.io/en/posts/codeforces-1697-d-tutorial/</guid>
-    <description><![CDATA[D. Guess The String Problem summary The Jury chosen a stringS consisting of n characters; each character of S is a lowercase Latin letter.
-You may ask query in two types:
-1 i - query for the letterSi 2 l r - query the size of character set of Sl,Sl+1,......,Sr You are allowed to ask no more than 26 queries of the first type, and no more than 6000 queries of the second type.]]></description>
 </item>
 </channel>
 </rss>

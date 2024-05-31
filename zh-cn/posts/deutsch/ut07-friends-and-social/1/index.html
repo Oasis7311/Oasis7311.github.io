@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Unit7-Part1: 发出指令和遵守指令 - Halfstack</title><meta name="Description" content="第七单元第一部分-发出指令和遵守指令"><meta property="og:title" content="Unit7-Part1: 发出指令和遵守指令" />
+<meta property="og:description" content="第七单元第一部分-发出指令和遵守指令" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-14T00:04:53+08:00" />
+<meta property="article:modified_time" content="2023-12-15T00:23:08+08:00" /><meta property="og:site_name" content="Halfstack" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unit7-Part1: 发出指令和遵守指令"/>
+<meta name="twitter:description" content="第七单元第一部分-发出指令和遵守指令"/>
+<meta name="application-name" content="Halfstack">
+<meta name="apple-mobile-web-app-title" content="Halfstack"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" /><link rel="prev" href="halfstack.net/zh-cn/posts/deutsch/ut06-feature-and-past/4/" /><link rel="next" href="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/2/" /><link rel="stylesheet" href="/halfstack.net/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Unit7-Part1: 发出指令和遵守指令",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "halfstack.net\/zh-cn\/posts\/deutsch\/ut07-friends-and-social\/1\/"
+        },"genre": "posts","wordcount":  5201 ,
+        "url": "halfstack.net\/zh-cn\/posts\/deutsch\/ut07-friends-and-social\/1\/","datePublished": "2023-12-14T00:04:53+08:00","dateModified": "2023-12-15T00:23:08+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Oasis"
+            },"description": "第七单元第一部分-发出指令和遵守指令"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="halfstack.net/zh-cn/" title="Halfstack">Halfstack</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/halfstack.net/zh-cn/posts"> 文章 </a><a class="menu-item" href="/halfstack.net/zh-cn/tags"> 标签 </a><a class="menu-item" href="/halfstack.net/zh-cn/categories"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="halfstack.net/zh-cn/" title="Halfstack">Halfstack</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/halfstack.net/zh-cn/posts" title="">文章</a><a class="menu-item" href="/halfstack.net/zh-cn/tags" title="">标签</a><a class="menu-item" href="/halfstack.net/zh-cn/categories" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Unit7-Part1: 发出指令和遵守指令</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="halfstack.net/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Oasis</a></span>&nbsp;<span class="post-category">收录于 <a href="halfstack.net/zh-cn/categories/german/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>german</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-12-14">2023-12-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5201 字
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" class="leancloud_visitors" data-flag-title="Unit7-Part1: 发出指令和遵守指令">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;
+					<a href="#comments" id="post-meta-vcount" title="查看评论">
+						<i class="fas fa-comment fa-fw"></i>&nbsp;<span id="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" class="waline-comment-count"></span>&nbsp;条评论
+					</a></div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#名词">名词</a>
+      <ul>
+        <li><a href="#die-feier-ˈfaɪɐ">die Feier: [ˈfaɪ̯ɐ]</a></li>
+        <li><a href="#der-frühling-ˈfʀyːlɪŋ">der Frühling: [ˈfʀyːlɪŋ]</a></li>
+        <li><a href="#das-theaterstück-ˈteːatɐˌʃtʏk">das Theaterstück: [ˈteːatɐˌʃtʏk]</a></li>
+      </ul>
+    </li>
+    <li><a href="#动词">动词</a>
+      <ul>
+        <li><a href="#singen-ˈzɪŋən">singen [ˈzɪŋən]</a></li>
+        <li><a href="#tanzen-ˈtantsn">tanzen [ˈtant͡sn̩]</a></li>
+        <li><a href="#darf-daːʁf-模态动词">darf [daːʁf] （模态动词）</a></li>
+        <li><a href="#stellen-ˈʃtɛlən">stellen [ˈʃtɛlən]</a></li>
+        <li><a href="#legen-ˈleːɡən">legen [ˈleːɡən]</a></li>
+        <li><a href="#gelegt-ɡəˈleːkt">gelegt [ɡəˈleːkt]</a></li>
+        <li><a href="#bringen-ˈbʁɪŋən">bringen [ˈbʁɪŋən]</a></li>
+        <li><a href="#beginnt-bəˈɡɪnt">beginnt [bəˈɡɪnt]</a></li>
+        <li><a href="#verlassen-fɛɐˈlasn">verlassen [fɛɐ̯ˈlasn̩]</a></li>
+      </ul>
+    </li>
+    <li><a href="#不定代词">不定代词</a>
+      <ul>
+        <li><a href="#etwas">etwas</a></li>
+      </ul>
+    </li>
+    <li><a href="#副词">副词</a>
+      <ul>
+        <li><a href="#vorbei-foːɐˈbaɪ">vorbei [foːɐ̯ˈbaɪ̯]</a></li>
+      </ul>
+    </li>
+    <li><a href="#例句">例句</a>
+      <ul>
+        <li><a href="#darf">darf</a></li>
+        <li><a href="#bitter">Bitter</a></li>
+        <li><a href="#stellen">stellen</a></li>
+        <li><a href="#legen">legen</a></li>
+        <li><a href="#gelegt">gelegt</a></li>
+        <li><a href="#bringen">bringen</a></li>
+        <li><a href="#beginnt">beginnt</a></li>
+        <li><a href="#vorbei">vorbei</a></li>
+        <li><a href="#verlassen">verlassen</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="名词">名词</h2>
+<h3 id="die-feier-ˈfaɪɐ">die Feier: [ˈfaɪ̯ɐ]</h3>
+<p>中/英：庆祝/celebration, party</p>
+<p>性：阴性</p>
+<p>&ldquo;Feier&rdquo; 指的是为特定场合或事件举办的庆祝活动或聚会。</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>die Feier</td>
+<td>die Feiern</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>die Feier</td>
+<td>die Feiern</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>der Feier</td>
+<td>den Feiern</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>der Feier</td>
+<td>der Feiern</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Die Feier beginnt um acht Uhr. (庆祝活动八点开始。)</li>
+<li>宾格（Akkusativ）：Wir organisieren die Feier. (我们组织这个庆祝活动。)</li>
+<li>与格（Dativ）：Während der Feier singen wir Lieder. (在庆祝活动期间，我们唱歌。)</li>
+<li>属格（Genitiv）：Das Ende der Feier ist ungewiss. (庆祝活动的结束时间不确定。)</li>
+</ul>
+<p>&ldquo;Feier&rdquo; 通常用于描述节日、生日、纪念日、婚礼等特别场合的庆祝活动，或者任何正式或非正式的聚会。</p>
+<h3 id="der-frühling-ˈfʀyːlɪŋ">der Frühling: [ˈfʀyːlɪŋ]</h3>
+<p>中/英：春天/spring</p>
+<p>性：阳性</p>
+<p>&ldquo;Frühling&rdquo; 指的是一年中的春季，通常特指气候变暖、植物开始生长的时期。</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>der Frühling</td>
+<td>die Frühlinge</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>den Frühling</td>
+<td>die Frühlinge</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>dem Frühling</td>
+<td>den Frühlingen</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>des Frühlings</td>
+<td>der Frühlinge</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Der Frühling ist meine Lieblingsjahreszeit. (春天是我最喜欢的季节。)</li>
+<li>宾格（Akkusativ）：Wir genießen den Frühling im Park. (我们在公园里享受春天。)</li>
+<li>与格（Dativ）：Im Frühling blühen die Blumen. (在春天，花朵绽放。)</li>
+<li>属格（Genitiv）：Die Tage des Frühlings werden länger. (春天的白昼变得更长。)</li>
+</ul>
+<p>&ldquo;Frühling&rdquo; 在德语中象征着新生和复苏，是诗歌和文学中常见的主题。这个季节通常与花朵盛开、天气温暖和自然的美景联系在一起。</p>
+<h3 id="das-theaterstück-ˈteːatɐˌʃtʏk">das Theaterstück: [ˈteːatɐˌʃtʏk]</h3>
+<p>中/英：戏剧作品/play, drama</p>
+<p>性：中性</p>
+<p>&ldquo;Theaterstück&rdquo; 指的是专为舞台表演而创作的戏剧作品。</p>
+<table>
+<thead>
+<tr>
+<th>格</th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主(N)</td>
+<td>das Theaterstück</td>
+<td>die Theaterstücke</td>
+</tr>
+<tr>
+<td>宾(A)</td>
+<td>das Theaterstück</td>
+<td>die Theaterstücke</td>
+</tr>
+<tr>
+<td>与(D)</td>
+<td>dem Theaterstück</td>
+<td>den Theaterstücken</td>
+</tr>
+<tr>
+<td>属(G)</td>
+<td>des Theaterstücks</td>
+<td>der Theaterstücke</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>主格（Nominativ）：Das Theaterstück ist sehr beliebt. (这个戏剧作品非常受欢迎。)</li>
+<li>宾格（Akkusativ）：Wir sehen das Theaterstück heute Abend. (我们今晚去看这个戏剧作品。)</li>
+<li>与格（Dativ）：Ich arbeite an dem Theaterstück. (我正在这个戏剧作品上工作。)</li>
+<li>属格（Genitiv）：Die Handlung des Theaterstücks ist komplex. (这个戏剧作品的情节很复杂。)</li>
+</ul>
+<p>&ldquo;Theaterstück&rdquo; 可以涵盖各种类型的舞台剧，包括悲剧、喜剧、历史剧等，通常包含对话和行动，旨在通过演员的表演向观众呈现故事和情感。</p>
+<h2 id="动词">动词</h2>
+<h3 id="singen-ˈzɪŋən">singen [ˈzɪŋən]</h3>
+<p>中/英：唱歌/sing</p>
+<p>&ldquo;singen&rdquo; 是表示“唱歌”的德语动词。以下是 &ldquo;singen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>singe</td>
+<td>singen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>singst</td>
+<td>singt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>singt</td>
+<td>singen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>singe</strong>.（我唱歌。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>singen</strong>.（我们唱歌。）</p>
+</li>
+<li>
+<p>二单：Du <strong>singst</strong>.（你唱歌。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>singt</strong>.（你们唱歌。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>singt</strong>.（他/她/它唱歌。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>singen</strong>.（他们唱歌。）</p>
+</li>
+</ul>
+<p>这个动词用于描述唱歌的行为，无论是专业的还是业余的。例如：&ldquo;Sie singt gerne in der Dusche&rdquo;（她喜欢在淋浴时唱歌）。</p>
+<h3 id="tanzen-ˈtantsn">tanzen [ˈtant͡sn̩]</h3>
+<p>中/英：跳舞/dance</p>
+<p>&ldquo;tanzen&rdquo; 是表示“跳舞”的德语动词。以下是 &ldquo;tanzen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>tanze</td>
+<td>tanzen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>tanzt</td>
+<td>tanzt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>tanzt</td>
+<td>tanzen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>tanze</strong>.（我跳舞。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>tanzen</strong>.（我们跳舞。）</p>
+</li>
+<li>
+<p>二单：Du <strong>tanzt</strong>.（你跳舞。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>tanzt</strong>.（你们跳舞。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>tanzt</strong>.（他/她/它跳舞。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>tanzen</strong>.（他们跳舞。）</p>
+</li>
+</ul>
+<p>这个动词用于描述跳舞的行为，可以用于各种情境，从休闲的社交舞到专业的舞蹈表演。例如：&ldquo;Wir tanzen jeden Samstagabend.&quot;（我们每个星期六晚上都跳舞。）</p>
+<h3 id="darf-daːʁf-模态动词">darf [daːʁf] （模态动词）</h3>
+<p>中/英：可以/may, is allowed to (1st and 3rd person singular, present tense)</p>
+<p>&ldquo;darf&rdquo; 是模态动词 &ldquo;dürfen&rdquo;（可以，被允许）的第一和第三人称单数现在时态的形式。以下是 &ldquo;dürfen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>darf</td>
+<td>dürfen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>darfst</td>
+<td>dürft</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>darf</td>
+<td>dürfen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>darf</strong> das machen.（我可以做那个。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>dürfen</strong> hier rauchen.（我们可以在这里吸烟。）</p>
+</li>
+<li>
+<p>二单：Du <strong>darfst</strong> jetzt gehen.（你现在可以走了。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>dürft</strong> das Spiel spielen.（你们可以玩那个游戏。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>darf</strong> das essen.（他/她/它可以吃那个。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>dürfen</strong> hier parken.（他们可以在这里停车。）</p>
+</li>
+</ul>
+<p>这个动词常用于表示许可或可能性。例如：&ldquo;Darf ich Ihr Telefon benutzen?&quot;（我可以使用您的电话吗？）</p>
+<h3 id="stellen-ˈʃtɛlən">stellen [ˈʃtɛlən]</h3>
+<p>中/英：放置/put, place</p>
+<p>&ldquo;stellen&rdquo; 是表示“放置”或“摆放”的德语动词。以下是 &ldquo;stellen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>stelle</td>
+<td>stellen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>stellst</td>
+<td>stellt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>stellt</td>
+<td>stellen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>stelle</strong> das Buch auf den Tisch.（我把书放在桌子上。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>stellen</strong> die Stühle in den Garten.（我们把椅子放到花园里。）</p>
+</li>
+<li>
+<p>二单：Du <strong>stellst</strong> die Vase auf das Regal.（你把花瓶放在架子上。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>stellt</strong> eure Taschen neben die Tür.（你们把包放在门旁边。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>stellt</strong> die Lampe in die Ecke.（他/她/它把灯放在角落。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>stellen</strong> die Tische in den Raum.（他们把桌子放进房间。）</p>
+</li>
+</ul>
+<p>这个动词用于描述将物体放置在某个位置的动作。例如：&ldquo;Sie stellt die Blumen ins Fenster.&quot;（她把花放在窗户上。）</p>
+<h3 id="legen-ˈleːɡən">legen [ˈleːɡən]</h3>
+<p>中/英：放置/lay, put</p>
+<p>&ldquo;legen&rdquo; 是表示“放置”或“平放”的德语动词。以下是 &ldquo;legen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>lege</td>
+<td>legen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>legst</td>
+<td>legt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>legt</td>
+<td>legen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>lege</strong> das Buch auf den Tisch.（我把书放在桌子上。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>legen</strong> die Handtücher auf die Liegen.（我们把毛巾放在躺椅上。）</p>
+</li>
+<li>
+<p>二单：Du <strong>legst</strong> deine Kleidung in den Schrank.（你把你的衣服放进衣柜。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>legt</strong> die Zeitschriften auf den Couchtisch.（你们把杂志放在咖啡桌上。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>legt</strong> die Schlüssel auf die Kommode.（他/她/它把钥匙放在梳妆台上。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>legen</strong> die Kissen auf das Sofa.（他们把枕头放在沙发上。）</p>
+</li>
+</ul>
+<p>这个动词用于描述将物体平放在某个位置的动作。例如：&ldquo;Er legt das Handy auf den Nachttisch.&quot;（他把手机放在床头柜上。）</p>
+<h3 id="gelegt-ɡəˈleːkt">gelegt [ɡəˈleːkt]</h3>
+<p>中/英：放置过/laid, put (past participle)</p>
+<p>&ldquo;gelegt&rdquo; 是动词 &ldquo;legen&rdquo;（放置，平放）的过去分词形式。在德语中，它用于形成完全体（Perfekt）和过去完成体（Plusquamperfekt）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>完全体（Perfekt）</th>
+<th>过去完成体（Plusquamperfekt）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>habe gelegt</td>
+<td>hatte gelegt</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>hast gelegt</td>
+<td>hattest gelegt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>hat gelegt</td>
+<td>hatte gelegt</td>
+</tr>
+<tr>
+<td>第一人称（复数）</td>
+<td>haben gelegt</td>
+<td>hatten gelegt</td>
+</tr>
+<tr>
+<td>第二人称（复数）</td>
+<td>habt gelegt</td>
+<td>hattet gelegt</td>
+</tr>
+<tr>
+<td>第三人称（复数）</td>
+<td>haben gelegt</td>
+<td>hatten gelegt</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>habe das Buch auf den Tisch gelegt</strong>.（我把书放在桌子上了。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>haben die Handtücher auf die Liegen gelegt</strong>.（我们把毛巾放在躺椅上了。）</p>
+</li>
+<li>
+<p>二单：Du <strong>hast deine Kleidung in den Schrank gelegt</strong>.（你把你的衣服放进衣柜了。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>habt die Zeitschriften auf den Couchtisch gelegt</strong>.（你们把杂志放在咖啡桌上了。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>hat die Schlüssel auf die Kommode gelegt</strong>.（他/她/它把钥匙放在梳妆台上了。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>haben die Kissen auf das Sofa gelegt</strong>.（他们把枕头放在沙发上了。）</p>
+</li>
+</ul>
+<p>在过去完成体中，&ldquo;gelegt&rdquo; 用于表示在过去某一时间点之前已经完成的放置动作，例如：&ldquo;Ich hatte die Bücher auf den Tisch gelegt, bevor ich ging.&quot;（我走之前已经把书放在桌子上了。）</p>
+<h3 id="bringen-ˈbʁɪŋən">bringen [ˈbʁɪŋən]</h3>
+<p>中/英：带来/bring</p>
+<p>&ldquo;bringen&rdquo; 是表示“带来”或“送来”的德语动词。以下是 &ldquo;bringen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>bringe</td>
+<td>bringen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>bringst</td>
+<td>bringt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>bringt</td>
+<td>bringen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>bringe</strong> das Buch.（我带来书。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>bringen</strong> das Essen.（我们带来食物。）</p>
+</li>
+<li>
+<p>二单：Du <strong>bringst</strong> die Getränke.（你带来饮料。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>bringt</strong> die Stühle.（你们带来椅子。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>bringt</strong> die Tasche.（他/她/它带来包。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>bringen</strong> die Geschenke.（他们带来礼物。）</p>
+</li>
+</ul>
+<p>这个动词用于描述携带或运送物品到某个地方的动作。例如：&ldquo;Kannst du mir das Buch bringen?&quot;（你能把书带给我吗？）</p>
+<h3 id="beginnt-bəˈɡɪnt">beginnt [bəˈɡɪnt]</h3>
+<p>中/英：开始/begins (3rd person singular, present tense)</p>
+<p>&ldquo;beginnt&rdquo; 是动词 &ldquo;beginnen&rdquo;（开始）的第三人称单数现在时态的形式。以下是 &ldquo;beginnen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>beginne</td>
+<td>beginnen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>beginnst</td>
+<td>beginnt</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>beginnt</td>
+<td>beginnen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>beginne</strong> mit der Arbeit.（我开始工作。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>beginnen</strong> das Projekt.（我们开始这个项目。）</p>
+</li>
+<li>
+<p>二单：Du <strong>beginnst</strong> das Spiel.（你开始游戏。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>beginnt</strong> die Sitzung.（你们开始会议。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>beginnt</strong> die Vorstellung.（他/她/它开始演出。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>beginnen</strong> den Unterricht.（他们开始上课。）</p>
+</li>
+</ul>
+<p>这个动词用于描述开始一个过程、活动或事件。例如：&ldquo;Die Vorstellung beginnt um 20 Uhr.&quot;（演出在20点开始。）</p>
+<h3 id="verlassen-fɛɐˈlasn">verlassen [fɛɐ̯ˈlasn̩]</h3>
+<p>中/英：离开/leave</p>
+<p>&ldquo;verlassen&rdquo; 是表示“离开”或“依赖”的德语动词。以下是 &ldquo;verlassen&rdquo; 在现在时的人称变化：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>单数</th>
+<th>复数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一人称</td>
+<td>verlasse</td>
+<td>verlassen</td>
+</tr>
+<tr>
+<td>第二人称</td>
+<td>verlässt</td>
+<td>verlasst</td>
+</tr>
+<tr>
+<td>第三人称</td>
+<td>verlässt</td>
+<td>verlassen</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>一单：Ich <strong>verlasse</strong> das Haus.（我离开房子。）</p>
+</li>
+<li>
+<p>一复：Wir <strong>verlassen</strong> die Stadt.（我们离开城市。）</p>
+</li>
+<li>
+<p>二单：Du <strong>verlässt</strong> die Schule.（你离开学校。）</p>
+</li>
+<li>
+<p>二复：Ihr <strong>verlasst</strong> das Büro.（你们离开办公室。）</p>
+</li>
+<li>
+<p>三单：Er/Sie/Es <strong>verlässt</strong> das Hotel.（他/她/它离开酒店。）</p>
+</li>
+<li>
+<p>三复：Sie <strong>verlassen</strong> das Land.（他们离开国家。）</p>
+</li>
+</ul>
+<p>这个动词用于描述离开某个地方或依赖某人的动作。例如：&ldquo;Sie verlässt sich auf ihre Freunde.&quot;（她依赖她的朋友。）</p>
+<h2 id="不定代词">不定代词</h2>
+<h3 id="etwas">etwas</h3>
+<p>something</p>
+<ul>
+<li>Sie liest etwas.</li>
+<li>Er trinkt etwas.</li>
+<li>Er schenkt ihr etwas.</li>
+</ul>
+<h4 id="etwas-zu-">etwas zu &hellip;.</h4>
+<p>something to &hellip;</p>
+<ul>
+<li>Er möchte etwas zu lesen.</li>
+<li>Sie möchten etwas zu trinken.</li>
+<li>Sie möchte etwas zu essen.</li>
+</ul>
+<h2 id="副词">副词</h2>
+<h3 id="vorbei-foːɐˈbaɪ">vorbei [foːɐ̯ˈbaɪ̯]</h3>
+<p>中/英：结束/over, past</p>
+<p>&ldquo;vorbei&rdquo; 是一个德语副词，表示某件事情已经结束或已经过去。它通常与动词结合使用，来表达某个动作或事件的完成或结束。&ldquo;vorbei&rdquo; 可以单独使用或与其他词结合，构成不同的表达方式。</p>
+<p>例如：</p>
+<ul>
+<li><strong>Es ist vorbei</strong>.（它结束了。）</li>
+<li><strong>Die Zeit ist vorbei</strong>.（时间已经过去了。）</li>
+<li><strong>Der Film ist vorbei</strong>.（电影结束了。）</li>
+<li><strong>Gehen Sie an der Kirche vorbei</strong>.（从教堂旁边走过。）</li>
+</ul>
+<p>在这些例句中，&ldquo;vorbei&rdquo; 被用来表示时间的结束或物体的空间移动。它可以用于各种情境，从日常活动到特定事件的结束。</p>
+<h2 id="例句">例句</h2>
+<h3 id="darf">darf</h3>
+<ul>
+<li>Sie dürfen nach links, rechts oder geradeaus fahren.</li>
+<li>Der Hund darf nicht mit dem Zug fahren.</li>
+<li>Er darf nicht links abbiegen.</li>
+<li>Die Schüler dürfen spielen.</li>
+<li>Sie dürfen jetzt nicht gehen.</li>
+<li>Sie darf in diesem See schwimmen.</li>
+</ul>
+<h3 id="bitter">Bitter</h3>
+<ul>
+<li>Bitte singen Sie.</li>
+<li>Bitte biegen Sie links ab.</li>
+<li>Bitte setzen Sie sich.</li>
+<li>Bitte trinken Sie das.</li>
+<li>Bitte schreiben Sie Ihren Namen.</li>
+<li>Bitte lesen Sie uns etwas aus Ihrem Buch vor!</li>
+</ul>
+<h3 id="stellen">stellen</h3>
+<ul>
+<li>Er stellt das Glas auf den Tisch.</li>
+<li>Die Mädchen stellen die Spielsachen auf den Tisch.</li>
+<li>Ich stelle einen Teller ins Spülbecken.</li>
+</ul>
+<h3 id="legen">legen</h3>
+<ul>
+<li>Die Männer legen die Zeitungen auf den Tisch.</li>
+<li>Sie legt den Stift auf den Tisch.</li>
+<li>Sie legen Handtücher auf den Stuhl.</li>
+<li>Die Studentin legt ihren Block auf das Pult.</li>
+<li>Wir legen die Decken aufs Bett.</li>
+</ul>
+<h3 id="gelegt">gelegt</h3>
+<ul>
+<li></li>
+<li>
+<p>Wohin hast du die Schlüssel gelegt?</p>
+</li>
+<li>
+<p>Ich habe sie auf den Tisch gelegt.</p>
+</li>
+<li></li>
+<li>
+<p>Wohin hast du das Buch gelegt?</p>
+</li>
+<li>
+<p>Ich habe es auf den Stuhl gelegt.</p>
+</li>
+</ul>
+<h3 id="bringen">bringen</h3>
+<ul>
+<li>Ich bringe dir Kaffee.</li>
+<li>Der Hund bringt dem Mann eine Zeitung.</li>
+<li>Die Mädchen bringen ihren Eltern Frühstück.</li>
+<li>Sie bringt ihm ein Handtuch.</li>
+<li>Ich <strong>bringe</strong> Fische vom Geschäft <strong>mit</strong> nach Hause.</li>
+<li>Sie <strong>bringt</strong> einen Ball <strong>mit</strong> zum Park.</li>
+<li>Wir <strong>bringen</strong> Bücher von der Bücherei <strong>mit</strong> nach Hause.</li>
+<li>Sie <strong>bringen</strong> Wasser <strong>mit</strong> in den Park.</li>
+</ul>
+<p><strong>Q:</strong> Ich bringe Fische vom Geschäft mit nach Hause. what are &lsquo;mit&rsquo; and &rsquo;nach&rsquo; mean in this sentence</p>
+<p><strong>A:</strong> In the sentence &ldquo;Ich bringe Fische vom Geschäft mit nach Hause,&rdquo; the words &ldquo;mit&rdquo; and &ldquo;nach&rdquo; are prepositions that contribute to the meaning of the sentence:</p>
+<ul>
+<li>
+<p>&ldquo;mit&rdquo; in this context is part of the separable verb &ldquo;mitbringen,&rdquo; which means &ldquo;to bring along&rdquo; or &ldquo;to take with.&rdquo; When separable verbs are used in the present tense, the prefix (&ldquo;mit&rdquo; in this case) is moved to the end of the clause.</p>
+</li>
+<li>
+<p>&ldquo;nach&rdquo; is a preposition that indicates direction and can be translated as &ldquo;to&rdquo; in English. It is used here with &ldquo;Hause&rdquo; to mean &ldquo;to home&rdquo; or &ldquo;home.&rdquo;</p>
+</li>
+</ul>
+<p>So, the sentence &ldquo;Ich bringe Fische vom Geschäft mit nach Hause&rdquo; translates to &ldquo;I am bringing fish from the store home with me.&rdquo; The verb &ldquo;mitbringen&rdquo; is split, with &ldquo;bringe&rdquo; in the second position of the sentence (as per the standard word order in German main clauses) and &ldquo;mit&rdquo; at the end of the clause. The &ldquo;nach Hause&rdquo; indicates the direction towards home.</p>
+<h3 id="beginnt">beginnt</h3>
+<ul>
+<li>Das Spiel beginnt.</li>
+<li>Das Theaterstück beginnt.</li>
+</ul>
+<h3 id="vorbei">vorbei</h3>
+<ul>
+<li>Das Spiel ist vorbei.</li>
+<li>Das Theaterstück ist vorbei.</li>
+</ul>
+<h3 id="verlassen">verlassen</h3>
+<ul>
+<li>Sie verlassen die Feier.</li>
+<li>Er verlässt das Büro.</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-12-15</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" data-title="Unit7-Part1: 发出指令和遵守指令" data-via="https://twitter.com/KKKyot_"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" data-title="Unit7-Part1: 发出指令和遵守指令"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" data-title="Unit7-Part1: 发出指令和遵守指令"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/1/" data-title="Unit7-Part1: 发出指令和遵守指令"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="halfstack.net/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="halfstack.net/zh-cn/posts/deutsch/ut06-feature-and-past/4/" class="prev" rel="prev" title="Unit6-Part4: 正式与非正式场合"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Unit6-Part4: 正式与非正式场合</a>
+            <a href="halfstack.net/zh-cn/posts/deutsch/ut07-friends-and-social/2/" class="next" rel="next" title="Unit7-Part2: 规划">Unit7-Part2: 规划<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="waline"></div>
+			<script src='https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+
+			<script>
+		    	new Waline({
+		    	  el: '#waline',
+				  meta: ["nick","mail","link"],
+		    	  requiredMeta: ["nick","mail"],
+		    	  login: "force",
+				  placeholder: "为防恶意灌水攻击，评论前需注册并登录，望见谅~",
+		    	  serverURL: "https://vercel-waline-kpliukny0-oasis7311.vercel.app",
+		    	  avatarCDN: "https://sdn.geekzu.org/avatar/",
+		    	  pageSize:  20 ,
+		    	  avatar: "retro",
+		    	  lang: "en",
+				  visitor:  true ,
+				  highlight:  true ,
+				  uploadImage:  false 				  
+		    	});
+		    </script></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="halfstack.net/zh-cn/" target="_blank">Oasis</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/halfstack.net/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/halfstack.net/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"halfstack.net/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/halfstack.net/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/halfstack.net/js/theme.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-4HXY0PTNJ3');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-4HXY0PTNJ3" async></script></body>
+</html>

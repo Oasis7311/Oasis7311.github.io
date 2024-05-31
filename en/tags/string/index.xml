@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>string - Tag - Halfstack</title>
+        <link>halfstack.net/en/tags/string/</link>
+        <description>string - Tag - Halfstack</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/string/" rel="self" type="application/rss+xml" /><item>
+    <title>68. Text Justification</title>
+    <link>halfstack.net/en/posts/lc/hard/0068_text_justification/</link>
+    <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
+    <author>Oasis</author>
+    <guid>halfstack.net/en/posts/lc/hard/0068_text_justification/</guid>
+    <description><![CDATA[https://leetcode.com/problems/text-justification/
+https://leetcode.com/problems/text-justification/submissions/1030637814/
+class Solution { public: vector&lt;string&gt; fullJustify(vector&lt;string&gt;&amp; words, int maxWidth) { vector&lt;string&gt; ans; for(int i = 0; i &lt; words.size(); ){ string tans = &#34;&#34;; int j = i; while(j != words.size() &amp;&amp; tans.size() + words[j].size() &lt;= maxWidth) { tans += words[j]; if(tans.size() != maxWidth) tans += &#34; &#34;; j++; } if(j == words.size()) { ans.push_back(tans + string(maxWidth - tans.size(), &#39; &#39;)); } else { ans.push_back(rerrange(tans, maxWidth)); } i = j; } return ans; } inline string rerrange(string s, int maxWidth) { int space = 0; vector&lt;string&gt; split; string ts = &#34;&#34;; for(auto c : s) { if(c == &#39; &#39;) space++, split.]]></description>
+</item>
+</channel>
+</rss>
