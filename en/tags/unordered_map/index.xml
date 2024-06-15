@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>unordered_map - Tag - Halfstack</title>
-        <link>halfstack.net/en/tags/unordered_map/</link>
+        <link>/en/tags/unordered_map/</link>
         <description>unordered_map - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/unordered_map/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/unordered_map/" rel="self" type="application/rss+xml" /><item>
     <title>403. Frog Jump</title>
-    <link>halfstack.net/en/posts/lc/hard/0403_frog_jump/</link>
+    <link>/en/posts/lc/hard/0403_frog_jump/</link>
     <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/0403_frog_jump/</guid>
+    <guid>/en/posts/lc/hard/0403_frog_jump/</guid>
     <description><![CDATA[https://leetcode.com/problems/frog-jump/
 https://leetcode.com/problems/frog-jump/submissions/1032720945/
 class Solution { public: bool check(unordered_map&lt;int, bool&gt;&amp; exist, unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; &amp;inq, int lastStone, int nextStone, int jumpUnits) { if(inq[nextStone][jumpUnits]) return false; if(nextStone &gt; lastStone) return false; if(!exist[nextStone]) return false; return true; } bool canCross(vector&lt;int&gt;&amp; stones) { if(stones == (vector&lt;int&gt;){0,1}) { return true; } int n = stones.size(); if(stones.back() &gt; (n * (1 + n - 1) / 2)) { return false; } unordered_map&lt;int, bool&gt; exist; for(int i : stones) exist[i] = true; priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, less&lt;pair&lt;int, int&gt;&gt;&gt; q; unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; inq; if(stones[1] !]]></description>

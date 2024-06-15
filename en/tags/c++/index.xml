@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>c&#43;&#43; - Tag - Halfstack</title>
-        <link>halfstack.net/en/tags/c&#43;&#43;/</link>
+        <link>/en/tags/c&#43;&#43;/</link>
         <description>c&#43;&#43; - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
     <title>c&#43;&#43; lib or usage, which I hardly used but seen</title>
-    <link>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
+    <link>/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
     <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</guid>
+    <guid>/en/posts/lib-or-special-usage/c&#43;&#43;/</guid>
     <description><![CDATA[cstdlib div div_t div(int numer, int denom); ldiv_t div(long int numer, long int denom); lldiv_t div (long long int numer, long long int denom); Returns the integral quotient and remainder of the division of numer by denom ( numer/denom ) as a structure of type div_t, ldiv_t or lldiv_t, which has two members: quot and rem.
 Only int version for c
 /* div example */ #include &lt;stdio.h&gt; /* printf */ #include &lt;stdlib.]]></description>

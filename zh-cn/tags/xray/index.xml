@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>xray - 标签 - Halfstack</title>
-        <link>halfstack.net/zh-cn/tags/xray/</link>
+        <link>/zh-cn/tags/xray/</link>
         <description>xray - 标签 - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 16 May 2023 23:38:59 &#43;0800</lastBuildDate><atom:link href="halfstack.net/zh-cn/tags/xray/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 16 May 2023 23:38:59 &#43;0800</lastBuildDate><atom:link href="/zh-cn/tags/xray/" rel="self" type="application/rss+xml" /><item>
     <title>脚本与配置</title>
-    <link>halfstack.net/zh-cn/posts/some-config-or-script/</link>
+    <link>/zh-cn/posts/some-config-or-script/</link>
     <pubDate>Tue, 16 May 2023 23:38:59 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/zh-cn/posts/some-config-or-script/</guid>
+    <guid>/zh-cn/posts/some-config-or-script/</guid>
     <description><![CDATA[自动更新域名SSL证书脚本 #!/bin/bash rm -rf ~/.acme.sh echo &#34;Clear acme&#34; wget -O - https://get.acme.sh | sh cd ~/.acme.sh/ echo &#34;Download acme&#34; sh acme.sh --upgrade --auto-upgrade echo &#34;Set acme auto upgrade&#34; sh acme.sh --issue --server letsencrypt --test -d halfstack.net -w /home/summer/www/webpage --keylength ec-256 echo &#34;Test Generate Cert&#34; sh acme.sh --set-default-ca --server letsencrypt echo &#34;Change Default CA&#34; sh acme.sh --issue -d halfstack.net]]></description>
 </item>
 </channel>

@@ -1,39 +1,39 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - Halfstack</title>
-        <link>halfstack.net/en/categories/</link>
+        <link>/en/categories/</link>
         <description>Categories - Category - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate><atom:link href="/en/categories/" rel="self" type="application/rss+xml" /><item>
     <title>travel</title>
-    <link>halfstack.net/en/categories/travel/</link>
+    <link>/en/categories/travel/</link>
     <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/categories/travel/</guid>
+    <guid>/en/categories/travel/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>leetcode hard</title>
-    <link>halfstack.net/en/categories/leetcode-hard/</link>
+    <link>/en/categories/leetcode-hard/</link>
     <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/categories/leetcode-hard/</guid>
+    <guid>/en/categories/leetcode-hard/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>leetcode medium</title>
-    <link>halfstack.net/en/categories/leetcode-medium/</link>
+    <link>/en/categories/leetcode-medium/</link>
     <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/categories/leetcode-medium/</guid>
+    <guid>/en/categories/leetcode-medium/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>lib</title>
-    <link>halfstack.net/en/categories/lib/</link>
+    <link>/en/categories/lib/</link>
     <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/categories/lib/</guid>
+    <guid>/en/categories/lib/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

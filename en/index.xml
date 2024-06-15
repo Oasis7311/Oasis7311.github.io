@@ -1,105 +1,105 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Halfstack</title>
-        <link>halfstack.net/en/</link>
+        <link>/en/</link>
         <description>Still have another half to learn</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
             <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</lastBuildDate>
-            <atom:link href="halfstack.net/en/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>2023.9.14～2023.9.17 Tokyo, Japan</title>
-    <link>halfstack.net/en/posts/travel/tokyo/</link>
+    <link>/en/posts/travel/tokyo/</link>
     <pubDate>Tue, 19 Sep 2023 22:30:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/travel/tokyo/</guid>
+    <guid>/en/posts/travel/tokyo/</guid>
     <description><![CDATA[Tokyo! Even though the trip was very rushed, it seemed to be enough for me. Even if I had extra time, I'd probably just roam around, see a few more landmarks and buildings, and enjoy more of the renowned local delicacies. Perhaps for every traveler, every city has its own advantages to admire.]]></description>
 </item>
 <item>
     <title>1359. Count All Valid Pickup and Delivery Options</title>
-    <link>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
+    <link>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</link>
     <pubDate>Sun, 10 Sep 2023 18:36:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
+    <guid>/en/posts/lc/hard/1359_count_all_valid_pickup_and_delivery_options/</guid>
     <description><![CDATA[https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
 https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/submissions/1045563113/
 class Solution { public: int countOrders(int n) { vector&lt;int&gt; dp(n + 1); dp[1] = 1; for(int i = 2; i &lt;= n; ++i){ int tn = (2 * i - 1); int sn = (tn * (tn + 1)) / 2; dp[i] = (long long)dp[i - 1] * sn % 1000000007; } return dp[n]; } }; Looked Hint]]></description>
 </item>
 <item>
     <title>2707. Extra Characters in a String</title>
-    <link>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
+    <link>/en/posts/lc/medium/2707_extra_characters_in_a_string/</link>
     <pubDate>Sat, 02 Sep 2023 13:12:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/medium/2707_extra_characters_in_a_string/</guid>
+    <guid>/en/posts/lc/medium/2707_extra_characters_in_a_string/</guid>
     <description><![CDATA[https://leetcode.com/problems/extra-characters-in-a-string/
 https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038162877/
 class Solution { public: vector&lt;int&gt; ans; unordered_map&lt;string, bool&gt; mp; int minExtraChar(string s, vector&lt;string&gt;&amp; dictionary) { ans.resize(s.size()+1, 0x3f3f3f3f); for(string a : dictionary) mp[a] = true; ans[s.size() - 1] = !mp[string(1, s.back())]; ans[s.size()] = 0; for(int i = s.size() - 2; i &gt;= 0; --i){ for(int j = 1; j &lt;= s.size() - i; ++j) { string tmp = s.substr(i, j); ans[i] = min(ans[i], (mp[tmp]?0:j) + ans[i+j]); } } return ans[0]; } }; ]]></description>
 </item>
 <item>
     <title>1326. Minimum Number of Taps to Open to Water a Garden</title>
-    <link>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</link>
+    <link>/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</link>
     <pubDate>Thu, 31 Aug 2023 08:49:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</guid>
+    <guid>/en/posts/lc/hard/1326_minimum-number_of_taps_to_open_to_water_a_garden/</guid>
     <description><![CDATA[https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
 https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/submissions/1036407008/
 class Solution { public: int minTaps(int n, vector&lt;int&gt;&amp; ranges) { vector&lt;int&gt; dp(n + 1, 0x3f3f3f3f); dp[0] = 0; for(int i = 0; i &lt; ranges.size(); ++i) { int l = max(0, i - ranges[i]); int r = min(n, i + ranges[i]); for(int j = l; j &lt;= r; ++j) { dp[j] = min(dp[j], dp[l] + 1); } } int ans = 0; for(int i = 0; i &lt;= n; ++i) { if(dp[i] == 0x3f3f3f3f) { return -1; } ans = max(ans, dp[i]); } return ans; } }; ]]></description>
 </item>
 <item>
     <title>2366. Minimum Replacements to Sort the Array</title>
-    <link>halfstack.net/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</link>
+    <link>/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</link>
     <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</guid>
+    <guid>/en/posts/lc/hard/2366_minimum_replacements_to_sort_the_array/</guid>
     <description><![CDATA[https://leetcode.com/problems/minimum-replacements-to-sort-the-array/description/
 https://leetcode.com/problems/minimum-replacements-to-sort-the-array/submissions/1035547342/
 class Solution { public: long long minimumReplacement(vector&lt;int&gt;&amp; nums) { long long ans = 0; int Max = nums.back(); for(int i = nums.size() - 2; i &gt;= 0; --i) { //cout &lt;&lt; i &lt;&lt; &#34; max = &#34; &lt;&lt; Max &lt;&lt; &#34; num = &#34; &lt;&lt; nums[i] &lt;&lt; endl; if(nums[i] &lt;= Max) { Max = nums[i]; continue; } int divisor = nums[i]; int dividend = Max; int mod = divisor % dividend; int quotient = divisor / dividend; if(mod == 0) { ans += quotient - 1; continue; } ans += quotient; // binary search to find max Max int l = mod, r = Max; while(l &lt;= r) { int mid = (l + r) &gt;&gt; 1; int gap = mid - mod; int times = gap / quotient; if(gap % quotient !]]></description>
 </item>
 <item>
     <title>c&#43;&#43; lib or usage, which I hardly used but seen</title>
-    <link>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
+    <link>/en/posts/lib-or-special-usage/c&#43;&#43;/</link>
     <pubDate>Wed, 30 Aug 2023 09:29:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lib-or-special-usage/c&#43;&#43;/</guid>
+    <guid>/en/posts/lib-or-special-usage/c&#43;&#43;/</guid>
     <description><![CDATA[cstdlib div div_t div(int numer, int denom); ldiv_t div(long int numer, long int denom); lldiv_t div (long long int numer, long long int denom); Returns the integral quotient and remainder of the division of numer by denom ( numer/denom ) as a structure of type div_t, ldiv_t or lldiv_t, which has two members: quot and rem.
 Only int version for c
 /* div example */ #include &lt;stdio.h&gt; /* printf */ #include &lt;stdlib.]]></description>
 </item>
 <item>
     <title>403. Frog Jump</title>
-    <link>halfstack.net/en/posts/lc/hard/0403_frog_jump/</link>
+    <link>/en/posts/lc/hard/0403_frog_jump/</link>
     <pubDate>Sun, 27 Aug 2023 10:40:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/0403_frog_jump/</guid>
+    <guid>/en/posts/lc/hard/0403_frog_jump/</guid>
     <description><![CDATA[https://leetcode.com/problems/frog-jump/
 https://leetcode.com/problems/frog-jump/submissions/1032720945/
 class Solution { public: bool check(unordered_map&lt;int, bool&gt;&amp; exist, unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; &amp;inq, int lastStone, int nextStone, int jumpUnits) { if(inq[nextStone][jumpUnits]) return false; if(nextStone &gt; lastStone) return false; if(!exist[nextStone]) return false; return true; } bool canCross(vector&lt;int&gt;&amp; stones) { if(stones == (vector&lt;int&gt;){0,1}) { return true; } int n = stones.size(); if(stones.back() &gt; (n * (1 + n - 1) / 2)) { return false; } unordered_map&lt;int, bool&gt; exist; for(int i : stones) exist[i] = true; priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, less&lt;pair&lt;int, int&gt;&gt;&gt; q; unordered_map&lt;int, unordered_map&lt;int, bool&gt;&gt; inq; if(stones[1] !]]></description>
 </item>
 <item>
     <title>68. Text Justification</title>
-    <link>halfstack.net/en/posts/lc/hard/0068_text_justification/</link>
+    <link>/en/posts/lc/hard/0068_text_justification/</link>
     <pubDate>Wed, 23 Aug 2023 23:17:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/0068_text_justification/</guid>
+    <guid>/en/posts/lc/hard/0068_text_justification/</guid>
     <description><![CDATA[https://leetcode.com/problems/text-justification/
 https://leetcode.com/problems/text-justification/submissions/1030637814/
 class Solution { public: vector&lt;string&gt; fullJustify(vector&lt;string&gt;&amp; words, int maxWidth) { vector&lt;string&gt; ans; for(int i = 0; i &lt; words.size(); ){ string tans = &#34;&#34;; int j = i; while(j != words.size() &amp;&amp; tans.size() + words[j].size() &lt;= maxWidth) { tans += words[j]; if(tans.size() != maxWidth) tans += &#34; &#34;; j++; } if(j == words.size()) { ans.push_back(tans + string(maxWidth - tans.size(), &#39; &#39;)); } else { ans.push_back(rerrange(tans, maxWidth)); } i = j; } return ans; } inline string rerrange(string s, int maxWidth) { int space = 0; vector&lt;string&gt; split; string ts = &#34;&#34;; for(auto c : s) { if(c == &#39; &#39;) space++, split.]]></description>
 </item>
 <item>
     <title>239. Sliding Window Maximum</title>
-    <link>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</link>
+    <link>/en/posts/lc/hard/0239_sliding_window_maximum/</link>
     <pubDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</guid>
+    <guid>/en/posts/lc/hard/0239_sliding_window_maximum/</guid>
     <description><![CDATA[https://leetcode.com/problems/sliding-window-maximum/
 https://leetcode.com/problems/sliding-window-maximum/submissions/1022554836/
 class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) { priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, less&lt;pair&lt;int,int&gt;&gt;&gt; q; for(int i = 0; i &lt; k; ++i) { q.push(pair(nums[i],i)); } vector&lt;int&gt; ans; ans.push_back(q.top().first); for(int i = k; i &lt; nums.size(); ++i) { q.push(pair(nums[i], i)); auto t = q.top(); while(t.second &lt;= i - k) { q.pop(); t = q.top(); } ans.push_back(q.top().first); } return ans; } }; ]]></description>
 </item>
 <item>
     <title>LeetCode Biweekly Contest 91 Tutorial</title>
-    <link>halfstack.net/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</link>
+    <link>/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</link>
     <pubDate>Sun, 13 Nov 2022 14:29:05 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</guid>
+    <guid>/en/posts/lc-contest/leetcode-biweekly-contest-91-tutorial/</guid>
     <description><![CDATA[Q2 Tutorial An easy dp problem, for dp[i], means how many good string of length i.
 Init dp[zero] = 1, dp[one] = 1 (if one == zero, then dp[one] = 2);
 So dp[i] = dp[i - zero] + dp[i - one]. After calculate all dp, sum up dp[low] to dp[high].

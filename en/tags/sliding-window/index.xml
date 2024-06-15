@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>sliding window - Tag - Halfstack</title>
-        <link>halfstack.net/en/tags/sliding-window/</link>
+        <link>/en/tags/sliding-window/</link>
         <description>sliding window - Tag - Halfstack</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>Oasis7311@gmail.com (Oasis)</managingEditor>
-            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</lastBuildDate><atom:link href="halfstack.net/en/tags/sliding-window/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>Oasis7311@gmail.com (Oasis)</webMaster><lastBuildDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</lastBuildDate><atom:link href="/en/tags/sliding-window/" rel="self" type="application/rss+xml" /><item>
     <title>239. Sliding Window Maximum</title>
-    <link>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</link>
+    <link>/en/posts/lc/hard/0239_sliding_window_maximum/</link>
     <pubDate>Wed, 16 Aug 2023 09:07:00 &#43;0800</pubDate>
     <author>Oasis</author>
-    <guid>halfstack.net/en/posts/lc/hard/0239_sliding_window_maximum/</guid>
+    <guid>/en/posts/lc/hard/0239_sliding_window_maximum/</guid>
     <description><![CDATA[https://leetcode.com/problems/sliding-window-maximum/
 https://leetcode.com/problems/sliding-window-maximum/submissions/1022554836/
 class Solution { public: vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) { priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, less&lt;pair&lt;int,int&gt;&gt;&gt; q; for(int i = 0; i &lt; k; ++i) { q.push(pair(nums[i],i)); } vector&lt;int&gt; ans; ans.push_back(q.top().first); for(int i = k; i &lt; nums.size(); ++i) { q.push(pair(nums[i], i)); auto t = q.top(); while(t.second &lt;= i - k) { q.pop(); t = q.top(); } ans.push_back(q.top().first); } return ans; } }; ]]></description>
